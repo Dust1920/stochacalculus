@@ -1,0 +1,11 @@
+{
+  "hash": "96f6d206acd0d66cc80585006193b416",
+  "result": {
+    "markdown": "# Introduction\n\nThis is a book created from markdown and executable code.\n\nSee @knuth84 for additional discussion of literate programming.\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nx = 10\nimport numpy as np\n```\n:::\n\n\n",
+    "supporting": [
+      "intro_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
