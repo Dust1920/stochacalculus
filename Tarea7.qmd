@@ -8,6 +8,7 @@ $$
 $$
 tiene valor esperado igual a cero y una varianza de $O(\delta t)$.
 ::: 
+
 Sin perdida de generalidad supongamos que $Z_{i}$ y $W(t_{i+1})-W(t_{i})$ son variables aleatorias independientes para cada $i=1,\dots L$. Entonces
 \begin{eqnarray*}
     \mathbb{E}\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right] & = &  \sum_{i=0}^{L}\mathbb{E}\left[Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right]\\

@@ -202,22 +202,101 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <div class="{exr-1}">
-<p>Sea <span class="math inline">\(\tau\)</span> un tiempo de paro. Prueba que <span class="math inline">\(W\left(t+\tau\right)-W\left(\tau\right)\)</span> es un movimiento browniano.</p>
+<p>Sea <span class="math inline">\(W(t)\)</span> un Movimiento Browniano y <span class="math inline">\(Z_{i}\)</span> una colección de variables aleatorias i.i.d, con distribución <span class="math inline">\(N\left(0,\frac{\delta t}{4}\right)\)</span>.<br>
+Pruebe que la suma <span class="math display">\[
+\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right),
+\]</span> tiene valor esperado igual a cero y una varianza de <span class="math inline">\(O(\delta t)\)</span>.</p>
 </div>
+<p>Sin perdida de generalidad supongamos que <span class="math inline">\(Z_{i}\)</span> y <span class="math inline">\(W(t_{i+1})-W(t_{i})\)</span> son variables aleatorias independientes para cada <span class="math inline">\(i=1,\dots L\)</span>. Entonces <span class="math display">\[\begin{eqnarray*}
+    \mathbb{E}\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right] &amp; = &amp;  \sum_{i=0}^{L}\mathbb{E}\left[Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right]\\
+    &amp; = &amp;  \sum_{i=0}^{L}\mathbb{E}(Z_{i})\mathbb{E}\left(W(t_{i+1})-W(t_{i})\right)\\
+    &amp; = &amp; 0
+\end{eqnarray*}\]</span> así, <span class="math display">\[\begin{eqnarray*}
+    Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right] &amp; = &amp;   \mathbb{E}\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right]+\left(\mathbb{E}\left[\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right]\right)^{2}\\
+    &amp; = &amp;  \mathbb{E}\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right]
+\end{eqnarray*}\]</span> por el Teorema multinomial, resulta <span class="math display">\[\begin{eqnarray*}
+\mathbb{E}\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right] &amp; = &amp;  \mathbb{E}\left[\sum_{i=0}^{L} \left[Z_{i}(W(t_{i+1})-W(t_{i}))\right]^{2}+2\sum_{i\neq j}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j}(W(t_{j+1})-W(t_{j}))\right]\\
+&amp; = &amp;  \sum_{i=0}^{L} \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))\right]^{2}+2\sum_{i\neq j}^{L} \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j}(W(t_{j+1})-W(t_{j}))\right]\\
+&amp; = &amp;  \sum_{i=0}^{L} \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))\right]^{2}+2\sum_{i\neq j}^{L} \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j}(W(t_{j+1})-W(t_{j}))\right]
+\end{eqnarray*}\]</span> observemos que, si <span class="math inline">\(i&lt;j\)</span> <span class="math display">\[\begin{eqnarray*}
+    \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j}(W(t_{j+1})-W(t_{j}))\right] &amp; = &amp;  \mathbb{E}\{ \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j}(W(t_{j+1})-W(t_{j}))|\mathcal{F}_{j}\right]
+    \}\\
+    &amp; = &amp; \mathbb{E}[Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j} ]\mathbb{E}\left[(W(t_{j+1})-W(t_{j}))|\mathcal{F}_{j}\right]\\
+    &amp; = &amp; 0
+\end{eqnarray*}\]</span> y además <span class="math display">\[\begin{eqnarray*}
+    \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))\right]^{2} &amp; = &amp;  \mathbb{E}\{ \mathbb{E}\left[Z_{i}^{2}(W(t_{i+1})-W(t_{i}))^{2}|\mathcal{F}_{j}\right]
+    \}\\
+    &amp; = &amp; \mathbb{E}\{Z_{i}^{2}\mathbb{E}\left[(W(t_{i+1})-W(t_{i}))^{2}|\mathcal{F}_{j}\right]\}\\
+    &amp; = &amp; \mathbb{E}[Z_{i}^{2}](t_{i+1}-t_{i})\\
+    &amp; = &amp; \dfrac{\delta t}{4}(t_{i+1}-t_{i})
+\end{eqnarray*}\]</span> sustituyendo resulta <span class="math display">\[\begin{eqnarray*}
+Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right] &amp; = &amp;  \sum_{i=0}^{L}\dfrac{\delta t}{4}(t_{i+1}-t_{i})\\
+&amp; = &amp;  \dfrac{\delta t}{4}(t_{L+1}-t_{0}).
+\end{eqnarray*}\]</span> Para un <span class="math inline">\(L\)</span> suficientemente grande, se tiene que, <span class="math inline">\((t_{L+1}-t_{0})\leq\dfrac{\varepsilon}{4}\)</span>, así <span class="math display">\[
+Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right]\leq \varepsilon\delta t.
+\]</span> Así, la varianza es de orden <span class="math inline">\(\delta t\)</span>. :::</p>
 <div class="{exr-1}">
-<p>Sea <span class="math inline">\(\tau\)</span> un tiempo de paro. Prueba que <span class="math inline">\(W\left(t+\tau\right)-W\left(\tau\right)\)</span> es un movimiento browniano.</p>
+<p>2.- La regla del punto medio de la integral de Riemann de una función <span class="math inline">\(h\in C^{2}([a,b])\)</span> sobre una partición de <span class="math inline">\(L\)</span> puntos del intervalo <span class="math inline">\([a,b]\)</span> está dada por, <span class="math display">\[
+\int_{a}^{b}h(t)dt=\lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}h\left(\dfrac{t_{i}+t_{i+1}}{2}\right)\delta t.
+\]</span> Use la relación <span class="math display">\[
+W\left(\frac{t_{i}+t_{i+1}}{2}\right)=\frac{1}{2}(W(t_{i})+W(t_{i+1}))+ \underbrace{Z_{i}}_{i.i.d.\sim N(0,\delta t/4)},
+\]</span> y el ejercicio anterior para demostrar que la regla del punto medio de la integral de Riemann implica que <span class="math display">\[
+\int_{0}^{T}W(t)dW(t)=\frac{1}{2}W(T)^{2}.
+\]</span></p>
 </div>
+<p>Sea <span class="math inline">\(\Delta_{L}=\{0=t_{0},t_{1},\dots,t_{L-1},t_{L}=T\}\)</span> una partición del intervalo <span class="math inline">\([0,T]\)</span>. De la regla del punto medio para <span class="math inline">\(h(t)=W(t)\)</span>, resulta <span class="math display">\[\begin{eqnarray*}
+    \int_{0}^{T}W(t)dW(t) &amp; = &amp; \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}W\left(\dfrac{t_{i}+t_{i+1}}{2}\right)(W(t_{i+1})-W(t_{i}))\\
+    &amp; = &amp; \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}\left[\frac{1}{2}(W(t_{i})+W(t_{i+1}))+ Z_{i}\right](W(t_{i+1})-W(t_{i}))\\
+    &amp; = &amp; \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}\frac{1}{2}\left(W(t_{i+1})^{2}-W(t_{i})^{2}\right)+ \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\\
+    &amp; = &amp; \lim_{\delta t\to 0,\,L\to\infty}\frac{1}{2}\left(W(T)^{2}-W(0)^{2}\right)+ \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\\
+    &amp; = &amp; \frac{1}{2}W(T)^{2}+ \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))
+\end{eqnarray*}\]</span> Solo falta ver que <span class="math display">\[
+\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\rightarrow 0\text{ en } L^{2}
+\]</span> es decir, <span class="math display">\[
+\lim_{\|\Delta_{L}\|\to0}E\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right]=0
+\]</span> Del ejercicio anterior se tiene que <span class="math display">\[
+E\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right] = O(\delta t)\leq \varepsilon\|\Delta_{L}\|,
+\]</span> así, tomando el limite cuando <span class="math inline">\(\|\Delta_{L}\|\to\)</span> se tiene que, <span class="math display">\[
+\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\rightarrow 0\text{ en } L^{2}
+\]</span> :::</p>
 <div class="{exr-1}">
-<p>Sea <span class="math inline">\(\tau\)</span> un tiempo de paro. Prueba que <span class="math inline">\(W\left(t+\tau\right)-W\left(\tau\right)\)</span> es un movimiento browniano.</p>
+<p>Usando la aproximación de la suma de Riemann <span class="math display">\[
+\int_{0}^{T}h(t)dW(t)\sim\sum_{i=0}^{L}h(t_{i})(W(t_{i+1})-W(t_{i})),
+\]</span> argumente que, <span class="math display">\[
+\mathbb{E}\left[\left(\int_{0}^{T}tdW(t)\right)^{2}\right]=\frac{T^{3}}{3}.
+\]</span></p>
+<p>Por tanto, enuncie la isometría de It^o y deduzca que esta isometría es válida para el caso <span class="math inline">\(h(t)=t\)</span>.</p>
 </div>
+<p>Sea <span class="math inline">\(\{0=t_{0},t_{1},\dots,t_{L-1},t_{L}=T\}\)</span> una partición del intervalo <span class="math inline">\([0,T]\)</span>. De la aproximación de la suma de Riemann, resulta <span class="math display">\[\begin{eqnarray*}
+\int_{0}^{T}tdW(t) &amp; \sim &amp; \sum_{i=0}^{L}t_{i}(W(t_{i+1})-W(t_{i}))\\
+\Longrightarrow \left(\int_{0}^{T}tdW(t)\right)^{2} &amp; \sim &amp; \left(\sum_{i=0}^{L}t_{i}(W(t_{i+1})-W(t_{i}))\right)^{2},
+\end{eqnarray*}\]</span> por el Teorema Multinomial, resulta <span class="math display">\[\begin{equation*}
+    \left(\sum_{i=0}^{L}t_{i}(W(t_{i+1})-W(t_{i}))\right)^{2} = \sum_{i=0}^{L}t_{i}^{2}(W(t_{i+1})-W(t_{i}))^{2}+2\sum_{i\neq j}t_{i} t_{j}(W(t_{i+1})-W(t_{i}))(W(t_{j+1})-W(t_{j}))
+\end{equation*}\]</span> entonces sustituyendo esto, resulta <span class="math display">\[\begin{eqnarray*}
+   \mathbb{E}
+\left[\left(\int_{0}^{T}tdW(t)\right)^{2}\right] &amp; \sim &amp;  \mathbb{E}
+\left[\sum_{i=0}^{L}t_{i}^{2}(W(t_{i+1})-W(t_{i}))^{2}+2\sum_{i\neq j}t_{i} t_{j}(W(t_{i+1})-W(t_{i}))(W(t_{j+1})-W(t_{j}))\right]\\
+&amp; = &amp;  
+\sum_{i=0}^{L}t_{i}^{2}\mathbb{E}(W(t_{i+1})-W(t_{i}))^{2}+2\sum_{i\neq j}t_{i} t_{j}\mathbb{E}\left[(W(t_{i+1})-W(t_{i}))(W(t_{j+1})-W(t_{j}))\right]\\
+&amp; = &amp;  
+\sum_{i=0}^{L}t_{i}^{2}(t_{i+1}-t_{i}),
+\end{eqnarray*}\]</span> observemos que, <span class="math display">\[
+\lim_{L\to 0}\sum_{i=0}^{L}t_{i}^{2}(t_{i+1}-t_{i})=\int_{0}^{T}t^{2}dt=\frac{T}{3}
+\]</span> entonces <span class="math display">\[
+\mathbb{E}
+\left[\left(\int_{0}^{T}tdW(t)\right)^{2}\right]=\frac{T}{3}.
+\]</span> Además, de la isometria de Itô, <span class="math display">\[\begin{eqnarray*}
+\mathbb{E}
+\left[\left(\int_{0}^{T}tdW(t)\right)^{2}\right] &amp; = &amp; \mathbb{E}
+\left[\left(\int_{0}^{T}tdW(t)\right)\left(\int_{0}^{T}tdW(t)\right)\right]\\
+&amp; = &amp;
+\int_{0}^{T}\mathbb{E}(t^{2})dt\\
+&amp; = &amp;
+\int_{0}^{T}t^{2}dt\\
+&amp; = &amp; \frac{T}{3}
+\end{eqnarray*}\]</span> :::</p>
 <div class="{exr-1}">
-<p>Sea <span class="math inline">\(\tau\)</span> un tiempo de paro. Prueba que <span class="math inline">\(W\left(t+\tau\right)-W\left(\tau\right)\)</span> es un movimiento browniano.</p>
-</div>
-<div class="{exr-1}">
-<p>Sea <span class="math inline">\(\tau\)</span> un tiempo de paro. Prueba que <span class="math inline">\(W\left(t+\tau\right)-W\left(\tau\right)\)</span> es un movimiento browniano.</p>
-</div>
-<div class="{exr-1}">
-<p>Sea <span class="math inline">\(\tau\)</span> un tiempo de paro. Prueba que <span class="math inline">\(W\left(t+\tau\right)-W\left(\tau\right)\)</span> es un movimiento browniano.</p>
+<p>Escriba una función de Python para calcular la integral de It^o del movimiento Browniano <span class="math inline">\(W(t)\)</span> sobre <span class="math inline">\([0,T]\)</span>. La función tendría la siguiente firma.</p>
 </div>
 
 
