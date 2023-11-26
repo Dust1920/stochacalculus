@@ -1,0 +1,347 @@
+# Tarea 3
+
+# Ejercicio 3.1
+
+Si $X\thicksim N(\mu,\sigma)$ entonces $\left(\dfrac{X-\mu}{\sigma}\right)\thicksim N(0,1)$.
+
+Calculemos la función característica de la variable $\dfrac{X-\mu}{\sigma}$, 
+\begin{eqnarray}\label{1.1}
+\varphi_{\frac{X-\mu}{\sigma}}(t) & = & E\left[e^{it\left(\frac{X-\mu}{\sigma}\right)}\right]\nonumber\\
+& = & E\left[e^{\left(\frac{itX}{\sigma}-\frac{it\mu}{\sigma}\right)}\right]\nonumber\\
+& = & e^{-\frac{it\mu}{\sigma}}E\left[e^{\left(\frac{itX}{\sigma}\right)}\right]\nonumber\\
+& = & e^{-\frac{it\mu}{\sigma}}\int_{-\infty}^{\infty}e^{\frac{itx}{\sigma}}\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}dx\nonumber\\
+& = & e^{-\frac{it\mu}{\sigma}}\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{\frac{itx}{\sigma}}e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}dx\nonumber\\
+& = & e^{-\frac{it\mu}{\sigma}}\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{\frac{itx}{\sigma}-\frac{(x-\mu)^{2}}{2\sigma^{2}}}dx\nonumber\\
+& = & e^{-\frac{it\mu}{\sigma}}\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{1}{2}\frac{(x-\mu)^{2}-2itx\sigma}{\sigma^{2}}}dx
+\end{eqnarray}
+
+Observemos que, 
+\begin{eqnarray}\label{1.2}
+\frac{(x-\mu)^{2}-2itx\sigma}{\sigma^{2}} & = & \frac{x^{2}-2x\mu+\mu^{2}-2itx\sigma}{\sigma^{2}}\nonumber\\
+& = & \frac{x^{2}}{\sigma^{2}}-\frac{2x\mu}{\sigma^{2}}+\frac{\mu^{2}}{\sigma^{2}}-\frac{2itx\sigma}{\sigma^{2}}\nonumber\\
+& = & \frac{x^{2}}{\sigma^{2}}-\frac{2x}{\sigma}\left(\frac{\mu+it\sigma}{\sigma^{2}}\right)+\frac{\mu^{2}}{\sigma^{2}}\nonumber\\
+& = & \left(\frac{x}{\sigma}-\left(\frac{\mu+it\sigma}{\sigma}\right)\right)^{2}-\left(\frac{\mu+it\sigma}{\sigma}\right)^{2}+\frac{\mu^{2}}{\sigma^{2}}\nonumber\\
+& = & \left(\frac{x}{\sigma}-\left(\frac{\mu+it\sigma}{\sigma}\right)\right)^{2}-\frac{2 it\sigma\mu}{\sigma^{2}}-\frac{(it\sigma)^{2}}{\sigma^{2}}\nonumber\\
+& = & \left(\frac{x}{\sigma}-\left(\frac{\mu+it\sigma}{\sigma}\right)\right)^{2}-\frac{2 it\mu}{\sigma}+t^{2}.
+\end{eqnarray}
+
+Sustituyendo (\ref{1.2}) en (\ref{1.1}), resulta
+
+\begin{eqnarray}\label{1.3}
+\varphi_{\frac{X-\mu}{\sigma}}(t) & = & e^{-\frac{it\mu}{\sigma}}\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{1}{2}\left[\left(\frac{x}{\sigma}-\left(\frac{\mu+it\sigma}{\sigma}\right)\right)^{2}-\frac{2 it\mu}{\sigma}+t^{2}\right]}dx\nonumber\\
+& = & e^{-\frac{it\mu}{\sigma}}e^{\frac{it\mu}{\sigma}-\frac{t^{2}}{2}}\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{1}{2}\left(\frac{x}{\sigma}-\left(\frac{\mu+it\sigma}{\sigma}\right)\right)^{2}}dx\nonumber\\
+& = & e^{-\frac{t^{2}}{2}}\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{1}{2}\left(\frac{x}{\sigma}-\left(\frac{\mu+it\sigma}{\sigma}\right)\right)^{2}}dx
+\end{eqnarray}
+
+
+Sea $u=\frac{x}{\sigma}-\left(\frac{\mu+it\sigma}{\sigma}\right)\Longrightarrow du=\frac{1}{\sigma}dx$, sustituyendo esto en (\ref{1.3}), resulta
+
+\begin{equation}\label{1.4}
+\varphi_{\frac{X-\mu}{\sigma}}(t) = e^{-\frac{t^{2}}{2}}\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{u^{2}}{2}}du
+\end{equation}
+
+de aquí se sigue que $u\thicksim N(0,1)$, entonces 
+$$
+\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{u^{2}}{2}}dx=1.
+$$
+
+sustituyendo esto ultimo en (\ref{1.4}), se tiene, 
+$$
+\varphi_{\frac{X-\mu}{\sigma}}(t) =e^{-\frac{t^{2}}{2}},
+$$
+
+que es la función característica de una Normal estándar, como las funciones características coinciden se concluye que $\frac{X-\mu}{\sigma}\thicksim N(0,1)$.
+
+# Ejercicio 3.2
+
+Si $Y\thicksim N(0,1)$ entonces $\sigma Y+\mu \thicksim N(\mu,\sigma)$. Calculemos la función característica de la variable $\sigma Y+\mu$, 
+
+\begin{eqnarray}\label{2.1}
+\varphi_{\sigma Y+\mu}(t) & = & E\left[e^{it(\sigma Y+\mu)}\right]\nonumber\\
+& = & E\left[e^{it\sigma Y+it\mu}\right]\nonumber\\
+& = & e^{it\mu}E\left[e^{it\sigma Y}\right]\nonumber\\
+& = & e^{it\mu}\int_{-\infty}^{\infty}e^{it\sigma y}\frac{1}{\sqrt{2\pi}}e^{\frac{-y^{2}}{2}}dy\nonumber\\
+& = & e^{it\mu}\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{1}{2}(y^{2}-2yit\sigma) }dy.
+\end{eqnarray} Observemos que, \begin{eqnarray}\label{2.2}
+y^{2}-2yit\sigma & = & (y-it\sigma)^{2}-(it\sigma)^{2}\nonumber\\
+& = & (y-it\sigma)^{2}+t^{2}\sigma^{2}.
+\end{eqnarray} Sustituyendo, (\ref{2.2}) en (\ref{2.1}) resulta \begin{eqnarray}\label{2.3}
+\varphi_{\sigma Y+\mu}(t) & = & e^{it\mu}\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{1}{2}((y-it\sigma)^{2}+t^{2}\sigma^{2}) }dy\nonumber\\
+& = & e^{it\mu}e^{-\frac{1}{2}t^{2}\sigma^{2}}\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{1}{2}(y-it\sigma)^{2} }dy
+\end{eqnarray} Tomando $u=y-it\sigma\Longrightarrow du=dy$, se tiene que 
+
+$$
+\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{1}{2}(y-it\sigma)^{2} }dy=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{u^{2} }{2}}du,
+$$
+
+entonces $U\thicksim N(0,1)$, por lo tanto, 
+$$
+\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{1}{2}(y-it\sigma)^{2} }dy=1
+$$
+
+sustituyendo esto ultimo en (\ref{2.3}), resulta,
+
+$$ \varphi_{\sigma Y+\mu}(t)=e^{it\mu}e^{-\frac{1}{2}t^{2}\sigma^{2}}=e^{it\mu-\frac{t^{2}\sigma^{2}}{2}}.
+$$
+
+Sea $Z$ una variable aleatoria tal que $Z\thicksim N(\mu,\sigma)$ sabemos que, 
+$$ 
+\varphi_{Z}(t)=e^{it\mu-\frac{t^{2}\sigma^{2}}{2}}.
+$$
+
+De estas dos ultimas igualdades se sigue que, 
+$$
+ \varphi_{Z}(t)=\varphi_{\sigma Y+\mu}(t).
+$$
+
+Dado que tienen iguales funciones características se concluye que, 
+$$
+\sigma Y+\mu\thicksim N(\mu,\sigma)
+$$
+
+# Ejercicio 3.3
+
+Si $X\thicksim N(\mu_{1},\sigma_{1}^{2})$, $Y\thicksim N(\mu_{2},\sigma_{2}^{2})$ además $X$ y $Y$ son independientes entonces $X+Y\thicksim N(\mu_{1}+\mu_{2},\sigma_{1}^{2}+\sigma_{2}^{2})$. Por definición, se tiene que,
+
+\begin{eqnarray}\label{eq:3.1}
+\varphi_{X+Y}(t) & = & E[e^{it(X+Y)}]\nonumber\\
+& = & E[e^{itX}e^{itY}]\text{ por ser independientes, del ejercicio 4}\nonumber\\
+& = & E[e^{itX}]E[e^{itY}]\nonumber\\
+& = &  \varphi_{X}(t) \varphi_{Y}(t).
+\end{eqnarray}
+
+Por otro lado, sea $Z$ una variables aleatoria tal que, $Z\thicksim N(\mu_{1}+\mu_{2},\sigma_{1}^{2}+\sigma_{2}^{2})$, sabemos que la función característica de $Z$, esta dada por,
+
+\begin{align*}
+\varphi_{Z}(t) & = & e^{it(\mu_{1}+\mu_{2})-\frac{t^{2}}{2}(\sigma_{1}^{2}+\sigma_{2}^{2})}\nonumber\\
+& = & e^{it\mu_{1}-\frac{t^{2}\sigma_{1}^{2}}{2}+it\mu_{2}-\frac{t^{2}\sigma_{2}^{2}}{2}}\nonumber\\
+& = & e^{it\mu_{1}-\frac{t^{2}\sigma_{1}^{2}}{2}}e^{it\mu_{2}-\frac{t^{2}\sigma_{2}^{2}}{2}}\\
+& = &  \varphi_{X}(t) \varphi_{Y}(t),
+\end{align*}
+
+entonces, de esta ultima igualdad y de $\eqref{3.1}$ se sigue que, 
+$$
+\varphi_{Z}(t)= \varphi_{X+Y}(t).
+$$
+
+Como las funciones características coinciden se sigue que, $X+Y\thicksim N(\mu_{1}+\mu_{2},\sigma_{1}^{2}+\sigma_{2}^{2})$.
+
+# Ejercicio 3.4
+Si $X,Y$ son variables normales independientes. Entonces $E\left[XY\right]=E\left[X\right]E\left[Y\right]$. 
+
+Recrodemos que 
+$$
+E\left[XY\right]=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xyf_{XY}\left(x,y\right)\mathrm{d}x\mathrm{d}y
+$$
+
+Como $X,Y$ son independientes 
+$$
+f_{XY}\left(x,y\right)=f_{X}\left(x\right)f_{Y}\left(y\right)
+$$
+
+Entonces 
+
+\begin{align*}
+E\left[XY\right] & =\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xyf_{XY}\left(x,y\right)\mathrm{d}x\mathrm{d}y\\
+ & =\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xyf_{X}\left(x\right)f_{y}\left(y\right)\mathrm{d}x\mathrm{d}y\\
+ & =\left[\int_{-\infty}^{\infty}xf_{X}\left(x\right)\mathrm{d}x\right]\left[\int_{-\infty}^{\infty}yf_{y}\left(y\right)\mathrm{d}y\right]\\
+ & =E\left[X\right]E\left[Y\right]
+\end{align*}
+
+# Ejercicio 3.5
+Por Demostrar
+$$
+\mathcal{P}\left[\left|X-\mu\right|\geq\epsilon\right]\leq\dfrac{\text{Var}\left[X\right]}{\epsilon^{2}}
+$$
+
+Por la desigualdad de Chebysev, para $X$ una variable aleatoria.
+$$
+\mathcal{P}\left[X\geq\epsilon\right]\leq\dfrac{E\left[X\right]}{\epsilon}
+$$
+
+Entonces, sea $Y=\left|X-\mu\right|,\mu=E\left[X\right]$
+
+\begin{align*}
+\mathcal{P}\left[\left|X-\mu\right|\geq\epsilon\right] & =\mathcal{P}\left[\left|X-\mu\right|^{2}\geq\epsilon^{2}\right]\\
+ & \leq\dfrac{E\left[\left(X-\mu\right)^{2}\right]}{\epsilon^{2}}=\dfrac{\text{Var}\left[X\right]}{\epsilon^{2}}
+\end{align*}
+
+# Ejercicio 3.6 (Ley de los grandes números)
+
+Por demostrar 
+
+Sean $X_{1},X_{2},\ldots,X_{n}$ variables aleatorias independienes
+con esperanza finita $\mu=E\left[X_{j}\right]$ y varianza infinita.
+$\sigma^{2}=\text{Var}\left(X_{j}\right)$. Sean $S_{n}=X_{1}+X_{2}+\ldots+X_{n}$.
+Entonces para cada $\epsilon>0$. 
+
+$$
+\mathcal{P}\left[\left|\dfrac{S_{n}}{n}-\mu\right|\geq\epsilon\right]\to0
+$$
+
+Notemos que 
+\begin{align*}
+\text{Var}\left[\dfrac{S_{n}}{n}-\mu\right] & =\dfrac{1}{n^{2}}\text{Var}\left(S_{n}\right)=\dfrac{1}{n^{2}}\sum_{i=1}^{n}\text{Var}\left(X_{i}\right)\\
+ & =\dfrac{\sigma^{2}}{n}
+\end{align*}
+
+Entonces, por el Teorema de Chebysev
+$$
+\mathcal{P}\left[\left|\dfrac{S_{n}}{n}-\mu\right|\geq\epsilon\right]\leq\dfrac{\sigma^{2}}{n\epsilon},
+$$
+
+notemos que para $n\to\infty$ 
+
+$$
+\dfrac{\sigma^{2}}{n\epsilon}\to0.
+$$
+
+Entonces 
+$$
+\mathcal{P}\left[\left|\dfrac{S_{n}}{n}-\mu\right|\geq\epsilon\right]\to0
+$$
+
+# Ejercicio 3.7 (Teorema de Limite Central)
+
+Sea $\left\{ X_{i}\right\} _{i=1}^{\infty}$ una secuencia de v.a.i.id
+con media $a$ y varianza $b^{2}$. Entonces para doo $\alpha,\beta\in\mathbb{R}$,
+con $\alpha<\beta$, entonces 
+
+$$
+\mathcal{P}\left(\lim_{M\to\infty}\alpha\le\dfrac{{\displaystyle \sum_{i=1}^{M}}X_{i}-Ma}{\sqrt{M}b}\leq\beta\right)=\dfrac{1}{\sqrt{2\pi}}\int_{\alpha}^{\beta}\exp\left(-\dfrac{1}{2}x^{2}\right)\mathrm{d}x
+$$
+
+Sea 
+$$
+Y_{M}=\dfrac{{\displaystyle \sum_{i=1}^{M}}\left[X_{i}-a\right]}{\sqrt{M}b},
+$$
+
+Definamos 
+$$
+\overline{S_{M}}={\displaystyle \sum_{i=1}^{M}}\left[X_{i}-a\right],
+$$
+
+entonces 
+$$
+Y_{M}=\dfrac{S_{M}}{\sqrt{M}b}
+$$
+
+demostraremos que la función generadora de momentos $\varphi_{M}\to\varphi$
+donde $\varphi_{m}=\varphi_{Y_{M}}$ y $\varphi$ es función generadora
+de momentos de la distribución normal estandar. 
+
+Ahora, 
+\begin{align*}
+\varphi_{M}\left(t\right) & =E\left[\exp\left(t\dfrac{S_{M}}{\sqrt{Mb}}\right)\right]\\
+ & =\varphi_{SM}\left(\dfrac{t}{\sqrt{M}b}\right)\\
+X_{i}\text{ v.a.i.i.d}\Rightarrow & =\left[\varphi_{\left(X_{1}-a\right)}\left(\dfrac{t}{\sqrt{M}b}\right)\right]^{M}\\
+ & =\left[E\left[\exp\left(\dfrac{t}{b\sqrt{M}}\left(X_{1}-a\right)\right)\right]\right]
+\end{align*}
+
+Recordando la serie de Taylor 
+\begin{align*}
+\varphi_{M}\left(t\right) & =\left[\sum_{i=0}^{\infty}\dfrac{E\left[\left(\dfrac{t}{b\sqrt{M}}\left(X_{1}-a\right)\right)^{i}\right]}{i!}\right]^{M}\\
+ & =\left[1+\dfrac{1}{2}\left(\dfrac{t}{b\sqrt{M}}\right)^{2}E\left[\left(X_{1}-a\right)^{2}\right]+\epsilon\left(3\right)\right]^{M}\\
+ & =\left[1+\dfrac{1}{M}\dfrac{t^{2}}{2}+\epsilon\left(3\right)\right]^{M},
+\end{align*}
+
+donde 
+\begin{align*}
+\epsilon\left(3\right) & =\sum_{i=3}^{\infty}\dfrac{E\left[\left(\dfrac{t}{b\sqrt{M}}\left(X_{1}-a\right)\right)^{i}\right]}{i!},
+\end{align*}
+
+Sea $s=\dfrac{t}{b\sqrt{M}},$ entonces $s\to0,t\to0$
+$$
+\epsilon\left(3\right)=\sum_{i=3}^{\infty}\dfrac{E\left[\left(X_{1}-a\right)^{i}\right]s^{i}}{i!}
+$$
+
+Notemos que, si $\varphi_{1}$ existe. Entonces 
+$$
+\dfrac{\epsilon\left(3\right)}{s^{2}}=\sum_{i=3}^{\infty}\dfrac{E\left[\left(X_{1}-a\right)^{i}\right]s^{i-2}}{i!}\to0,s\to0.
+$$
+
+Además $s\to 0$ cuando $M\to\infty$. 
+$$
+\Rightarrow\varphi_{M}\left(t\right)=\left[1+\dfrac{1}{M}\left[\dfrac{t^{2}}{2}+M\epsilon\left(3\right)\right]\right]^{M},
+$$
+
+Entonces $\epsilon\left(3\right)s^{-2}=Me\left(3\right)b^{2}t^{-2}\to0$.
+Como $b,t$ estan fijas. 
+$$
+M\epsilon\left(3\right)\to0,M\to\infty,
+$$
+
+por lo tanto 
+\begin{align*}
+\dfrac{t^{2}}{2}+M\epsilon\left(3\right) & \to\dfrac{t^{2}}{2},M\to\infty\\
+\left[1+\dfrac{1}{M}\left[\dfrac{t^{2}}{2}+M\epsilon\left(3\right)\right]\right]^{M} & \to\exp\left(t^{2}\right),M\to\infty\\
+\lim_{M\to\infty}\varphi_{M}\left(t\right) & =\exp\left(t^{2}\right)=\varphi\left(t\right),
+\end{align*}
+
+la función generadora de momentos de la distribución normal estándar.
+Por lo tanto 
+$$
+F_{M}\left(x\right)\to F_{N\left(0,1\right)}\left(x\right)
+$$
+
+\begin{align*}
+F_{M}\left(b\right)-F_{M}\left(a\right) & \to F_{N}\left(b\right)-F_{N}\left(a\right)\\
+\mathcal{P}\left(\lim_{M\to\infty}\alpha\le\dfrac{{\displaystyle \sum_{i=1}^{M}}X_{i}-Ma}{\sqrt{M}b}\leq\beta\right) & =\dfrac{1}{\sqrt{2\pi}}\int_{\alpha}^{\beta}\exp\left(-\dfrac{1}{2}x^{2}\right)\mathrm{d}x
+\end{align*}
+
+# Ejercicio 3.8
+Sea $\left\{ X_{i}\right\} _{i=1}^{\infty}$ una sucesión de v.a.i.i.d
+con media $a$. Entonces 
+$$
+\mathcal{P}\left[\lim_{M\to\infty}\dfrac{1}{M}\sum_{i=1}^{M}X_{i}=a\right]=1.
+$$
+
+Esto es similar a decir que 
+$$
+\lim_{M\to\infty}\dfrac{1}{M}\sum_{i=1}^{M}X_{i}\stackrel{\text{c.s}}{=}a
+$$
+
+Sin perdida de generalidad, diremos que $X_{i}\geq0,\forall i$. Definamos
+$$
+Y_{n}=X_{n}I_{\left[\left|X_{n}\right|\leq n\right]},Q_{n}=\sum_{i=1}^{n}Y_{i}
+$$
+
+Por la desigualdad de 
+\begin{align*}
+\sum_{n=1}^{\infty}\mathcal{P}\left[\left|\dfrac{Q_{n}-E\left[Q_{n}\right]}{n}\right|\geq\epsilon\right] & \leq\sum_{n=1}^{\infty}\dfrac{\text{Var}\left(Q_{n}\right)}{\epsilon^{2}n^{2}}=\sum_{n=1}^{\infty}\dfrac{1}{\epsilon^{2}n^{2}}\sum_{i=1}^{n}\text{Var}\left(Y_{i}\right)\\
+ & \leq\sum_{n=1}^{\infty}\dfrac{E\left(Y_{n}^{2}\right)}{\epsilon^{2}n^{2}}=\sum_{n=1}^{\infty}\dfrac{1}{\epsilon^{2}n^{2}}\int_{0}^{n}x^{2}\mathrm{d}F\\
+ & \leq\sum_{n=1}^{\infty}\dfrac{1}{\epsilon^{2}}\int_{0}^{n}x\mathrm{d}F<\infty,
+\end{align*}
+
+donde $F$ es la función de distribución de $X_{i}$. Luego 
+$$
+E\left[X_{1}\right]=\lim_{n\to\infty}\int_{0}^{n}x\mathrm{d}F=\lim_{n\to\infty}E\left[Y_{n}\right]=\lim_{n\to\infty}\dfrac{E\left[Q_{n}\right]}{n}.
+$$
+
+Entonces, por el Lema de Borel Canteli. $\mathcal{\mathcal{P}}\left[\limsup\left(\left|\dfrac{Q_{n}-E\left[Q_{n}\right]}{n}\right|\geq\epsilon\right)\right]=0$
+
+$$
+\lim_{n\to\infty}\dfrac{Q_{n}}{n}=E\left[X_{1}\right],\text{c.s}
+$$
+
+Ahora, calcularemos la siguiente probabilidad
+$$
+\sum_{i=1}^{\infty}\mathcal{P}\left[X_{i}\neq Y_{i}\right]=\sum_{i=1}^{\infty}\mathcal{P}\left[X_{i}>n\right]
+$$
+
+como $E\left[X_{i}\right]<\infty$ y $X_{i}$ son v.a.i.i.d. 
+
+$$
+\sum_{i=1}^{\infty}\mathcal{P}\left[X_{i}>n\right]\leq E\left[X_{1}\right]<\infty
+$$
+
+De nuevo, por el Lema de Borel Cantelli. 
+$$
+\mathcal{P}\left[\limsup\left[X_{i}\neq Y_{i}\right]\right]=0,\forall i
+$$
+
+Entonces 
+\begin{align*}
+X_{i} & =Y_{i},\text{c.s}\\
+\Rightarrow & \dfrac{1}{M}\sum_{i=1}^{M}X_{i}\to E\left[X_{1}\right]=\mu.\text{ c.s}
+\end{align*}
