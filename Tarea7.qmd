@@ -95,6 +95,7 @@ así, tomando el limite cuando $\|\Delta_{L}\|\to$ se tiene que,
 $$
 \sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\rightarrow 0\text{ en } L^{2}
 $$
+
 :::
 
 :::{exr-1}
