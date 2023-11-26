@@ -2,24 +2,102 @@
 
 
 ::: {#exr-1}
-
+Hacer un script para simular 10000 trayectorias del proceso $u(t,W_t)$ definido en el Ejercicio. Grafique en una figura, 10 trayectorias y la media de las 10000 trayectorias del proceso $u(t, W_t)$. 
 :::
 
 ```{python}
 import numpy as np
+import matplotlib.pyplot as plt
+
+def strong_brownian(t, n):
+    dt = t / n
+    dw = np.zeros(n)
+    w = np.zeros(n)
+    for i in np.arange(1, n):
+        dw[i] = np.sqrt(dt)*np.random.standard_normal()
+        w[i] = w[i - 1] + dw[i]
+    time = np.linspace(0, t, n)
+    return time, w
+
+
+
+def b_function(t, a, w):
+    y = np.exp(t - a * w)
+    return y
+
+
+n_samples = 10000
+n_points = 64
+t_initial = 0
+t_final = 1
+
+mean = np.zeros(n_points)
+for i in range(n_samples):
+    time, b_w = strong_brownian(t_final, n_points)
+    y = b_function(time, 0.25, b_w)
+    if i < 10:
+        plt.plot(time, b_w, 'g-', alpha=0.5)
+    mean += y
+
+mean = (n_samples)**(-1) * mean
+time = np.linspace(0, t_final, n_points)
+
+y = [np.exp(33 / 32 * t) for t in time]
+plt.plot(time, mean, 'r-')
+plt.plot(time, y, 'b-', alpha=0.3)
+plt.show()
 
 ```
 
 
 ::: {#exr-1}
-
+Siguiendo las ideas del refinamiento del camino browniano. $t_{i + 1/2} = t_i + \dfrac{1}{2}\delta t$. Hacer un código de Python para el refinamiento del Browniano para $\alpha \in (0, 1)$ para el refinamiento $t_{i+ \alpha} = t_i + \alpha \delta t $ 
 :::
-::: {#exr-1}
 
-:::
-::: {#exr-1}
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
 
-:::
-::: {#exr-1}
+def strong_brownian(t, n):
+    dt = t / n
+    dw = np.zeros(n)
+    w = np.zeros(n)
+    for i in np.arange(1, n):
+        dw[i] = np.sqrt(dt)*np.random.standard_normal()
+        w[i] = w[i - 1] + dw[i]
+    time = np.linspace(0, t, n)
+    return time, w
 
-:::
+t_final = 1
+n_points = 65
+delta_t = 1/(n_points - 1)
+alpha = 0.7
+
+prng = np.random.RandomState(219)
+
+time, w = strong_brownian(1, n_points)  # w_i
+
+y = np.sqrt(delta_t * (alpha - alpha ** 2)) * prng.standard_normal(n_points - 1)
+
+w_ = np.roll(w, -1)  # w_i+1
+
+w_alpha = alpha * w_ + (1 - alpha) * w
+w_alpha = np.delete(w_alpha, -1)
+w_alpha += y
+w_ref = np.zeros(2* n_points -1)
+
+w_ref[0::2] = w
+w_ref[1::2] = w_alpha
+
+time_ref = np.zeros(2 * n_points - 1)
+
+for i in range(2 * n_points - 1):
+    if i % 2 == 0:
+        time_ref[i] = time[int(i / 2)]
+    else:
+        time_ref[i] = time[int(i / 2)] + alpha * delta_t
+
+plt.plot(time_ref, w_ref, 'g-')
+plt.plot(time, w, 'ro')
+plt.show()
+```
