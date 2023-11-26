@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>stochacalculus - References</title>
+<title>stochacalculus - 10&nbsp; Muestre que \(X_{t}\) es una martingala local.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Tarea10.html" rel="prev">
+<link href="./Tarea10.html" rel="next">
+<link href="./Tarea8.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -94,7 +76,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea9.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Muestre que $X_{t}$ es una martingala local.</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -175,7 +157,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Tarea9.html" class="sidebar-item-text sidebar-link">
+  <a href="./Tarea9.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Muestre que <span class="math inline">\(X_{t}\)</span> es una martingala local.</span></span></a>
   </div>
 </li>
@@ -187,7 +169,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -197,14 +179,21 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#muestre-que-eleftx_trightinfty-para-cada-t0." id="toc-muestre-que-eleftx_trightinfty-para-cada-t0." class="nav-link active" data-scroll-target="#muestre-que-eleftx_trightinfty-para-cada-t0."><span class="header-section-number">10.0.1</span> Muestre que <span class="math inline">\(E\left|X_{t}\right|&lt;\infty\)</span> para cada <span class="math inline">\(t&gt;0\)</span>.</a></li>
+  <li><a href="#muestre-que-x_t-no-es-una-martingala." id="toc-muestre-que-x_t-no-es-una-martingala." class="nav-link" data-scroll-target="#muestre-que-x_t-no-es-una-martingala."><span class="header-section-number">10.0.2</span> Muestre que <span class="math inline">\(X_{t}\)</span> no es una martingala.</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Muestre que <span class="math inline">\(X_{t}\)</span> es una martingala local.</span></h1>
 </div>
 
 
@@ -219,11 +208,82 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" role="list" style="display: none">
-
+<div class="{exr-1}">
+<p>Sea <span class="math inline">\(\tau\)</span> un tiempo de paro. Prueba que <span class="math inline">\(W\left(t+\tau\right)-W\left(\tau\right)\)</span> es un movimiento browniano.</p>
 </div>
+<p>Definamos <span class="math display">\[
+V_{\tau}\left(t\right)=W\left(t+\tau\right)-W\left(\tau\right),
+\]</span></p>
+<p>notemos que <span class="math display">\[
+V_{\tau}\left(0\right)=0,
+\]</span></p>
+<p>Luego, considere para <span class="math inline">\(s\leq t\)</span> <span class="math display">\[\begin{align*}
+V_{\tau}\left(t\right)-V_{\tau}\left(s\right) &amp; =W\left(t+\tau\right)-W\left(\tau\right)-\left[W\left(s+\tau\right)-W\left(\tau\right)\right]\\
+&amp; =W\left(t+\tau\right)-W\left(s+\tau\right)\sim N\left(0,t-s\right),
+\end{align*}\]</span></p>
+<p>esto además nos garantiza la independencia de los incrementos del Browniano.</p>
+<div class="{exr-1}">
+<p>Sea <span class="math inline">\(W_{1}\left(t\right),W_{2}\left(t\right)\)</span> movimientos brownianos independientes con punto inicial <span class="math inline">\(\left(W_{1}\left(0\right),W_{2}\left(0\right)\right)\neq\left(0,0\right)\)</span>. Defina <span class="math inline">\(X_{t}=\ln\left(W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\right).\)</span></p>
+</div>
+<p>Supongamos que <span class="math inline">\(X_{t}\)</span> NO es una martingala local.</p>
+<section id="muestre-que-eleftx_trightinfty-para-cada-t0." class="level3" data-number="10.0.1">
+<h3 data-number="10.0.1" class="anchored" data-anchor-id="muestre-que-eleftx_trightinfty-para-cada-t0."><span class="header-section-number">10.0.1</span> Muestre que <span class="math inline">\(E\left|X_{t}\right|&lt;\infty\)</span> para cada <span class="math inline">\(t&gt;0\)</span>.</h3>
+<p>Considere <span class="math display">\[\begin{align*}
+X_{t} &amp; =\ln\left(W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\right),\\
+\exp\left(X_{t}\right) &amp; =W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right).
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+E\left[\exp\left(X_{t}\right)\right] &amp; =E\left[W_{1}^{2}\left(t\right)\right]+E\left[W_{2}^{2}\left(t\right)\right]\\
+&amp; =2t,
+\end{align*}\]</span></p>
+<p>Como <span class="math inline">\(X_{t}\geq0,\forall t\)</span> <span class="math display">\[\begin{align*}
+X_{t} &amp; \le\exp\left(X_{t}\right)\\
+E\left[X_{t}\right] &amp; \leq2t&lt;\infty,\forall t
+\end{align*}\]</span></p>
+</section>
+<section id="muestre-que-x_t-no-es-una-martingala." class="level3" data-number="10.0.2">
+<h3 data-number="10.0.2" class="anchored" data-anchor-id="muestre-que-x_t-no-es-una-martingala."><span class="header-section-number">10.0.2</span> Muestre que <span class="math inline">\(X_{t}\)</span> no es una martingala.</h3>
+<p>Supongamos que existe <span class="math inline">\(c\in\mathbb{R}\)</span> tal que <span class="math inline">\(E\left[X_{t}\right]=c,\forall t\)</span>. Entonces <span class="math display">\[\begin{align*}
+E\left[\ln\left(W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\right)\right] &amp; =c\\
+\int_{0}^{\infty}\ln\left(W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\right)\mathrm{d}\mathcal{P} &amp; =c,
+\end{align*}\]</span></p>
+<p>Como la integral es finita. Entonces <span class="math display">\[
+X_{t}\to0,t\to\infty,\text{ c.s}
+\]</span></p>
+<p>Luego, <span class="math display">\[
+W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\to1,t\to\infty,\text{c.s}
+\]</span></p>
+<p>Sin embargo <span class="math display">\[
+E\left[W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\right]=2t\to\infty,t\to\infty,
+\]</span></p>
+<p>entonces llegamos a una contradicci'on. Entonces <span class="math inline">\(E\left[X_{t}\right]\)</span> no es constante, por lo tanto <span class="math inline">\(X_{t}\)</span> no puede ser martingala.</p>
+<p>Considere <span class="math display">\[
+\tau_{n}=\inf_{t}\left\{ X_{t}=n\right\}
+\]</span></p>
+<p>Como <span class="math inline">\(X_{t}\)</span> es no acotada. Entonces <span class="math display">\[
+\tau_{n}\left(\omega\right)\to\infty,n\to\infty,\forall n.
+\]</span></p>
+<p>Ahora probaremos que <span class="math inline">\(Y_t\)</span> es una martingala. Ahora, considere <span class="math display">\[
+Y_{t}=X_{\min\left\{ t,\tau_{n}\right\} },
+\]</span></p>
+<p>es adaptado con respecto a la filtración. Si <span class="math inline">\(\tau_{n}&gt;t\)</span> lo tenemos por construcción. En caso contrario, para <span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+<p><span class="math display">\[
+Y_{t}=n
+\]</span></p>
+<p><span class="math display">\[
+\left[Y_{t}=n\right]\subset\left[\tau_{n}&lt;t\right]\in\mathcal{F}_{t},
+\]</span></p>
+<p>por ser tiempo de paro. Por lo tanto <span class="math inline">\(Y_{t}\)</span> es adaptado a la filtración, por lo tanto nos queda probar que es una martingala.</p>
+<p>Considere <span class="math inline">\(s&lt;t\)</span>. <span class="math display">\[\begin{align*}
+E\left[Y_{t}\mid\mathcal{F}_{s}\right] &amp; =E\left[X_{\min\left\{ t,\tau_{n}\right\} }\mid\mathcal{F}_{s}\right]\\
+&amp; =E\left[X_{t}1_{[t&lt;\tau_{n}]}\left(t\right)\mid\mathcal{F}_{s}\right]+E\left[X_{t}1_{\left[\tau_{n}\leq t\right]}\left(t\right)\mid\mathcal{F}_{s}\right]\\
+&amp; =E\left[X_{s}1_{[s&lt;\tau_{n}]}\left(t\right)\mid\mathcal{F}_{s}\right]+E\left[X_{\tau_{n}}1_{\left[\tau_{n}\leq t\right]}\left(t\right)\mid\mathcal{F}_{s}\right]\\
+&amp; =X_{s}1_{[s&lt;\tau_{n}]}\left(t\right)+X_{\tau_{n}}1_{\left[\tau_{n}\leq s\right]}\left(s\right)\\
+&amp; =Y_{s},
+\end{align*}\]</span> teniendo así que para cada <span class="math inline">\(n\)</span> <span class="math inline">\(Y_{t}\)</span> es una martingala.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -461,11 +521,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Tarea10.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tarea10.html</span></span>
+      <a href="./Tarea8.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tarea8.html</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./Tarea10.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tarea10.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

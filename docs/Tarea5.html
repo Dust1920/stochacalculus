@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>stochacalculus - References</title>
+<title>stochacalculus - 6&nbsp; Tarea 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Tarea10.html" rel="prev">
+<link href="./Tarea6.html" rel="next">
+<link href="./Tarea4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -94,7 +76,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea5.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tarea 5</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -151,7 +133,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Tarea5.html" class="sidebar-item-text sidebar-link">
+  <a href="./Tarea5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tarea 5</span></span></a>
   </div>
 </li>
@@ -187,7 +169,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -204,7 +186,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tarea 5</span></h1>
 </div>
 
 
@@ -219,11 +201,204 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" role="list" style="display: none">
-
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.1 </strong></span>Muestre que el movimiento Browniano satisface <span class="math display">\[
+E\left[\left|W\left(t\right)-W\left(s\right)\right|^{2}\right]=\left|t-s\right|
+\]</span></p>
 </div>
+<p>Si <span class="math inline">\(t&gt;s\)</span>. <span class="math display">\[\begin{align*}
+E\left[\left|W\left(t\right)-W\left(s\right)\right|^{2}\right] &amp; =E\left[\left(W\left(t\right)-W\left(s\right)\right)^{2}\right]\\
+&amp; =t-s,
+\end{align*}\]</span></p>
+<p>mientras que si <span class="math inline">\(t\leq s\)</span>. <span class="math display">\[\begin{align*}
+E\left[\left(W\left(t\right)-W\left(s\right)\right)^{2}\right] &amp; =E\left[\left(W\left(s\right)-W\left(t\right)\right)^{2}\right]\\
+&amp; =s-t,
+\end{align*}\]</span></p>
+<p>por lo tanto <span class="math display">\[
+E\left[\left|W\left(t\right)-W\left(s\right)\right|^{2}\right]=\left|t-s\right|
+\]</span></p>
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.2 </strong></span>Dado <span class="math inline">\(W\left(t_{i}\right)\)</span> y <span class="math inline">\(W\left(t_{i+1}\right)\)</span>, muestre que la variable aleatoria <span class="math display">\[
+W\left(t_{i+\frac{1}{2}}\right):=\dfrac{1}{2}\left[W\left(t_{i}\right)+W\left(t_{i+1}\right)\right]+\dfrac{1}{2}\sqrt{\Delta t}\xi,\xi\sim N\left(0,1\right)
+\]</span> es un movimiento Browniano.</p>
+</div>
+<section id="es-claro-que-al-ser-un-refinamiento-del-movimiento-browniano." class="level5" data-number="6.0.0.0.1">
+<h5 data-number="6.0.0.0.1" class="anchored" data-anchor-id="es-claro-que-al-ser-un-refinamiento-del-movimiento-browniano."><span class="header-section-number">6.0.0.0.1</span> Es claro que al ser un refinamiento del movimiento browniano.</h5>
+<p><span class="math display">\[
+W\left(0\right)=0
+\]</span></p>
+</section>
+<section id="c_2.-notemos-que" class="level5" data-number="6.0.0.0.2">
+<h5 data-number="6.0.0.0.2" class="anchored" data-anchor-id="c_2.-notemos-que"><span class="header-section-number">6.0.0.0.2</span> <span class="math inline">\(C_{2}\)</span>. Notemos que</h5>
+<p><span class="math display">\[
+W_{i+\frac{i}{2}}-W_{i}=\dfrac{1}{2}\left[W\left(t_{i+1}\right)-W\left(t_{i}\right)\right]+\dfrac{1}{2}\sqrt{\Delta t}\xi,
+\]</span></p>
+<p>Sabemos que la combinación lineal de normales es una nornal. Luego, partiendo que <span class="math inline">\(t_{i+1}-t_{i}=\Delta t\)</span>. <span class="math display">\[\begin{align*}
+E\left[W_{i+\frac{i}{2}}-W_{i}\right] &amp; =0,\\
+\text{Var}\left[W_{i+\frac{i}{2}}-W_{i}\right] &amp; =\dfrac{1}{4}\Delta t+\dfrac{1}{4}\Delta t=\dfrac{1}{2}\Delta t,
+\end{align*}\]</span></p>
+<p>Por lo tanto <span class="math inline">\(W_{i+\frac{1}{2}}-W_{i}\sim N\left(0,\dfrac{\Delta t}{2}\right)\)</span>.</p>
+</section>
+<section id="calculamos-la-esperanza." class="level5" data-number="6.0.0.0.3">
+<h5 data-number="6.0.0.0.3" class="anchored" data-anchor-id="calculamos-la-esperanza."><span class="header-section-number">6.0.0.0.3</span> Calculamos la esperanza.</h5>
+<p><span class="math display">\[
+E\left[\left(W_{i+1}-W_{i+\frac{1}{2}}\right)\left(W_{j+1}-W_{j+\frac{1}{2}}\right)\right]=E\left[\left(\dfrac{1}{2}\left[W\left(t_{i+1}\right)-W\left(t_{i}\right)\right]+\sqrt{\dfrac{\Delta t}{4}}\xi\right)\dfrac{1}{2}\left[W\left(t_{j+1}\right)-W\left(t_{j}\right)\right]+\sqrt{\dfrac{\Delta t}{4}}\xi\right],
+\]</span></p>
+<p>defina <span class="math inline">\(dW_{i}=W_{i+1}-W_{i},\)</span></p>
+<p><span class="math display">\[\begin{align*}
+E\left[\left(W_{i+1}-W_{i+\frac{1}{2}}\right)\left(W_{j+1}-W_{j+\frac{1}{2}}\right)\right] &amp; =E\left[\left(\dfrac{1}{2}dW_{i}+\sqrt{\dfrac{\Delta t}{4}}\xi\right)\left(\dfrac{1}{2}dW_{j}+\sqrt{\dfrac{\Delta t}{4}}\xi\right)\right]\\
+&amp; =E\left[\dfrac{1}{4}dW_{i}dW_{j}+\dfrac{1}{2}dW_{i}\sqrt{\dfrac{\Delta t}{4}}\xi+\dfrac{1}{2}dW_{j}\sqrt{\dfrac{\Delta t}{4}}\xi+\left(\sqrt{\dfrac{\Delta t}{4}}\xi\right)^{2}\right]\\
+dW_{i},dW_{j}\text{ son independientes} &amp; =\left(E\left[\dfrac{1}{2}dW_{i}\right]\right)\left(E\left[\dfrac{1}{2}dW_{j}\right]\right)+E\left[\dfrac{1}{2}dW_{i}\right]\sqrt{\dfrac{\Delta t}{4}}E\left[\xi\right]\\
+&amp; +E\left[\dfrac{1}{2}dW_{j}\right]\sqrt{\dfrac{\Delta t}{4}}E\left[\xi\right]+\dfrac{\Delta t}{4}\left(E\left[\xi\right]\right)^{2}\\
+&amp; =\left(E\left[\dfrac{1}{2}dW_{i}\right]\right)\left(E\left[\dfrac{1}{2}dW_{j}+\sqrt{\dfrac{\Delta t}{4}}\xi\right]\right)+E\left[\dfrac{1}{2}dW_{j}\right]\sqrt{\dfrac{\Delta t}{4}}E\left[\xi\right]+\dfrac{\Delta t}{4}\left(E\left[\xi\right]\right)^{2}\\
+&amp; =\left(E\left[\dfrac{1}{2}dW_{i}\right]\right)\left(E\left[\left(W_{j+1}-W_{j+\frac{1}{2}}\right)\right]\right)+E\left[\dfrac{1}{2}dW_{j}\right]\sqrt{\dfrac{\Delta t}{4}}E\left[\xi\right]+\dfrac{\Delta t}{4}\left(E\left[\xi\right]\right)^{2}\\
+&amp; =\left(E\left[\dfrac{1}{2}dW_{i}\right]\right)\left(E\left[\left(W_{j+1}-W_{j+\frac{1}{2}}\right)\right]\right)+E\left[\dfrac{1}{2}dW_{j}+\sqrt{\dfrac{\Delta t}{4}}\xi\right]\sqrt{\dfrac{\Delta t}{4}}E\left[\xi\right]\\
+&amp; =\left(E\left[\dfrac{1}{2}dW_{i}\right]\right)\left(E\left[\left(W_{j+1}-W_{j+\frac{1}{2}}\right)\right]\right)+E\left[\left(W_{j+1}-W_{j+\frac{1}{2}}\right)\right]\sqrt{\dfrac{\Delta t}{4}}E\left[\xi\right]\\
+&amp; =E\left[\left(W_{i+1}-W_{i+\frac{1}{2}}\right)\right]E\left[\left(W_{j+1}-W_{j+\frac{1}{2}}\right)\right],
+\end{align*}\]</span> teniendo asi, que los incrementos son independientes.</p>
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.3 </strong></span>Generalice la fórmula del ejercicio anterior para en el caso donde, <span class="math inline">\(W\left(t_{i}\right),W\left(t_{i+1}\right),\)</span> y <span class="math inline">\(\alpha\in\left(0,1\right)\)</span> el valor <span class="math display">\[
+W\left(t_{i}+\alpha\Delta t\right),
+\]</span></p>
+<p>es un movimiento Browniano.</p>
+</div>
+<p>Notemos que <span class="math display">\[
+t_{i}+\alpha\Delta t+\left(1-\alpha\right)\Delta t=t_{i+1},
+\]</span> entonces vamos a definir <span class="math display">\[\begin{align*}
+W_{i+\alpha} &amp; =W\left(t_{i}+\alpha\Delta t\right)\\
+&amp; =\left(1-\alpha\right)W_{i}+\alpha W_{i+1}+Y,
+\end{align*}\]</span> donde <span class="math inline">\(Y\)</span> será una v.a independiente de <span class="math inline">\(W\left(t\right)\)</span>. Entonces <span class="math display">\[\begin{align*}
+W_{i+\alpha}-W_{i} &amp; =\left(1-\alpha\right)W_{i}+\alpha W_{i+1}+Y-W_{i}\\
+&amp; =\alpha\left(W_{i+1}-W_{i}\right)+Y\\
+&amp; =\alpha\left(W_{i+1}-W_{i}\right)+Y.
+\end{align*}\]</span></p>
+<p>Entonces <span class="math display">\[
+E\left[W_{i+\alpha}-W_{i}\right]=E\left[Y\right],
+\]</span></p>
+<p>por lo tanto, <span class="math inline">\(E\left[Y\right]\)</span> tiene que ser cero. Luego <span class="math display">\[
+\text{Var}\left[W_{i+\alpha}-W_{i}\right]=\alpha^{2}\Delta t+\text{Var}\left[Y\right],
+\]</span></p>
+<p>notemos que <span class="math display">\[
+\left(i+\alpha\right)\Delta t-i\Delta t=\alpha\Delta t,
+\]</span></p>
+<p>por lo tanto tendría que cumplirse <span class="math inline">\(\text{Var}\left[W_{i+\alpha}-W_{i}\right]=\alpha\Delta t\)</span>.</p>
+<p><span class="math display">\[
+\alpha^{2}\Delta t+\text{Var}\left[Y\right]=\alpha\Delta t,
+\]</span></p>
+<p>entonces <span class="math display">\[
+\text{Var}\left[Y\right]=\Delta t\left(\alpha-\alpha^{2}\right),
+\]</span></p>
+<p>como <span class="math inline">\(Y=\sqrt{\alpha\left(1-\alpha\right)}\xi,\xi\sim N\left(0,1\right)\)</span>. Como este es un refinamiento del browniano, entonces se cumple <span class="math inline">\(C1\)</span>. <span class="math display">\[
+W\left(0\right)=0.
+\]</span></p>
+<p>Conseguimos <span class="math inline">\(C2\)</span> por construcción y de forma análoga tenemos la independiencia de los incrementos. <span class="math display">\[
+E\left[\left(W_{i+\alpha}-W_{i}\right)\left(W_{j+\alpha}-W_{j}\right)\right]=E\left[W_{i+\alpha}-W_{i}\right]E\left[W_{j+\alpha}-W_{j}\right].
+\]</span></p>
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.4 </strong></span>Suponga que <span class="math inline">\(X\sim N\left(0,1\right)\)</span>. Sabemos que <span class="math inline">\(E\left[X\right]=0\)</span> y <span class="math inline">\(E\left[X^{2}\right]=3\)</span>. Luego, de la definición, el <span class="math inline">\(p-\)</span> ésimo momento satisface <span class="math display">\[
+E\left[X^{p}\right]=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}x^{p}\exp\left(-\frac{x^{2}}{2}\right)\mathrm{D}x.
+\]</span></p>
+<p>Usando la relación, muestre que <span class="math inline">\(E\left[X^{3}\right]=0\)</span> y <span class="math inline">\(E\left[X^{4}\right]=1\)</span>.</p>
+<p>Entonces deduzca el incremento Browniano, <span class="math display">\[
+\Delta W_{i}=W\left(t_{i+1}\right)-W\left(t_{i}\right),
+\]</span></p>
+<p>satisface <span class="math inline">\(E\left[\Delta W_{i}^{3}\right]=0,E\left[\Delta W_{i}^{4}\right]=3\left(\Delta t\right)^{2}\)</span>. Entonces encuentre una expresión para <span class="math inline">\(E\left[X^{p}\right]\)</span> para un entero positivo <span class="math inline">\(p\)</span>.\ Pista: Tu puedes usar el dato que <span class="math inline">\(\int_{-\infty}^{\infty}\exp\left(-\dfrac{x^{2}}{2}\right)=\sqrt{2\pi}.\)</span></p>
+</div>
+<p>Considere la fórmula. <span class="math display">\[
+E\left[X^{p}\right]=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}x^{p}\exp\left(-\frac{x^{2}}{2}\right)\mathrm{D}x.
+\]</span></p>
+<p>Partiendo la integral, <span class="math display">\[
+\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}x^{p}\exp\left(-\frac{x^{2}}{2}\right)\mathrm{D}x=\underbrace{\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{0}x^{p}\exp\left(-\frac{x^{2}}{2}\right)\mathrm{D}x}_{I_{1}}+\underbrace{\dfrac{1}{\sqrt{2\pi}}\int_{0}^{\infty}x^{p}\exp\left(-\frac{x^{2}}{2}\right)\mathrm{D}x}_{I_{2}}
+\]</span></p>
+<p>Entonces <span class="math display">\[
+I_{1}=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{0}x^{p}\exp\left(-\dfrac{x^{2}}{2}\right)\mathrm{D}x,
+\]</span></p>
+<p>hagamos el cambio de variable. <span class="math inline">\(y=-x,\)</span> tenemos que <span class="math display">\[\begin{align*}
+I_{1} &amp; =\dfrac{1}{\sqrt{2\pi}}\int_{\infty}^{0}-\left(-y\right)^{p}\exp\left(-\dfrac{y^{2}}{2}\right)\mathrm{D}y\\
+&amp; =\dfrac{\left(-1\right)^{p}}{\sqrt{2\pi}}\int_{0}^{\infty}y^{p}\exp\left(-\dfrac{y^{2}}{2}\right)\mathrm{D}y=I_{2}\left(-1\right)^{p},
+\end{align*}\]</span> entonces <span class="math display">\[
+E\left[X^{p}\right]=\left(1+\left(-1\right)^{p}\right)I_{2},
+\]</span></p>
+<p>de aqui tenemos, que si <span class="math inline">\(p\)</span> es impar <span class="math inline">\(E\left[X^{p}\right]=0,\)</span> entonces si <span class="math inline">\(p\)</span> es par <span class="math display">\[
+E\left[X^{p}\right]=2I_{2},
+\]</span></p>
+<p>entonces, nos concentraremos en <span class="math display">\[
+E\left[X^{p}\right]=\dfrac{2}{\sqrt{2\pi}}\int_{0}^{\infty}x^{p}\exp\left(-\frac{x^{2}}{2}\right)\mathrm{D}x,p=2k,k\in\mathbb{N}
+\]</span></p>
+<p>Considere <span class="math inline">\(y=\dfrac{x^{2}}{2},\mathrm{D}y=x\mathrm{D}x\)</span>.</p>
+<p><span class="math display">\[
+E\left[X^{p}\right]=\dfrac{2}{\sqrt{2\pi}}\int_{0}^{\infty}x^{p-1}\exp\left(-y\right)\mathrm{D}y,
+\]</span></p>
+<p>luego <span class="math inline">\(\sqrt{2y}=x,\)</span> entonces <span class="math display">\[\begin{align*}
+E\left[X^{p}\right] &amp; =\dfrac{2}{\sqrt{2\pi}}\int_{0}^{\infty}\left(\sqrt{2y}\right)^{p-1}\exp\left(-y\right)\mathrm{D}y\\
+&amp; =\dfrac{2\left(\sqrt{2}\right)^{p-1}}{\sqrt{2\pi}}\int_{0}^{\infty}y^{\frac{p-1}{2}}\exp\left(-y\right)\mathrm{D}y\\
+&amp; =\dfrac{2\left(\sqrt{2}\right)^{p-1}}{\sqrt{2\pi}}\int_{0}^{\infty}y^{\frac{p+1}{2}-1}\exp\left(-y\right)\mathrm{D}y,
+\end{align*}\]</span> recordando la función Gamma. <span class="math display">\[
+\Gamma\left(z\right)=\int_{0}^{\infty}x^{z-1}e^{-t}\mathrm{D}t,
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+E\left[X^{p}\right]=\begin{cases}
+0 &amp; p\text{ impar}\\
+\dfrac{2^{\frac{p+1}{2}}}{\sqrt{2\pi}}\Gamma\left(\dfrac{p+1}{2}\right) &amp; p\text{ par}
+\end{cases},
+\]</span></p>
+<p>entonces <span class="math inline">\(E\left[X^{4}\right]=\dfrac{4}{\sqrt{\pi}}\Gamma\left(\dfrac{5}{2}\right)\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\Gamma\left(\dfrac{5}{2}\right) &amp; =\int_{0}^{\infty}x^{\frac{3}{2}}e^{-x}\mathrm{D}x.
+\end{align*}\]</span></p>
+<p>Considere <span class="math display">\[\begin{align*}
+u=x^{3/2} &amp; \mathrm{D}v=e^{-x}\mathrm{D}x\\
+\mathrm{D}u=\dfrac{3}{2}x^{1/2} &amp; v=-e^{-x},
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\Gamma\left(\dfrac{5}{2}\right) &amp; =\left[-x^{3/2}e^{-x}\right]+\dfrac{3}{2}\int_{0}^{\infty}x^{1/2}e^{-x}\mathrm{D}x\\
+&amp; =\dfrac{3}{2}\dfrac{\sqrt{\pi}}{2}.
+\end{align*}\]</span></p>
+<p>Entonces <span class="math display">\[
+E\left[X^{4}\right]=3
+\]</span></p>
+<p>Notemos que si <span class="math inline">\(\Delta W\sim N\left(0,\sigma^{2}\right)\)</span>, entonces <span class="math display">\[
+Z=\dfrac{\Delta W}{\sigma}\sim N\left(0,1\right)
+\]</span></p>
+<p>En general, <span class="math display">\[
+E\left[\left(\Delta W\right)^{p}\right]=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}w^{p}\exp\left(-\left(\dfrac{w}{\sigma}\right)^{2}\right)\mathrm{D}w,
+\]</span></p>
+<p>considere <span class="math inline">\(\sigma u=w\)</span>, entonces <span class="math display">\[\begin{align*}
+E\left[\left(\Delta W\right)^{p}\right] &amp; =\sigma^{p}\left[\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}u^{p}\exp\left(-u^{2}\right)\mathrm{D}w\right],\\
+&amp; =\sigma^{p}E\left[Z^{p}\right],
+\end{align*}\]</span></p>
+<p>entonces para <span class="math inline">\(p=4,\sigma^{2}=\Delta t\)</span>. <span class="math display">\[
+E\left[\left(\Delta W\right)^{4}\right]=\left(\Delta t\right)^{2}E\left[Z^{4}\right]=3\left(\Delta t\right)^{2}
+\]</span></p>
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6.5 </strong></span>Suponga que <span class="math inline">\(X\sim N\left(0,1\right)\)</span>. Muestre que para <span class="math inline">\(a,b\in\mathbb{R}\)</span>, <span class="math display">\[
+E\left[\exp\left(a+bX\right)\right]=\exp\left(a+\dfrac{1}{2}b^{2}\right).
+\]</span> Deduzca que <span class="math display">\[
+E\left[\exp\left(t+\dfrac{1}{4}W_{t}\right)\right]=\exp\left(\dfrac{33}{32}t\right)
+\]</span></p>
+</div>
+<p>Considere <span class="math display">\[
+E\left[\exp\left(a+bX\right)\right]=e^{a}E\left[\exp\left(bX\right)\right],
+\]</span></p>
+<p>notemos que <span class="math inline">\(bX\sim N\left(0,b^{2}\right),\)</span> por lo tanto, la función generadora de momentos nos dice que <span class="math display">\[
+E\left[\exp\left(bX\right)\right]=M_{bX}\left(1\right)=\exp\left(\dfrac{b^{2}}{2}\right),
+\]</span></p>
+<p>por lo tanto <span class="math display">\[
+E\left[\exp\left(a+bX\right)\right]=e^{a}\exp\left(\dfrac{b^{2}}{2}\right)=\exp\left(a+\dfrac{1}{2}b^{2}\right),
+\]</span></p>
+<p>ahora, considere <span class="math display">\[
+E\left[\exp\left(t+\dfrac{1}{4}W_{t}\right)\right]=E\left[\exp\left(t+\dfrac{1}{4}\left(W_{t}-W_{0}\right)\right)\right],
+\]</span></p>
+<p>Notemos que <span class="math inline">\(W_{t}-W_{0}\sim N\left(0,t\right),\)</span> por lo tanto, usando la fórmula anterior</p>
+<p><span class="math display">\[\begin{align*}
+E\left[\exp\left(t+\dfrac{1}{4}\left(W_{t}-W_{0}\right)\right)\right] &amp; =\exp\left(t+\dfrac{1}{4}\left(\sqrt{t}X\right)\right),X\sim N\left(0,1\right)\\
+&amp; =\exp\left(t+\left(\dfrac{1}{4}\sqrt{t}\right)X\right)=\exp\left(t+\dfrac{t}{32}\right)\\
+&amp; =\exp\left(\dfrac{33}{32}t\right)
+\end{align*}\]</span></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -461,11 +636,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Tarea10.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tarea10.html</span></span>
+      <a href="./Tarea4.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tarea 4</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./Tarea6.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tarea 6</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>stochacalculus - References</title>
+<title>stochacalculus - 3&nbsp; Tarea 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Tarea10.html" rel="prev">
+<link href="./Tarea3.html" rel="next">
+<link href="./Tarea1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -94,7 +76,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tarea 2</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,7 +115,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Tarea2.html" class="sidebar-item-text sidebar-link">
+  <a href="./Tarea2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tarea 2</span></span></a>
   </div>
 </li>
@@ -187,7 +169,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -204,7 +186,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tarea 2</span></h1>
 </div>
 
 
@@ -219,9 +201,65 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" role="list" style="display: none">
-
-</div>
+<p>Sea <span class="math inline">\(X_{i}\)</span> v.a.i.i.d tales que</p>
+<p><span class="math display">\[
+\mathcal{P}\left[X_{i}=h\right]=\mathcal{P}\left[X_{i}=-h\right]=\dfrac{1}{2},\forall i,
+\]</span></p>
+<p>entonces definimos <span class="math inline">\(Y_{n,h}\)</span>. ::: Queremos calcular la función característica de <span class="math inline">\(Y_{n,\delta}\)</span>.</p>
+<p><span class="math display">\[
+E\left[i\lambda Y_{n,\delta}\left(t\right)\right],
+\]</span></p>
+<p>Aprovechando que para cada <span class="math inline">\(X_{i}\)</span> son v.a.i.i.d. Entonces, tenemos lo siguiente</p>
+<p><span class="math display">\[\begin{align*}
+E\left[i\lambda Y_{n,\delta}\left(t\right)\right] &amp; =\left(\cos\left(\lambda h\right)\right)^{t/\delta}\\
+&amp; =u^{t},
+\end{align*}\]</span></p>
+<p>donde <span class="math display">\[\begin{align*}
+u &amp; =\left[\cos\left(\lambda h\right)\right]^{1/\delta}\\
+\ln\left(u\right) &amp; =\dfrac{1}{\delta}\ln\left[\cos\left(\lambda h\right)\right]
+\end{align*}\]</span></p>
+<p>Entonces, aproximaremos <span class="math inline">\(\cos\left(\lambda h\right)\)</span> con su expansión de Taylor. <span class="math display">\[
+\cos\left(\lambda h\right)\approx1-\dfrac{\left(\lambda h\right)^{2}}{2!}+\dfrac{\left(\lambda h\right)^{4}}{4!},
+\]</span></p>
+<p>entonces <span class="math display">\[\begin{align*}
+\ln\left(\cos\left(\lambda h\right)\right) &amp; \approx\ln\left[1-\dfrac{\left(\lambda h\right)^{2}}{2}+\dfrac{\left(\lambda h\right)^{4}}{4!}\right]\\
+&amp; \approx-\dfrac{\left(\lambda h\right)^{2}}{2!}+\dfrac{\left(\lambda h\right)^{4}}{4!}
+\end{align*}\]</span></p>
+<p>Entonces <span class="math display">\[\begin{align*}
+u^{t} &amp; \approx\exp\left[\dfrac{t}{\delta}\left(-\dfrac{\left(\lambda h\right)^{2}}{2!}+\dfrac{\left(\lambda h\right)^{4}}{4!}\right)\right],\\
+&amp; \approx\exp\left[-\dfrac{t}{\delta}\left(\dfrac{\lambda^{2}h^{2}}{2}-\dfrac{\lambda^{4}h^{4}}{24}\right)\right],
+\end{align*}\]</span></p>
+<p>Calculando el limite <span class="math display">\[
+\lim_{\delta\to0}E\left[\exp\left(i\lambda Y_{n,\delta}\left(t\right)\right)\right]=\lim_{\delta\to0}\exp\left[-t\left(\left[\dfrac{h^{2}}{\delta}\right]\left(\dfrac{\lambda^{2}}{2}-\dfrac{\lambda^{4}h^{2}}{24}\right)\right)\right],
+\]</span></p>
+<p>si <span class="math inline">\(h^{2}/\delta\to\infty\)</span> Segun la sucesión <span class="math inline">\(\delta_{n}\to0\)</span> tenemos limites diferentes, por lo tanto, este no existe. Ahora, usando la normalización, retomando las operaciones anteriores,</p>
+<p><span class="math display">\[\begin{align*}
+E\left[\exp\left(i\lambda Y_{n,\delta}\left(t\right)+\dfrac{th^{2}\lambda^{2}}{2}\right)\right] &amp; =E\left[\exp\left(i\lambda\sum_{i=0}^{n}X_{i}+\dfrac{th^{2}\lambda^{2}}{2\delta}\right)\right]\\
+&amp; =E\left[\exp\left(i\lambda\sum_{i=0}^{n}X_{i}\right)\right]\exp\left(\dfrac{th^{2}\lambda^{2}}{2\delta}\right)\\
+&amp; =\left(\left[\cos\left(\lambda h\right)\right]^{1/\delta}\exp\left(\dfrac{h^{2}\lambda^{2}}{2\delta}\right)\right)^{t},
+\end{align*}\]</span></p>
+<p>entonces, <span class="math display">\[\begin{align*}
+v &amp; =\left[\cos\left(\lambda h\right)\right]^{1/\delta}\exp\left(\dfrac{h^{2}\lambda^{2}}{2}\right)\\
+\ln v &amp; =\ln\left[\left[\cos\left(\lambda h\right)\right]^{1/\delta}\exp\left(\dfrac{h^{2}\lambda^{2}}{2}\right)\right]\\
+&amp; =\dfrac{1}{\delta}\ln\left[\cos\left(\lambda h\right)\right]+\dfrac{h^{2}\lambda^{2}}{2\delta}\\
+&amp; =\dfrac{1}{\delta}\left(\ln\left[\cos\left(\lambda h\right)\right]+\dfrac{h^{2}\lambda^{2}}{2}\right)\\
+&amp; \approx\dfrac{1}{\delta}\left(\ln\left[1\underbrace{-\dfrac{\left(\lambda h\right)^{2}}{2}+\dfrac{\left(\lambda h\right)^{4}}{4!}}_{x_{0}}\right]+\dfrac{h^{2}\lambda^{2}}{2}\right)
+\end{align*}\]</span></p>
+<p>recordando que <span class="math display">\[
+\ln\left(1+x\right)\approx x-\dfrac{x^{2}}{2},
+\]</span></p>
+<p>entonces</p>
+<p><span class="math display">\[
+\ln v\approx\dfrac{1}{\delta}\left(\left[-\dfrac{\left(\lambda h\right)^{2}}{2}+\dfrac{\left(\lambda h\right)^{4}}{4!}-\dfrac{\left(-\dfrac{\left(\lambda h\right)^{2}}{2}+\dfrac{\left(\lambda h\right)^{4}}{4!}\right)^{2}}{2}\right]+\dfrac{h^{2}\lambda^{2}}{2}\right),
+\]</span></p>
+<p>bajo la simplificación de que <span class="math inline">\(o\left(h^{k}\right)\equiv0,k\geq4,\)</span> entonces <span class="math display">\[\begin{align*}
+\ln v &amp; \approx\dfrac{1}{\delta}\left(\dfrac{\left(\lambda h\right)^{4}}{24}-\dfrac{\left(\lambda h\right)^{4}}{8}\right)\\
+&amp; \approx\dfrac{1}{\delta}\left(\dfrac{\left(\lambda h\right)^{4}}{24}-\dfrac{3\left(\lambda h\right)^{4}}{24}\right)\\
+v &amp; \approx\exp\left(-\dfrac{\left(\lambda h\right)^{4}}{12\delta}\right)
+\end{align*}\]</span></p>
+<p>por lo tanto, si <span class="math inline">\(h^{4}/\delta\to0\)</span> <span class="math display">\[
+\lim_{\delta\to0}E\left[\exp\left(i\lambda Y_{n,\delta}\left(t\right)+\dfrac{th^{2}\lambda^{2}}{2}\right)\right]=\lim_{\delta\to0}\exp\left(-\dfrac{\left(\lambda h\right)^{4}}{12\delta}\right)=1
+\]</span></p>
 
 
 
@@ -461,11 +499,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Tarea10.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tarea10.html</span></span>
+      <a href="./Tarea1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tarea 1</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./Tarea3.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tarea 3</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

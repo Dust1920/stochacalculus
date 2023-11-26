@@ -90,7 +90,7 @@ $$
 \tau_{n}\left(\omega\right)\to\infty,n\to\infty,\forall n.
 $$
 
-Ahora probaremos que $Y_$ es una martingala. Ahora, considere 
+Ahora probaremos que $Y_t$ es una martingala. Ahora, considere 
 $$
 Y_{t}=X_{\min\left\{ t,\tau_{n}\right\} },
 $$

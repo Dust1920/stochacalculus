@@ -86,10 +86,10 @@ Sin embargo, para este ejercicio debemos partir de una trayectoria dada, entonce
 c_time = c**2 * time  # Transformamos el intervalo del tiempo
 c_w = c**(-1) * w  # Escalamos el browniano. 
 
-print("El valor de c es ",hw2.c)
+print("El valor de c es ",c)
 fig, cbrown = plt.subplots(2)
-cbrown[0].plot(time, hw2.w)
-cbrown[1].plot(c_time, hw2.c_w)
+cbrown[0].plot(time, w)
+cbrown[1].plot(c_time, c_w)
 cbrown[0].set_title('Movimiento browniano')
 cbrown[1].set_title('Movimiento browniano escalado')
 plt.show()
