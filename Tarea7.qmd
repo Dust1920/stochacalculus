@@ -112,6 +112,7 @@ $$
 
 Por tanto, enuncie la isometría de It\^o y deduzca que esta isometría es válida para el caso $h(t)=t$.
 :::
+
 Sea $\{0=t_{0},t_{1},\dots,t_{L-1},t_{L}=T\}$ una partición del intervalo $[0,T]$. De la aproximación de la suma de Riemann, resulta
 \begin{eqnarray*}
 \int_{0}^{T}tdW(t) & \sim & \sum_{i=0}^{L}t_{i}(W(t_{i+1})-W(t_{i}))\\
@@ -135,11 +136,13 @@ observemos que,
 $$
 \lim_{L\to 0}\sum_{i=0}^{L}t_{i}^{2}(t_{i+1}-t_{i})=\int_{0}^{T}t^{2}dt=\frac{T}{3}
 $$
+
 entonces
 $$
  \mathbb{E}
 \left[\left(\int_{0}^{T}tdW(t)\right)^{2}\right]=\frac{T}{3}.
 $$
+
 Además, de la isometria de Itô,
 \begin{eqnarray*}
 \mathbb{E}

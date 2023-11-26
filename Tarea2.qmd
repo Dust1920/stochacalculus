@@ -1,5 +1,6 @@
 # Tarea 2
 
+::: {exr-1}
 Sea $X_{i}$ v.a.i.i.d tales que 
 
 $$

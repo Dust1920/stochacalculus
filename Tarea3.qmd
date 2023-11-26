@@ -1,9 +1,9 @@
 # Tarea 3
 
-# Ejercicio 3.1
 
+::: {exr-1}
 Si $X\thicksim N(\mu,\sigma)$ entonces $\left(\dfrac{X-\mu}{\sigma}\right)\thicksim N(0,1)$.
-
+::: 
 Calculemos la función característica de la variable $\dfrac{X-\mu}{\sigma}$, 
 \begin{eqnarray}\label{1.1}
 \varphi_{\frac{X-\mu}{\sigma}}(t) & = & E\left[e^{it\left(\frac{X-\mu}{\sigma}\right)}\right]\nonumber\\
@@ -52,9 +52,9 @@ $$
 
 que es la función característica de una Normal estándar, como las funciones características coinciden se concluye que $\frac{X-\mu}{\sigma}\thicksim N(0,1)$.
 
-# Ejercicio 3.2
-
+::: {exr-1}
 Si $Y\thicksim N(0,1)$ entonces $\sigma Y+\mu \thicksim N(\mu,\sigma)$. Calculemos la función característica de la variable $\sigma Y+\mu$, 
+::: 
 
 \begin{eqnarray}\label{2.1}
 \varphi_{\sigma Y+\mu}(t) & = & E\left[e^{it(\sigma Y+\mu)}\right]\nonumber\\
@@ -99,10 +99,10 @@ $$
 \sigma Y+\mu\thicksim N(\mu,\sigma)
 $$
 
-# Ejercicio 3.3
+::: {exr-1}
 
 Si $X\thicksim N(\mu_{1},\sigma_{1}^{2})$, $Y\thicksim N(\mu_{2},\sigma_{2}^{2})$ además $X$ y $Y$ son independientes entonces $X+Y\thicksim N(\mu_{1}+\mu_{2},\sigma_{1}^{2}+\sigma_{2}^{2})$. Por definición, se tiene que,
-
+:::
 \begin{eqnarray}\label{eq:3.1}
 \varphi_{X+Y}(t) & = & E[e^{it(X+Y)}]\nonumber\\
 & = & E[e^{itX}e^{itY}]\text{ por ser independientes, del ejercicio 4}\nonumber\\
@@ -126,10 +126,11 @@ $$
 
 Como las funciones características coinciden se sigue que, $X+Y\thicksim N(\mu_{1}+\mu_{2},\sigma_{1}^{2}+\sigma_{2}^{2})$.
 
-# Ejercicio 3.4
+::: {exr-1}
 Si $X,Y$ son variables normales independientes. Entonces $E\left[XY\right]=E\left[X\right]E\left[Y\right]$. 
+:::
 
-Recrodemos que 
+Recordemos que 
 $$
 E\left[XY\right]=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xyf_{XY}\left(x,y\right)\mathrm{d}x\mathrm{d}y
 $$
@@ -148,12 +149,13 @@ E\left[XY\right] & =\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xyf_{XY}\left(
  & =E\left[X\right]E\left[Y\right]
 \end{align*}
 
-# Ejercicio 3.5
+::: {exr-1}
 Por Demostrar
 $$
 \mathcal{P}\left[\left|X-\mu\right|\geq\epsilon\right]\leq\dfrac{\text{Var}\left[X\right]}{\epsilon^{2}}
 $$
 
+::: 
 Por la desigualdad de Chebysev, para $X$ una variable aleatoria.
 $$
 \mathcal{P}\left[X\geq\epsilon\right]\leq\dfrac{E\left[X\right]}{\epsilon}
@@ -165,8 +167,7 @@ Entonces, sea $Y=\left|X-\mu\right|,\mu=E\left[X\right]$
 \mathcal{P}\left[\left|X-\mu\right|\geq\epsilon\right] & =\mathcal{P}\left[\left|X-\mu\right|^{2}\geq\epsilon^{2}\right]\\
  & \leq\dfrac{E\left[\left(X-\mu\right)^{2}\right]}{\epsilon^{2}}=\dfrac{\text{Var}\left[X\right]}{\epsilon^{2}}
 \end{align*}
-
-# Ejercicio 3.6 (Ley de los grandes números)
+::: {exr-1}
 
 Por demostrar 
 
@@ -174,6 +175,9 @@ Sean $X_{1},X_{2},\ldots,X_{n}$ variables aleatorias independienes
 con esperanza finita $\mu=E\left[X_{j}\right]$ y varianza infinita.
 $\sigma^{2}=\text{Var}\left(X_{j}\right)$. Sean $S_{n}=X_{1}+X_{2}+\ldots+X_{n}$.
 Entonces para cada $\epsilon>0$. 
+
+:::
+
 
 $$
 \mathcal{P}\left[\left|\dfrac{S_{n}}{n}-\mu\right|\geq\epsilon\right]\to0
@@ -201,8 +205,8 @@ $$
 \mathcal{P}\left[\left|\dfrac{S_{n}}{n}-\mu\right|\geq\epsilon\right]\to0
 $$
 
-# Ejercicio 3.7 (Teorema de Limite Central)
 
+::: {exr-1}
 Sea $\left\{ X_{i}\right\} _{i=1}^{\infty}$ una secuencia de v.a.i.id
 con media $a$ y varianza $b^{2}$. Entonces para doo $\alpha,\beta\in\mathbb{R}$,
 con $\alpha<\beta$, entonces 
@@ -210,6 +214,8 @@ con $\alpha<\beta$, entonces
 $$
 \mathcal{P}\left(\lim_{M\to\infty}\alpha\le\dfrac{{\displaystyle \sum_{i=1}^{M}}X_{i}-Ma}{\sqrt{M}b}\leq\beta\right)=\dfrac{1}{\sqrt{2\pi}}\int_{\alpha}^{\beta}\exp\left(-\dfrac{1}{2}x^{2}\right)\mathrm{d}x
 $$
+
+:::
 
 Sea 
 $$
@@ -289,12 +295,14 @@ F_{M}\left(b\right)-F_{M}\left(a\right) & \to F_{N}\left(b\right)-F_{N}\left(a\r
 \mathcal{P}\left(\lim_{M\to\infty}\alpha\le\dfrac{{\displaystyle \sum_{i=1}^{M}}X_{i}-Ma}{\sqrt{M}b}\leq\beta\right) & =\dfrac{1}{\sqrt{2\pi}}\int_{\alpha}^{\beta}\exp\left(-\dfrac{1}{2}x^{2}\right)\mathrm{d}x
 \end{align*}
 
-# Ejercicio 3.8
+::: {exr-1}
 Sea $\left\{ X_{i}\right\} _{i=1}^{\infty}$ una sucesión de v.a.i.i.d
 con media $a$. Entonces 
 $$
 \mathcal{P}\left[\lim_{M\to\infty}\dfrac{1}{M}\sum_{i=1}^{M}X_{i}=a\right]=1.
 $$
+
+:::
 
 Esto es similar a decir que 
 $$

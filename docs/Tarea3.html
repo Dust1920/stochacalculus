@@ -179,20 +179,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#ejercicio-3.1" id="toc-ejercicio-3.1" class="nav-link active" data-scroll-target="#ejercicio-3.1"><span class="header-section-number">5</span> Ejercicio 3.1</a></li>
-  <li><a href="#ejercicio-3.2" id="toc-ejercicio-3.2" class="nav-link" data-scroll-target="#ejercicio-3.2"><span class="header-section-number">6</span> Ejercicio 3.2</a></li>
-  <li><a href="#ejercicio-3.3" id="toc-ejercicio-3.3" class="nav-link" data-scroll-target="#ejercicio-3.3"><span class="header-section-number">7</span> Ejercicio 3.3</a></li>
-  <li><a href="#ejercicio-3.4" id="toc-ejercicio-3.4" class="nav-link" data-scroll-target="#ejercicio-3.4"><span class="header-section-number">8</span> Ejercicio 3.4</a></li>
-  <li><a href="#ejercicio-3.5" id="toc-ejercicio-3.5" class="nav-link" data-scroll-target="#ejercicio-3.5"><span class="header-section-number">9</span> Ejercicio 3.5</a></li>
-  <li><a href="#ejercicio-3.6-ley-de-los-grandes-números" id="toc-ejercicio-3.6-ley-de-los-grandes-números" class="nav-link" data-scroll-target="#ejercicio-3.6-ley-de-los-grandes-números"><span class="header-section-number">10</span> Ejercicio 3.6 (Ley de los grandes números)</a></li>
-  <li><a href="#ejercicio-3.7-teorema-de-limite-central" id="toc-ejercicio-3.7-teorema-de-limite-central" class="nav-link" data-scroll-target="#ejercicio-3.7-teorema-de-limite-central"><span class="header-section-number">11</span> Ejercicio 3.7 (Teorema de Limite Central)</a></li>
-  <li><a href="#ejercicio-3.8" id="toc-ejercicio-3.8" class="nav-link" data-scroll-target="#ejercicio-3.8"><span class="header-section-number">12</span> Ejercicio 3.8</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -214,9 +201,9 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="ejercicio-3.1" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Ejercicio 3.1</h1>
+<div class="{exr-1}">
 <p>Si <span class="math inline">\(X\thicksim N(\mu,\sigma)\)</span> entonces <span class="math inline">\(\left(\dfrac{X-\mu}{\sigma}\right)\thicksim N(0,1)\)</span>.</p>
+</div>
 <p>Calculemos la función característica de la variable <span class="math inline">\(\dfrac{X-\mu}{\sigma}\)</span>, <span class="math display">\[\begin{eqnarray}\label{1.1}
 \varphi_{\frac{X-\mu}{\sigma}}(t) &amp; = &amp; E\left[e^{it\left(\frac{X-\mu}{\sigma}\right)}\right]\nonumber\\
 &amp; = &amp; E\left[e^{\left(\frac{itX}{\sigma}-\frac{it\mu}{\sigma}\right)}\right]\nonumber\\
@@ -251,10 +238,9 @@ ul.task-list li input[type="checkbox"] {
 \varphi_{\frac{X-\mu}{\sigma}}(t) =e^{-\frac{t^{2}}{2}},
 \]</span></p>
 <p>que es la función característica de una Normal estándar, como las funciones características coinciden se concluye que <span class="math inline">\(\frac{X-\mu}{\sigma}\thicksim N(0,1)\)</span>.</p>
-</section>
-<section id="ejercicio-3.2" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Ejercicio 3.2</h1>
+<div class="{exr-1}">
 <p>Si <span class="math inline">\(Y\thicksim N(0,1)\)</span> entonces <span class="math inline">\(\sigma Y+\mu \thicksim N(\mu,\sigma)\)</span>. Calculemos la función característica de la variable <span class="math inline">\(\sigma Y+\mu\)</span>,</p>
+</div>
 <p><span class="math display">\[\begin{eqnarray}\label{2.1}
 \varphi_{\sigma Y+\mu}(t) &amp; = &amp; E\left[e^{it(\sigma Y+\mu)}\right]\nonumber\\
 &amp; = &amp; E\left[e^{it\sigma Y+it\mu}\right]\nonumber\\
@@ -286,10 +272,9 @@ y^{2}-2yit\sigma &amp; = &amp; (y-it\sigma)^{2}-(it\sigma)^{2}\nonumber\\
 <p>Dado que tienen iguales funciones características se concluye que, <span class="math display">\[
 \sigma Y+\mu\thicksim N(\mu,\sigma)
 \]</span></p>
-</section>
-<section id="ejercicio-3.3" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Ejercicio 3.3</h1>
+<div class="{exr-1}">
 <p>Si <span class="math inline">\(X\thicksim N(\mu_{1},\sigma_{1}^{2})\)</span>, <span class="math inline">\(Y\thicksim N(\mu_{2},\sigma_{2}^{2})\)</span> además <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes entonces <span class="math inline">\(X+Y\thicksim N(\mu_{1}+\mu_{2},\sigma_{1}^{2}+\sigma_{2}^{2})\)</span>. Por definición, se tiene que,</p>
+</div>
 <p><span class="math display">\[\begin{eqnarray}\label{eq:3.1}
 \varphi_{X+Y}(t) &amp; = &amp; E[e^{it(X+Y)}]\nonumber\\
 &amp; = &amp; E[e^{itX}e^{itY}]\text{ por ser independientes, del ejercicio 4}\nonumber\\
@@ -307,11 +292,10 @@ y^{2}-2yit\sigma &amp; = &amp; (y-it\sigma)^{2}-(it\sigma)^{2}\nonumber\\
 \varphi_{Z}(t)= \varphi_{X+Y}(t).
 \]</span></p>
 <p>Como las funciones características coinciden se sigue que, <span class="math inline">\(X+Y\thicksim N(\mu_{1}+\mu_{2},\sigma_{1}^{2}+\sigma_{2}^{2})\)</span>.</p>
-</section>
-<section id="ejercicio-3.4" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Ejercicio 3.4</h1>
+<div class="{exr-1}">
 <p>Si <span class="math inline">\(X,Y\)</span> son variables normales independientes. Entonces <span class="math inline">\(E\left[XY\right]=E\left[X\right]E\left[Y\right]\)</span>.</p>
-<p>Recrodemos que <span class="math display">\[
+</div>
+<p>Recordemos que <span class="math display">\[
 E\left[XY\right]=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xyf_{XY}\left(x,y\right)\mathrm{d}x\mathrm{d}y
 \]</span></p>
 <p>Como <span class="math inline">\(X,Y\)</span> son independientes <span class="math display">\[
@@ -324,12 +308,11 @@ E\left[XY\right] &amp; =\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xyf_{XY}\l
 &amp; =\left[\int_{-\infty}^{\infty}xf_{X}\left(x\right)\mathrm{d}x\right]\left[\int_{-\infty}^{\infty}yf_{y}\left(y\right)\mathrm{d}y\right]\\
 &amp; =E\left[X\right]E\left[Y\right]
 \end{align*}\]</span></p>
-</section>
-<section id="ejercicio-3.5" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Ejercicio 3.5</h1>
+<div class="{exr-1}">
 <p>Por Demostrar <span class="math display">\[
 \mathcal{P}\left[\left|X-\mu\right|\geq\epsilon\right]\leq\dfrac{\text{Var}\left[X\right]}{\epsilon^{2}}
 \]</span></p>
+</div>
 <p>Por la desigualdad de Chebysev, para <span class="math inline">\(X\)</span> una variable aleatoria. <span class="math display">\[
 \mathcal{P}\left[X\geq\epsilon\right]\leq\dfrac{E\left[X\right]}{\epsilon}
 \]</span></p>
@@ -337,12 +320,10 @@ E\left[XY\right] &amp; =\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xyf_{XY}\l
 <p><span class="math display">\[\begin{align*}
 \mathcal{P}\left[\left|X-\mu\right|\geq\epsilon\right] &amp; =\mathcal{P}\left[\left|X-\mu\right|^{2}\geq\epsilon^{2}\right]\\
 &amp; \leq\dfrac{E\left[\left(X-\mu\right)^{2}\right]}{\epsilon^{2}}=\dfrac{\text{Var}\left[X\right]}{\epsilon^{2}}
-\end{align*}\]</span></p>
-</section>
-<section id="ejercicio-3.6-ley-de-los-grandes-números" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Ejercicio 3.6 (Ley de los grandes números)</h1>
+\end{align*}\]</span> ::: {exr-1}</p>
 <p>Por demostrar</p>
 <p>Sean <span class="math inline">\(X_{1},X_{2},\ldots,X_{n}\)</span> variables aleatorias independienes con esperanza finita <span class="math inline">\(\mu=E\left[X_{j}\right]\)</span> y varianza infinita. <span class="math inline">\(\sigma^{2}=\text{Var}\left(X_{j}\right)\)</span>. Sean <span class="math inline">\(S_{n}=X_{1}+X_{2}+\ldots+X_{n}\)</span>. Entonces para cada <span class="math inline">\(\epsilon&gt;0\)</span>.</p>
+<p>:::</p>
 <p><span class="math display">\[
 \mathcal{P}\left[\left|\dfrac{S_{n}}{n}-\mu\right|\geq\epsilon\right]\to0
 \]</span></p>
@@ -360,13 +341,12 @@ E\left[XY\right] &amp; =\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xyf_{XY}\l
 <p>Entonces <span class="math display">\[
 \mathcal{P}\left[\left|\dfrac{S_{n}}{n}-\mu\right|\geq\epsilon\right]\to0
 \]</span></p>
-</section>
-<section id="ejercicio-3.7-teorema-de-limite-central" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Ejercicio 3.7 (Teorema de Limite Central)</h1>
+<div class="{exr-1}">
 <p>Sea <span class="math inline">\(\left\{ X_{i}\right\} _{i=1}^{\infty}\)</span> una secuencia de v.a.i.id con media <span class="math inline">\(a\)</span> y varianza <span class="math inline">\(b^{2}\)</span>. Entonces para doo <span class="math inline">\(\alpha,\beta\in\mathbb{R}\)</span>, con <span class="math inline">\(\alpha&lt;\beta\)</span>, entonces</p>
 <p><span class="math display">\[
 \mathcal{P}\left(\lim_{M\to\infty}\alpha\le\dfrac{{\displaystyle \sum_{i=1}^{M}}X_{i}-Ma}{\sqrt{M}b}\leq\beta\right)=\dfrac{1}{\sqrt{2\pi}}\int_{\alpha}^{\beta}\exp\left(-\dfrac{1}{2}x^{2}\right)\mathrm{d}x
 \]</span></p>
+</div>
 <p>Sea <span class="math display">\[
 Y_{M}=\dfrac{{\displaystyle \sum_{i=1}^{M}}\left[X_{i}-a\right]}{\sqrt{M}b},
 \]</span></p>
@@ -415,12 +395,11 @@ F_{M}\left(x\right)\to F_{N\left(0,1\right)}\left(x\right)
 F_{M}\left(b\right)-F_{M}\left(a\right) &amp; \to F_{N}\left(b\right)-F_{N}\left(a\right)\\
 \mathcal{P}\left(\lim_{M\to\infty}\alpha\le\dfrac{{\displaystyle \sum_{i=1}^{M}}X_{i}-Ma}{\sqrt{M}b}\leq\beta\right) &amp; =\dfrac{1}{\sqrt{2\pi}}\int_{\alpha}^{\beta}\exp\left(-\dfrac{1}{2}x^{2}\right)\mathrm{d}x
 \end{align*}\]</span></p>
-</section>
-<section id="ejercicio-3.8" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Ejercicio 3.8</h1>
+<div class="{exr-1}">
 <p>Sea <span class="math inline">\(\left\{ X_{i}\right\} _{i=1}^{\infty}\)</span> una sucesión de v.a.i.i.d con media <span class="math inline">\(a\)</span>. Entonces <span class="math display">\[
 \mathcal{P}\left[\lim_{M\to\infty}\dfrac{1}{M}\sum_{i=1}^{M}X_{i}=a\right]=1.
 \]</span></p>
+</div>
 <p>Esto es similar a decir que <span class="math display">\[
 \lim_{M\to\infty}\dfrac{1}{M}\sum_{i=1}^{M}X_{i}\stackrel{\text{c.s}}{=}a
 \]</span></p>
@@ -455,7 +434,6 @@ X_{i} &amp; =Y_{i},\text{c.s}\\
 \end{align*}\]</span></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
