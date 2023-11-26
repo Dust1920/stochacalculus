@@ -62,6 +62,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -199,6 +201,70 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="{exr-1}">
+<p>Considere la ecuación diferencial estocástica lineal con ruido multiplicativo. <span class="math display">\[
+\mathrm{d}Y\left(t\right)=\left(\mu+\dfrac{1}{2}\sigma^{2}\right)Y\left(t\right)\mathrm{d}t+\sigma\mathrm{d}W\left(t\right)
+\]</span></p>
+<p>Aplicando la Fórmula de Ito a la función</p>
+<p><span class="math display">\[
+u\left(t,x\right)=y_{0}\exp\left(\mu t+\sigma x\right).
+\]</span></p>
+<p>Muestre que</p>
+<p><span class="math display">\[
+Y\left(t\right)=Y\left(0\right)\exp\left(\mu t+\sigma W\left(t\right)\right),
+\]</span></p>
+<p>resuelve la ecuación diferencial.</p>
+</div>
+<div class="{exr-1}">
+<p>Use el hecho anterior, confirma que</p>
+<p><span class="math display">\[
+Y\left(t\right)=Y\left(0\right)\exp\left(\left(\mu-\dfrac{1}{2}\sigma^{2}\right)t+\sigma W\left(t\right)\right),
+\]</span></p>
+<p>resuelve,</p>
+<p><span class="math display">\[
+\mathrm{d}Y\left(t\right)=\mu Y\left(t\right)\mathrm{d}t+\sigma Y\left(t\right)\mathrm{d}W\left(t\right)
+\]</span></p>
+</div>
+<div class="{exr-1}">
+<p>Considere la siguiente ecuación diferencial estocástica lineal. <span class="math display">\[
+\mathrm{d}S\left(t\right)=\left(a_{1}\mathrm{S}\left(t\right)+a_{2}\right)\mathrm{d}t+g\left(S\left(t\right)\right)\mathrm{d}W\left(t\right),
+\]</span> donde <span class="math inline">\(g:\mathbb{R}\to\mathbb{R}\)</span> es cualquier función global de Lipschitz con crecimiento lineal, y <span class="math inline">\(a_{1},a_{2}\)</span> son dos constantes diferentes de cero. Use la forma integral de la ecuación diferencial estocástica, la propiedad de martingala de la integral de Ito y la notación <span class="math display">\[
+m\left(t\right)=E\left[X_{t}\right],
+\]</span> para deducir que <span class="math display">\[
+m\left(t\right)-m\left(0\right)=a_{1}\int_{0}^{t}m\left(s\right)\mathrm{d}s+a_{2}t
+\]</span></p>
+<p>Usando que <span class="math inline">\(m\left(t\right)\)</span> es la solución <span class="math display">\[
+\dfrac{\mathrm{d}m\left(t\right)}{\mathrm{d}t}=a_{1}m\left(t\right)+a_{2},m\left(0\right)=E\left[X_{0}\right]
+\]</span></p>
+<p>Finalmente, muestre que <span class="math display">\[
+E\left[X\left(t\right)\right]=-\dfrac{a_{2}}{a_{1}}+\left(E\left[X\left(0\right)\right]+\dfrac{a_{2}}{a_{1}}\right)\exp\left(a_{1}t\right)
+\]</span></p>
+</div>
+<div class="{exr-1}">
+<p>Considere la siguiente ecuación diferencial estocástica lineal. <span class="math display">\[
+\mathrm{d}S\left(t\right)=\left(\alpha\left(t\right)\mathrm{S}\left(t\right)\right)\mathrm{d}t+\beta\left(t\right)S\left(t\right)\mathrm{d}W\left(t\right),S\left(0\right)=s_{0},
+\]</span> con constantes <span class="math inline">\(s_{0}\)</span> y funciones <span class="math inline">\(\alpha,\beta\)</span> integrables. Use la formula de Ito con la fórmula <span class="math display">\[
+u\left(t,x\right)=\ln\left(\dfrac{x}{S_{0}}\right),
+\]</span> para deducir que <span class="math display">\[
+S\left(t\right)=S\left(0\right)\exp\left(\int_{0}^{t}\left[\alpha\left(s\right)-\dfrac{1}{2}\beta^{2}\left(s\right)\right]\mathrm{d}s+\int_{0}^{t}\beta\left(s\right)\mathrm{d}W\left(s\right)\right)
+\]</span></p>
+</div>
+<div class="{exr-1}">
+<p>Considere la siguiente ecuación diferencial estocástica lineal. <span class="math display">\[
+\mathrm{d}S\left(t\right)=\left(\alpha\left(t\right)\mathrm{S}\left(t\right)\right)\mathrm{d}t+\beta\left(t\right)S\left(t\right)\mathrm{d}W\left(t\right),S\left(0\right)=s_{0},
+\]</span></p>
+<p>con constantes <span class="math inline">\(s_{0}\)</span> y funciones <span class="math inline">\(\alpha,\beta\)</span> integrables. Considere <span class="math display">\[\begin{align*}
+\alpha\left(t\right) &amp; =\sin\left(t\right)\\
+\beta\left(t\right) &amp; =\dfrac{t}{1+t}\\
+s_{0} &amp; =1,
+\end{align*}\]</span> sobre el intervalo <span class="math inline">\(\left[0,5\right]\)</span>.</p>
+<p>Usando el acercamiento apropiado, la salida del código reproduce 200 realizaciones de la solución con el proceso de Euler-Maruyama.</p>
+<p>Adapta el código para obtener la media de la solución de 1000 realizaciones y comparalo con la media de la solución de la forma diferencial, usando los mismos parámetros. Ilustra la diferencia con un log-plot de</p>
+<p><span class="math display">\[
+\ln\left|S\left(t\right)-\tilde{S}\left(t\right)\right|,
+\]</span></p>
+<p>donde <span class="math inline">\(S\)</span> es la solución de Euler y <span class="math inline">\(\tilde{S}\)</span> es la solución de la diferencial.</p>
+</div>
 
 
 

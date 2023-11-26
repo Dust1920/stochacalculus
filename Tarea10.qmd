@@ -1,1 +1,138 @@
 # Tarea 10
+
+
+::: {exr-1}
+
+Considere la ecuación diferencial estocástica lineal con ruido multiplicativo.
+$$
+\mathrm{d}Y\left(t\right)=\left(\mu+\dfrac{1}{2}\sigma^{2}\right)Y\left(t\right)\mathrm{d}t+\sigma\mathrm{d}W\left(t\right)
+$$
+
+Aplicando la Fórmula de Ito a la función 
+
+$$
+u\left(t,x\right)=y_{0}\exp\left(\mu t+\sigma x\right).
+$$
+
+Muestre que 
+
+$$
+Y\left(t\right)=Y\left(0\right)\exp\left(\mu t+\sigma W\left(t\right)\right),
+$$
+
+resuelve la ecuación diferencial.
+
+:::
+
+
+
+
+
+::: {exr-1}
+
+Use el hecho anterior, confirma que 
+
+$$
+Y\left(t\right)=Y\left(0\right)\exp\left(\left(\mu-\dfrac{1}{2}\sigma^{2}\right)t+\sigma W\left(t\right)\right),
+$$
+
+resuelve, 
+
+$$
+\mathrm{d}Y\left(t\right)=\mu Y\left(t\right)\mathrm{d}t+\sigma Y\left(t\right)\mathrm{d}W\left(t\right)
+$$
+
+:::
+
+
+
+
+
+::: {exr-1}
+
+Considere la siguiente ecuación diferencial estocástica lineal. 
+$$
+\mathrm{d}S\left(t\right)=\left(a_{1}\mathrm{S}\left(t\right)+a_{2}\right)\mathrm{d}t+g\left(S\left(t\right)\right)\mathrm{d}W\left(t\right),
+$$
+donde $g:\mathbb{R}\to\mathbb{R}$ es cualquier función global de
+Lipschitz con crecimiento lineal, y $a_{1},a_{2}$ son dos constantes
+diferentes de cero. Use la forma integral de la ecuación diferencial
+estocástica, la propiedad de martingala de la integral de Ito y la
+notación 
+$$
+m\left(t\right)=E\left[X_{t}\right],
+$$
+para deducir que 
+$$
+m\left(t\right)-m\left(0\right)=a_{1}\int_{0}^{t}m\left(s\right)\mathrm{d}s+a_{2}t
+$$
+
+Usando que $m\left(t\right)$ es la solución 
+$$
+\dfrac{\mathrm{d}m\left(t\right)}{\mathrm{d}t}=a_{1}m\left(t\right)+a_{2},m\left(0\right)=E\left[X_{0}\right]
+$$
+
+Finalmente, muestre que 
+$$
+E\left[X\left(t\right)\right]=-\dfrac{a_{2}}{a_{1}}+\left(E\left[X\left(0\right)\right]+\dfrac{a_{2}}{a_{1}}\right)\exp\left(a_{1}t\right)
+$$
+
+:::
+
+
+
+
+
+::: {exr-1}
+
+Considere la siguiente ecuación diferencial estocástica lineal. 
+$$
+\mathrm{d}S\left(t\right)=\left(\alpha\left(t\right)\mathrm{S}\left(t\right)\right)\mathrm{d}t+\beta\left(t\right)S\left(t\right)\mathrm{d}W\left(t\right),S\left(0\right)=s_{0},
+$$
+con constantes $s_{0}$ y funciones $\alpha,\beta$ integrables. Use
+la formula de Ito con la fórmula 
+$$
+u\left(t,x\right)=\ln\left(\dfrac{x}{S_{0}}\right),
+$$
+para deducir que 
+$$
+S\left(t\right)=S\left(0\right)\exp\left(\int_{0}^{t}\left[\alpha\left(s\right)-\dfrac{1}{2}\beta^{2}\left(s\right)\right]\mathrm{d}s+\int_{0}^{t}\beta\left(s\right)\mathrm{d}W\left(s\right)\right)
+$$
+
+:::
+
+
+
+
+
+
+::: {exr-1}
+
+Considere la siguiente ecuación diferencial estocástica lineal. 
+$$
+\mathrm{d}S\left(t\right)=\left(\alpha\left(t\right)\mathrm{S}\left(t\right)\right)\mathrm{d}t+\beta\left(t\right)S\left(t\right)\mathrm{d}W\left(t\right),S\left(0\right)=s_{0},
+$$
+
+con constantes $s_{0}$ y funciones $\alpha,\beta$ integrables. Considere
+\begin{align*}
+\alpha\left(t\right) & =\sin\left(t\right)\\
+\beta\left(t\right) & =\dfrac{t}{1+t}\\
+s_{0} & =1,
+\end{align*}
+sobre el intervalo $\left[0,5\right]$. 
+
+Usando el acercamiento apropiado, la salida del código reproduce 200
+realizaciones de la solución con el proceso de Euler-Maruyama. 
+
+Adapta el código para obtener la media de la solución de 1000 realizaciones
+y comparalo con la media de la solución de la forma diferencial, usando
+los mismos parámetros. Ilustra la diferencia con un log-plot de 
+
+$$
+\ln\left|S\left(t\right)-\tilde{S}\left(t\right)\right|,
+$$
+
+donde $S$ es la solución de Euler y $\tilde{S}$ es la solución de
+la diferencial.
+
+:::

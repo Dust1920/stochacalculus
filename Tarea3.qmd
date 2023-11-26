@@ -1,6 +1,5 @@
 # Tarea 3
 
-
 ::: {exr-1}
 Si $X\thicksim N(\mu,\sigma)$ entonces $\left(\dfrac{X-\mu}{\sigma}\right)\thicksim N(0,1)$.
 ::: 
