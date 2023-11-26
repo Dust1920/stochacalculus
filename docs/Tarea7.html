@@ -234,7 +234,7 @@ Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right] &amp; = &amp
 &amp; = &amp;  \dfrac{\delta t}{4}(t_{L+1}-t_{0}).
 \end{eqnarray*}\]</span> Para un <span class="math inline">\(L\)</span> suficientemente grande, se tiene que, <span class="math inline">\((t_{L+1}-t_{0})\leq\dfrac{\varepsilon}{4}\)</span>, así <span class="math display">\[
 Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right]\leq \varepsilon\delta t.
-\]</span> Así, la varianza es de orden <span class="math inline">\(\delta t\)</span>. :::</p>
+\]</span> Así, la varianza es de orden <span class="math inline">\(\delta t\)</span>.</p>
 <div class="{exr-1}">
 <p>2.- La regla del punto medio de la integral de Riemann de una función <span class="math inline">\(h\in C^{2}([a,b])\)</span> sobre una partición de <span class="math inline">\(L\)</span> puntos del intervalo <span class="math inline">\([a,b]\)</span> está dada por, <span class="math display">\[
 \int_{a}^{b}h(t)dt=\lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}h\left(\dfrac{t_{i}+t_{i+1}}{2}\right)\delta t.
@@ -259,7 +259,6 @@ E\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right] = O(\de
 \]</span> así, tomando el limite cuando <span class="math inline">\(\|\Delta_{L}\|\to\)</span> se tiene que, <span class="math display">\[
 \sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\rightarrow 0\text{ en } L^{2}
 \]</span></p>
-<p>:::</p>
 <div class="{exr-1}">
 <p>Usando la aproximación de la suma de Riemann <span class="math display">\[
 \int_{0}^{T}h(t)dW(t)\sim\sum_{i=0}^{L}h(t_{i})(W(t_{i+1})-W(t_{i})),
@@ -295,7 +294,7 @@ E\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right] = O(\de
 &amp; = &amp;
 \int_{0}^{T}t^{2}dt\\
 &amp; = &amp; \frac{T}{3}
-\end{eqnarray*}\]</span> :::</p>
+\end{eqnarray*}\]</span></p>
 <div class="{exr-1}">
 <p>Escriba una función de Python para calcular la integral de It^o del movimiento Browniano <span class="math inline">\(W(t)\)</span> sobre <span class="math inline">\([0,T]\)</span>. La función tendría la siguiente firma.</p>
 </div>

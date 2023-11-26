@@ -51,7 +51,7 @@ $$
 Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right]\leq \varepsilon\delta t.
 $$
 Así, la varianza es de orden $\delta t$.
-:::
+
 
 :::{exr-1}
 
@@ -96,7 +96,6 @@ $$
 \sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\rightarrow 0\text{ en } L^{2}
 $$
 
-:::
 
 :::{exr-1}
 Usando la aproximación de la suma de Riemann
@@ -149,7 +148,6 @@ Además, de la isometria de Itô,
 \int_{0}^{T}t^{2}dt\\
 & = & \frac{T}{3}
 \end{eqnarray*}
-:::
 
 :::{exr-1}
 Escriba una función de Python para calcular la integral de It\^o del movimiento Browniano $W(t)$ sobre $[0,T]$. La función tendría la siguiente firma.
