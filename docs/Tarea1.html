@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>stochacalculus - 2&nbsp; Ejercicio 1</title>
+<title>stochacalculus - 2&nbsp; plt.show()</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea1.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ejercicio 1</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea1.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">plt.show()</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -144,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Tarea1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ejercicio 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">plt.show()</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -163,10 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link active" data-scroll-target="#ejercicio-3"><span class="header-section-number">3</span> Ejercicio 3</a>
-  <ul class="collapse">
-  <li><a href="#generando-normales" id="toc-generando-normales" class="nav-link" data-scroll-target="#generando-normales"><span class="header-section-number">3.0.1</span> Generando Normales</a></li>
-  </ul></li>
+  <li><a href="#generando-normales" id="toc-generando-normales" class="nav-link active" data-scroll-target="#generando-normales"><span class="header-section-number">2.0.1</span> Generando Normales</a></li>
   </ul>
 </nav>
     </div>
@@ -175,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ejercicio 1</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">plt.show()</span></h1>
 </div>
 
 
@@ -190,7 +187,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<div class="{exr-1}">
 <p>Ejecute y explica en pocas palabras la salida del código ex_001.py</p>
+</div>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> multivariate_normal</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> axes3d</span>
@@ -223,7 +222,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>El código posee 3 salidas: * Un vector <span class="math inline">\([0.3, 0.21, 0.87, -1.23]\)</span> * Dos gráficas.</p>
 <p>El vector hace referencia a los momentos de la distribución bernoulli con parámetro <span class="math inline">\(p=0.3\)</span>. * mean hace referencia a la media. * var hace referencia a la varianza. * skew hace referencia al sesgo. * kurt hace referencia a la kurtosis.</p>
 <p>Finalmente, las dos gráficas: * La primera hace referencia a la función de probabilidad. Notemos que <span class="math inline">\(\mathcal{P}[X = 0] = 0.7\)</span>, lo que muestra la gráfica. Notemos que la gráfica va de -0.04 a 0.04, por lo tanto no se iba a mostrar el caso <span class="math inline">\(X=1\)</span>.<br>
-* La segunda hace referencia a una simulación: Se generaron una muestra de tamaño <span class="math inline">\(N\)</span> variables aleatorias con distribución bernoulli. Como la distribución bernoulli tiene media <span class="math inline">\(Np\)</span>, pretende mostrar que en efecto, habrá de forma aproximada <span class="math inline">\(Np\)</span> valores igual a 1 y <span class="math inline">\(N(1-p)\)</span> valores igual a 0. # Ejercicio 2 Ejecute y explica en pocas palabras la salida del código ex_002.py</p>
+* La segunda hace referencia a una simulación: Se generaron una muestra de tamaño <span class="math inline">\(N\)</span> variables aleatorias con distribución bernoulli. Como la distribución bernoulli tiene media <span class="math inline">\(Np\)</span>, pretende mostrar que en efecto, habrá de forma aproximada <span class="math inline">\(Np\)</span> valores igual a 1 y <span class="math inline">\(N(1-p)\)</span> valores igual a 0.</p>
+<div class="{exr-1}">
+<p>Ejecute y explica en pocas palabras la salida del código ex_002.py</p>
+</div>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mean, var, skew, kurt <span class="op">=</span> norm.stats(moments<span class="op">=</span><span class="st">'mvsk'</span>)</span>
@@ -254,9 +256,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>El código posee una gráfica. Que hace referencia a una simulación de variables aleatorias normales. Notemos que * El elemento en azul, hace referencia a un histograma que refleja las frecuencias de los valores generados. * Mientras que la linea roja, muestra la función de densidad de una variable aleatoria estándar.</p>
-<section id="ejercicio-3" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Ejercicio 3</h1>
+<div class="{exr-1}">
 <p>Ejecute y explica en pocas palabras la salida del código ex_003.py</p>
+</div>
 <p>Para cambiar el vector de medias <span class="math inline">\(\mu\)</span> y la matriz <span class="math inline">\(\Sigma\)</span> hay que prestar atención en la linea donde aparece la función <code>multivariate_normal()</code> que de forma simple posee dos parámetros: * El vector de medias <span class="math inline">\(\mu = [0.5, -0.2]\)</span> * La matriz de covarianza <span class="math inline">\(\Sigma = [[2.0, 0.3], [0.3, 0.5]]\)</span></p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">100</span>, endpoint<span class="op">=</span><span class="va">False</span>)</span>
@@ -265,40 +267,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig1.add_subplot(<span class="dv">111</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> np.mgrid[<span class="op">-</span><span class="dv">5</span>:<span class="dv">5</span>:<span class="fl">.1</span>, <span class="op">-</span><span class="dv">5</span>:<span class="dv">5</span>:<span class="fl">.1</span>]</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> np.dstack((x, y))</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>rv <span class="op">=</span> multivariate_normal([<span class="fl">0.1</span>, <span class="fl">0.5</span>], [[<span class="fl">3.0</span>, <span class="fl">0.3</span>], [<span class="fl">0.75</span>, <span class="fl">1.5</span>]])</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>fig2 <span class="op">=</span> plt.figure()</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig2.add_subplot(<span class="dv">111</span>)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>ax2.contourf(x, y, rv.pdf(pos))</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.figure().add_subplot(projection<span class="op">=</span><span class="st">'3d'</span>)</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>ax.plot_surface(</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    x,</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    y,</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    rv.pdf(pos),</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    edgecolor<span class="op">=</span><span class="st">'royalblue'</span>,</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    lw<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    rstride<span class="op">=</span><span class="dv">8</span>,</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    cstride<span class="op">=</span><span class="dv">8</span>,</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.4</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>ax.contour(x, y, rv.pdf(pos), zdir<span class="op">=</span><span class="st">'z'</span>, offset<span class="op">=-</span><span class="fl">.2</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>ax.contour(x, y, rv.pdf(pos), zdir<span class="op">=</span><span class="st">'x'</span>, offset<span class="op">=-</span><span class="dv">5</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>ax.contour(x, y, rv.pdf(pos), zdir<span class="op">=</span><span class="st">'y'</span>, offset<span class="op">=</span><span class="dv">5</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>),</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    ylim<span class="op">=</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>),</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    zlim<span class="op">=</span>(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">0.2</span>),</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">'X'</span>,</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">'Y'</span>,</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    zlabel<span class="op">=</span><span class="st">'Z'</span></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> np.mgrid[<span class="op">-</span><span class="dv">5</span>:<span class="dv">5</span>:<span class="fl">.1</span>, <span class="op">-</span><span class="dv">5</span>:<span class="dv">5</span>:<span class="fl">.1</span>]</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> np.dstack((x, y))</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>rv <span class="op">=</span> multivariate_normal([<span class="fl">0.1</span>, <span class="fl">0.5</span>], [[<span class="fl">3.0</span>, <span class="fl">0.3</span>], [<span class="fl">0.75</span>, <span class="fl">1.5</span>]])</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>fig2 <span class="op">=</span> plt.figure()</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig2.add_subplot(<span class="dv">111</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>ax2.contourf(x, y, rv.pdf(pos))</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.figure().add_subplot(projection<span class="op">=</span><span class="st">'3d'</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>ax.plot_surface(</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    x,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    y,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    rv.pdf(pos),</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    edgecolor<span class="op">=</span><span class="st">'royalblue'</span>,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    lw<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    rstride<span class="op">=</span><span class="dv">8</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    cstride<span class="op">=</span><span class="dv">8</span>,</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.4</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>ax.contour(x, y, rv.pdf(pos), zdir<span class="op">=</span><span class="st">'z'</span>, offset<span class="op">=-</span><span class="fl">.2</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>ax.contour(x, y, rv.pdf(pos), zdir<span class="op">=</span><span class="st">'x'</span>, offset<span class="op">=-</span><span class="dv">5</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>ax.contour(x, y, rv.pdf(pos), zdir<span class="op">=</span><span class="st">'y'</span>, offset<span class="op">=</span><span class="dv">5</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>),</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    ylim<span class="op">=</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>),</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    zlim<span class="op">=</span>(<span class="op">-</span><span class="fl">0.2</span>, <span class="fl">0.2</span>),</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">'X'</span>,</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">'Y'</span>,</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    zlabel<span class="op">=</span><span class="st">'Z'</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="Tarea1_files/figure-html/cell-4-output-1.png" width="571" height="411"></p>
 </div>
@@ -309,8 +310,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="Tarea1_files/figure-html/cell-4-output-3.png" width="413" height="392"></p>
 </div>
 </div>
-<section id="generando-normales" class="level3" data-number="3.0.1">
-<h3 data-number="3.0.1" class="anchored" data-anchor-id="generando-normales"><span class="header-section-number">3.0.1</span> Generando Normales</h3>
+<section id="generando-normales" class="level3" data-number="2.0.1">
+<h3 data-number="2.0.1" class="anchored" data-anchor-id="generando-normales"><span class="header-section-number">2.0.1</span> Generando Normales</h3>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> bernoulli</span>
@@ -327,8 +328,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> bernoulli.rvs(p, size <span class="op">=</span> <span class="dv">1000</span>)</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>ax_02.hist(r, bins <span class="op">=</span> <span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>(array([713.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>(array([727.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
           0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
           0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
           0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
@@ -346,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
           0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
           0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,
-          0., 287.]),
+          0., 273.]),
  array([0.   , 0.005, 0.01 , 0.015, 0.02 , 0.025, 0.03 , 0.035, 0.04 ,
         0.045, 0.05 , 0.055, 0.06 , 0.065, 0.07 , 0.075, 0.08 , 0.085,
         0.09 , 0.095, 0.1  , 0.105, 0.11 , 0.115, 0.12 , 0.125, 0.13 ,
@@ -395,11 +396,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stderr">
 <pre><code>No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>&lt;matplotlib.legend.Legend at 0x2bc44722890&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>&lt;matplotlib.legend.Legend at 0x20c2acaca10&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="Tarea1_files/figure-html/cell-6-output-3.png" width="571" height="411"></p>
+<p><img src="Tarea1_files/figure-html/cell-6-output-3.png" width="579" height="411"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="6">
@@ -430,8 +431,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>                rstride <span class="op">=</span> <span class="dv">8</span>,</span>
 <span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>                cstride <span class="op">=</span> <span class="dv">8</span>,</span>
 <span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>                alpha <span class="op">=</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>&lt;mpl_toolkits.mplot3d.art3d.Poly3DCollection at 0x2bc44a77e50&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>&lt;mpl_toolkits.mplot3d.art3d.Poly3DCollection at 0x20c2a65cf10&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="Tarea1_files/figure-html/cell-7-output-2.png" width="571" height="411"></p>
@@ -445,7 +446,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
