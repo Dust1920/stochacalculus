@@ -1,11 +1,12 @@
 # Tarea 7
 
-:::{exr-1}
+::: {exr-1}
 Sea $W(t)$ un Movimiento Browniano y $Z_{i}$ una colección de variables aleatorias i.i.d, con distribución $N\left(0,\frac{\delta t}{4}\right)$.\
 Pruebe que la suma
 $$
 \sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right),
 $$
+
 tiene valor esperado igual a cero y una varianza de $O(\delta t)$.
 ::: 
 
@@ -38,7 +39,7 @@ y además
     \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))\right]^{2} & = &  \mathbb{E}\{ \mathbb{E}\left[Z_{i}^{2}(W(t_{i+1})-W(t_{i}))^{2}|\mathcal{F}_{j}\right]
     \}\\
     & = & \mathbb{E}\{Z_{i}^{2}\mathbb{E}\left[(W(t_{i+1})-W(t_{i}))^{2}|\mathcal{F}_{j}\right]\}\\
-    & = & \mathbb{E}[Z_{i}^{2}](t_{i+1}-t_{i})\\
+    & = & \mathbb{E}[Z_{i}^2](t_{i+1}-t_{i})\\
     & = & \dfrac{\delta t}{4}(t_{i+1}-t_{i})
 \end{eqnarray*}
 sustituyendo resulta
@@ -50,19 +51,21 @@ Para un $L$ suficientemente grande, se tiene que, $(t_{L+1}-t_{0})\leq\dfrac{\va
 $$
 Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right]\leq \varepsilon\delta t.
 $$
+
 Así, la varianza es de orden $\delta t$.
 
 
-:::{exr-1}
-
-2.- La regla del punto medio de la integral de Riemann de una función $h\in C^{2}([a,b])$ sobre una partición de $L$ puntos del intervalo $[a,b]$ está dada por,
+::: {exr-1}
+La regla del punto medio de la integral de Riemann de una función $h\in C^{2}([a,b])$ sobre una partición de $L$ puntos del intervalo $[a,b]$ está dada por,
 $$
 \int_{a}^{b}h(t)dt=\lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}h\left(\dfrac{t_{i}+t_{i+1}}{2}\right)\delta t.
 $$
+
 Use la relación
 $$
 W\left(\frac{t_{i}+t_{i+1}}{2}\right)=\frac{1}{2}(W(t_{i})+W(t_{i+1}))+ \underbrace{Z_{i}}_{i.i.d.\sim N(0,\delta t/4)},
 $$
+
 y el ejercicio anterior para demostrar que la regla del punto medio de la integral de Riemann implica que
 $$
 \int_{0}^{T}W(t)dW(t)=\frac{1}{2}W(T)^{2}.
@@ -97,7 +100,7 @@ $$
 $$
 
 
-:::{exr-1}
+::: {exr-1}
 Usando la aproximación de la suma de Riemann
 $$
 \int_{0}^{T}h(t)dW(t)\sim\sum_{i=0}^{L}h(t_{i})(W(t_{i+1})-W(t_{i})),
@@ -149,7 +152,7 @@ Además, de la isometria de Itô,
 & = & \frac{T}{3}
 \end{eqnarray*}
 
-:::{exr-1}
+::: {exr-1}
 Escriba una función de Python para calcular la integral de It\^o del movimiento Browniano $W(t)$ sobre $[0,T]$. La función tendría la siguiente firma.
 :::
 

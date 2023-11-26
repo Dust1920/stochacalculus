@@ -205,7 +205,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Sea <span class="math inline">\(W(t)\)</span> un Movimiento Browniano y <span class="math inline">\(Z_{i}\)</span> una colección de variables aleatorias i.i.d, con distribución <span class="math inline">\(N\left(0,\frac{\delta t}{4}\right)\)</span>.<br>
 Pruebe que la suma <span class="math display">\[
 \sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right),
-\]</span> tiene valor esperado igual a cero y una varianza de <span class="math inline">\(O(\delta t)\)</span>.</p>
+\]</span></p>
+<p>tiene valor esperado igual a cero y una varianza de <span class="math inline">\(O(\delta t)\)</span>.</p>
 </div>
 <p>Sin perdida de generalidad supongamos que <span class="math inline">\(Z_{i}\)</span> y <span class="math inline">\(W(t_{i+1})-W(t_{i})\)</span> son variables aleatorias independientes para cada <span class="math inline">\(i=1,\dots L\)</span>. Entonces <span class="math display">\[\begin{eqnarray*}
     \mathbb{E}\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right] &amp; = &amp;  \sum_{i=0}^{L}\mathbb{E}\left[Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right]\\
@@ -227,20 +228,23 @@ Pruebe que la suma <span class="math display">\[
     \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))\right]^{2} &amp; = &amp;  \mathbb{E}\{ \mathbb{E}\left[Z_{i}^{2}(W(t_{i+1})-W(t_{i}))^{2}|\mathcal{F}_{j}\right]
     \}\\
     &amp; = &amp; \mathbb{E}\{Z_{i}^{2}\mathbb{E}\left[(W(t_{i+1})-W(t_{i}))^{2}|\mathcal{F}_{j}\right]\}\\
-    &amp; = &amp; \mathbb{E}[Z_{i}^{2}](t_{i+1}-t_{i})\\
+    &amp; = &amp; \mathbb{E}[Z_{i}^2](t_{i+1}-t_{i})\\
     &amp; = &amp; \dfrac{\delta t}{4}(t_{i+1}-t_{i})
 \end{eqnarray*}\]</span> sustituyendo resulta <span class="math display">\[\begin{eqnarray*}
 Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right] &amp; = &amp;  \sum_{i=0}^{L}\dfrac{\delta t}{4}(t_{i+1}-t_{i})\\
 &amp; = &amp;  \dfrac{\delta t}{4}(t_{L+1}-t_{0}).
 \end{eqnarray*}\]</span> Para un <span class="math inline">\(L\)</span> suficientemente grande, se tiene que, <span class="math inline">\((t_{L+1}-t_{0})\leq\dfrac{\varepsilon}{4}\)</span>, así <span class="math display">\[
 Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right]\leq \varepsilon\delta t.
-\]</span> Así, la varianza es de orden <span class="math inline">\(\delta t\)</span>.</p>
+\]</span></p>
+<p>Así, la varianza es de orden <span class="math inline">\(\delta t\)</span>.</p>
 <div class="{exr-1}">
-<p>2.- La regla del punto medio de la integral de Riemann de una función <span class="math inline">\(h\in C^{2}([a,b])\)</span> sobre una partición de <span class="math inline">\(L\)</span> puntos del intervalo <span class="math inline">\([a,b]\)</span> está dada por, <span class="math display">\[
+<p>La regla del punto medio de la integral de Riemann de una función <span class="math inline">\(h\in C^{2}([a,b])\)</span> sobre una partición de <span class="math inline">\(L\)</span> puntos del intervalo <span class="math inline">\([a,b]\)</span> está dada por, <span class="math display">\[
 \int_{a}^{b}h(t)dt=\lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}h\left(\dfrac{t_{i}+t_{i+1}}{2}\right)\delta t.
-\]</span> Use la relación <span class="math display">\[
+\]</span></p>
+<p>Use la relación <span class="math display">\[
 W\left(\frac{t_{i}+t_{i+1}}{2}\right)=\frac{1}{2}(W(t_{i})+W(t_{i+1}))+ \underbrace{Z_{i}}_{i.i.d.\sim N(0,\delta t/4)},
-\]</span> y el ejercicio anterior para demostrar que la regla del punto medio de la integral de Riemann implica que <span class="math display">\[
+\]</span></p>
+<p>y el ejercicio anterior para demostrar que la regla del punto medio de la integral de Riemann implica que <span class="math display">\[
 \int_{0}^{T}W(t)dW(t)=\frac{1}{2}W(T)^{2}.
 \]</span></p>
 </div>
