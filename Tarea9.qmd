@@ -1,4 +1,4 @@
-
+# Tarea 9
 :::{exr-1}
 Sea $\tau$ un tiempo de paro. Prueba que $W\left(t+\tau\right)-W\left(\tau\right)$
 es un movimiento browniano. 

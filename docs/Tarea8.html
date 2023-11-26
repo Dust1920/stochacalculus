@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>stochacalculus – tarea8</title>
+<title>stochacalculus - 9&nbsp; Tarea 8</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea8.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tarea8.html</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tarea8.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tarea 8</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -146,25 +146,25 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Tarea7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tarea7.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tarea 7</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Tarea8.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tarea8.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tarea 8</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Tarea9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Muestre que <span class="math inline">\(X_{t}\)</span> es una martingala local.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tarea 9</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Tarea10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tarea10.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Tarea 10</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -178,12 +178,143 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tarea 8</span></h1>
+</div>
 
 
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="{exr-1}">
+<p>Use la aproximación de la suma de Riemann la ecuación 6.1. Muestra la propiedad de linealidad de la integral estocástica. Es decir, <span class="math display">\[
+\int_{0}^{T}\left(\alpha f(t)+\beta g(t)\right) dW_{t}=\alpha\int_{0}^{T}f(t)dW_{t}+\beta\int_{0}^{T}g(t)dW_{t}
+\]</span></p>
+</div>
+<p>Sea <span class="math inline">\(\{0=t_{0},t_{1},\dots,t_{L-1},t_{L}=T\}\)</span> una particion del intervalo <span class="math inline">\([0,T]\)</span>, de la aproximación de la suma de Riemann, resulta <span class="math display">\[\begin{eqnarray*}
+    \int_{0}^{T}\left(\alpha f(t)+\beta g(t)\right) dW_{t} &amp; \sim &amp; \sum_{i=0}^{L}(\alpha f(t_{i})+\beta g(t_{i}))(W(t_{i+1})-W(t_{i}))\\
+    &amp; = &amp; \sum_{i=0}^{L}\alpha f(t_{i})(W(t_{i+1})-W(t_{i}))+ \sum_{i=0}^{L}\beta g(t_{i})(W(t_{i+1})-W(t_{i}))\\
+    &amp; = &amp; \alpha\sum_{i=0}^{L} f(t_{i})(W(t_{i+1})-W(t_{i}))+\beta\sum_{i=0}^{L} g(t_{i})(W(t_{i+1})-W(t_{i}))
+\end{eqnarray*}\]</span></p>
+<p>tomando el limite cuando <span class="math inline">\(L\to\infty\)</span>, resulta <span class="math display">\[
+    \alpha\lim_{L\to\infty}\sum_{i=0}^{L} f(t_{i})(W(t_{i+1})-W(t_{i}))=\alpha \int_{0}^{T}f(t)dW_{t}
+\]</span></p>
+<p>y <span class="math display">\[
+    \beta\lim_{L\to\infty}\sum_{i=0}^{L} g(t_{i})(W(t_{i+1})-W(t_{i}))=\beta\int_{0}^{T}g(t)dW_{t}
+\]</span></p>
+<p>así, <span class="math display">\[
+\int_{0}^{T}\left(\alpha f(t)+\beta g(t)\right) dW_{t}= \alpha \int_{0}^{T}f(t)dW_{t}+\beta\int_{0}^{T}g(t)dW_{t}
+\]</span></p>
+<div class="{exr-1}">
+<p>Escriba con detalle la demostración del siguiente Teorema, también incluya la demostración del Lema 5.18 del Mao.\ Teorema: Sea <span class="math inline">\(f\in\mathcal{M}^{2}([0,T];\mathbb{R})\)</span>, sea <span class="math inline">\(\rho,\tau\)</span> dos tiempos de paro tales que <span class="math inline">\(0\leq\rho\leq\tau\leq T\)</span>. Entonces <span class="math display">\[\begin{eqnarray}
+    \mathbb{E}\left(\int_{\rho}^{\tau}f(s)dW_{s}\mid\mathcal{F}_{\rho}\right) &amp; = &amp; 0,\\
+    \mathbb{E}\left(\left|\int_{\rho}^{\tau}f(s)dW_{s}\right|^{2}\mid\mathcal{F}_{\rho}\right) &amp; = &amp; \mathbb{E}\left(\int_{\rho}^{\tau}\left|f(s)\right|^{2}ds\mid\mathcal{F}_{\rho}\right).
+\end{eqnarray}\]</span></p>
+</div>
+<p>Por el Teorema 5.14 y el teorema de paro de la martingala de Doob, <span class="math display">\[\begin{equation}
+    E(I(\tau)|\mathcal{F}_{\rho})=I(\rho)
+\end{equation}\]</span> y <span class="math display">\[\begin{equation}
+    E(I^{2}(\tau)-\langle I,I\rangle_{\tau}|\mathcal{F}_{\rho})=I^{2}(\rho)-\langle I,I\rangle_{\rho},
+\end{equation}\]</span> donde <span class="math inline">\(\{\langle I,I\rangle_{t}\}\)</span> es definido por 5.18. Aplicando el Lema 5.18 se ve entonces de 5.22 que <span class="math display">\[
+\mathbb{E}\left(\int_{\rho}^{\tau}f(s)dB_{s}|\mathcal{F}_{\rho}\right)=\mathbb{E}(I(\tau)-I(\rho)|\mathcal{F}_{\rho})=0
+\]</span></p>
+<p>que es (5.20). Además, por (5.22) y (5.23),</p>
+<p><span class="math display">\[
+\mathbb{E}(|I(\tau)-I(\rho)|^{2}|\mathcal{F}_{\rho})=\mathbb{E}(I^{2}(\tau)|\mathcal{F}_{\rho})-2I(\rho)\mathbb{E}(I(\tau)|\mathcal{F}_{\rho})+I^{2}(\rho)
+\]</span></p>
+<p><span class="math display">\[
+=\mathbb{E}(I^{2}(\tau)|\mathcal{F}_{\rho})-I^{2}(\rho)=\mathbb{E}(\langle I,I\rangle_{\tau}-\langle I, I\rangle_{\rho}|\mathcal{F}_{\rho})=\mathbb{E}\left(\int_{\rho}^{\tau}|f(s)|^{2}ds|\mathcal{F}_{\rho}\right)
+\]</span></p>
+<div class="{exr-1}">
+<p>Usando la aproximación de la suma de Riemann ecuación 6.1, la isometría de Itô y la identidad <span class="math inline">\(4ab=(a+b)^{2}-(a-b)^{2}\)</span> pruebe que <span class="math display">\[
+\mathbb{E}\left[\left(\int_{0}^{T}g(t)dW_{t}\right)\left(\int_{0}^{T}f(t)dW_{t}\right)\right]=\int_{0}^{T}\mathbb{E}[f(t)g(t)]dt.
+\]</span></p>
+</div>
+<p>Tomemos <span class="math inline">\(a=\int_{0}^{T}g(t)dW_{t}\)</span> y <span class="math inline">\(b=\int_{0}^{T}f(t)dW_{t}\)</span>, entonces usando la identidad <span class="math inline">\(4ab=(a+b)^{2}-(a-b)^{2}\)</span> <span class="math display">\[\begin{eqnarray*}
+    4\left(\int_{0}^{T}g(t)dW_{t}\right)\left(\int_{0}^{T}f(t)dW_{t}\right) &amp; = &amp; \left(\int_{0}^{T}g(t)dW_{t}+\int_{0}^{T}f(t)dW_{t}\right)^{2}-\left(\int_{0}^{T}g(t)dW_{t}-\int_{0}^{T}f(t)dW_{t}\right)^{2}\\
+    &amp; = &amp; \left(\int_{0}^{T}(g(t)+f(t))dW_{t}\right)^{2}-\left(\int_{0}^{T}(g(t)-f(t))dW_{t}\right)^{2},
+\end{eqnarray*}\]</span> así, <span class="math display">\[\begin{eqnarray*}
+    4\mathbb{E}\left[\left(\int_{0}^{T}g(t)dW_{t}\right)\left(\int_{0}^{T}f(t)dW_{t}\right)\right] &amp; = &amp; \mathbb{E}\left(\int_{0}^{T}(g(t)+f(t))dW_{t}\right)^{2}-\mathbb{E}\left(\int_{0}^{T}(g(t)-f(t))dW_{t}\right)^{2}\\
+   &amp; = &amp;\left(\int_{0}^{T} \mathbb{E}(g(t)+f(t))^{2}dt\right)-\left(\int_{0}^{T}\mathbb{E}(g(t)-f(t))^{2}dt\right)\\
+    &amp; = &amp; \left(\int_{0}^{T}\mathbb{E}[(g(t)+f(t))^{2}-(g(t)-f(t))^{2}]dt\right)\\
+    &amp; = &amp; 4\left(\int_{0}^{T}\mathbb{E}[g(t)f(t)]dt\right)
+\end{eqnarray*}\]</span></p>
+<div class="{exr-1}">
+<p>Usando la suma de Riemann ecuación 6.1 y deduzca que, <span class="math display">\[
+\int_{0}^{T}W(t)^{2}dW(t)=\dfrac{1}{3}W(T)^{3}-\int_{0}^{T}W(t)dt.
+\]</span></p>
+</div>
+<p>Observemos que, <span class="math display">\[
+3W(t_{i})^{2}(W(t_{i+1})-W((t_{i})))=W(t_{i+1})^{3}-\left(W(t_{i+1})-W(t_{i})\right)^{3}-3\left(W(t_{i+1})-W(t_{i})\right)^{2}W(t_{i})-W(t_{i-1})^{3},
+\]</span></p>
+<p>aplicando la ecuación 6.1 <span class="math display">\[\begin{align*}
+\int_{0}^{T}W(t)^{2}dW(t) &amp; \sim \sum_{i=0}^{L}W(t_{i})^{2} (W(t_{i+1})-W((t_{i})))\\
+&amp; = \frac{1}{3} \sum_{i=0}^{L}\left[W(t_{i+1})^{3}-W(t_{i-1})^{3}\right]-\frac{1}{3}\sum_{i=0}^{L}\left(W(t_{i+1})-W(t_{i})\right)^{3}-\sum_{i=0}^{L}\left(W(t_{i+1})-W(t_{i})\right)^{2}W(t_{i})\\
+&amp; =\frac{1}{3}( W(T)^{3}-W(t_{0})^{3})- \frac{1}{3}\sum_{i=0}^{L}\left(W(t_{i+1})-W(t_{i})\right)^{3}-\sum_{i=0}^{L}\left(W(t_{i+1})-W(t_{i})\right)^{2}W(t_{i})\\
+  &amp; =\frac{1}{3}W(T)^{3}- \frac{1}{3}\sum_{i=0}^{L}\left(W(t_{i+1})-W(t_{i})\right)^{3}-\sum_{i=0}^{L}\left(W(t_{i+1})-W(t_{i})\right)^{2}W(t_{i})
+\end{align*}\]</span> veamos que <span class="math inline">\(\frac{1}{3}\sum_{i=0}^{L}\left(W(t_{i+1})-W(t_{i})\right)^{3}\to 0\)</span> en <span class="math inline">\(L^{2}\)</span>.\ Ahora, calcularemos la media de la variación cuadrática. Del Teorema Multinomial <span class="math display">\[
+\frac{1}{9}\mathbb{E}\left[\left(\sum_{i=0}^{L}\left(W(t_{i+1})-W(t_{i})\right)^{3}\right)^{2}\right]=\frac{1}{9}\sum_{i=0}^{L}\mathbb{E}\left[\left(W(t_{i+1})-W(t_{i})\right)^{6}\right]+\frac{2}{9}\sum_{i=0}^{L}\mathbb{E}\left[\left(W(t_{i+1})-W(t_{i})\right)^{3}\left(W(t_{j+1})-W(t_{j})\right)^{3}\right],
+\]</span></p>
+<p>además, de la tarea 5, <span class="math display">\[\begin{eqnarray*}
+    \mathbb{E}\left[\left(W(t_{i+1})-W(t_{i})\right)^{3}\left(W(t_{j+1})-W(t_{j})\right)^{3}\right] &amp; = &amp; \mathbb{E}\{\mathbb{E}\left[\left(W(t_{i+1})-W(t_{i})\right)^{3}\left(W(t_{j+1})-W(t_{j})\right)^{3}\right]|\mathcal{F}_{j}\}\\
+    &amp; = &amp; \mathbb{E}\{\left(W(t_{i+1})-W(t_{i})\right)^{3}\mathbb{E}\left[\left(W(t_{j+1})-W(t_{j})\right)^{3}\right|\mathcal{F}_{j}]\}\\
+    &amp; = &amp; \mathbb{E}[\left(W(t_{i+1})-W(t_{i})\right)^{3}]\mathbb{E}\left[\left(W(t_{j+1})-W(t_{j})\right)^{3}\right]\\
+    &amp; = &amp; 0. \text{ de la tarea 5}
+\end{eqnarray*}\]</span> así, <span class="math display">\[
+\frac{2}{9}\sum_{i=0}^{L}\mathbb{E}\left[\left(W(t_{i+1})-W(t_{i})\right)^{3}\left(W(t_{j+1})-W(t_{j})\right)^{3}\right]=0
+\]</span></p>
+<p>y también se tiene que <span class="math inline">\(\mathbb{E}\left[\left(W(t_{i+1})-W(t_{i})\right)^{6}\right] = 15\left(t_{i+1}-t_{i}\right)^{3}\)</span>, así <span class="math display">\[\begin{align*}
+\frac{1}{9}\sum_{i=0}^{L}E\left[\left(W(t_{i+1})-W(t_{i})\right)^{6}\right] &amp; =\frac{5}{3}\sum_{i=0}^{L}\left(t_{i+1}-t_{i}\right)^{3}\\
+&amp; \leq\frac{5}{3}\|\Delta_{L}\|^{2}\sum_{i=0}^{L}\left(t_{i+1}-t_{i}\right)\\
+&amp; \leq\frac{5}{3}\|\Delta_{L}\|^{2}L\to0,\|\Delta_{L}\|\to0
+\end{align*}\]</span> Ahora veamos que <span class="math display">\[
+\sum_{i=0}^{L}\left(W(t_{i+1})-W(t_{i})\right)^{2}W(t_{i})\to \sum_{i=0}^{L}W(t_{i})\left(t_{i+1}-t_{i}\right)\text{ en }L^{2}
+\]</span></p>
+<p>se tiene que, <span class="math display">\[\begin{eqnarray*}
+  \mathbb{E}\left[\left(\sum_{i=0}^{L}\left(W(t_{i+1})-W(t_{i})\right)^{2}W(t_{i})- \sum_{i=0}^{L}W(t_{i})\left(t_{i+1}-t_{i}\right) \right)^{2}\right] &amp; = &amp; \mathbb{E}\left[\left(\sum_{i=0}^{L}W(t_{i})[\left(W(t_{i+1})-W(t_{i})\right)^{2}-\left(t_{i+1}-t_{i}\right)] \right)^{2}\right]
+\end{eqnarray*}\]</span> <span class="math display">\[
+\mathbb{E}\left[\sum_{i=0}^{L}W(t_{i})^{2}[\left(W(t_{i+1})-W(t_{i})\right)^{2}-\left(t_{i+1}-t_{i}\right)]^{2} +\sum_{i=0}^{L}W(t_{i})W(t_{j})[\left(W(t_{i+1})-W(t_{i})\right)^{2}-\left(t_{i+1}-t_{i}\right)][\left(W(t_{j+1})-W(t_{j})\right)^{2}-\left(t_{j+1}-t_{j}\right)] \right]
+\]</span></p>
+<p>calculemos <span class="math display">\[\begin{eqnarray*}
+\mathbb{E}\{\mathbb{E}[W(t_{i})W(t_{j})(\left(W(t_{i+1})-W(t_{i})\right)^{2}-\left(t_{i+1}-t_{i}\right))(\left(W(t_{j+1})-W(t_{j})\right)^{2}-\left(t_{j+1}-t_{j}\right))]|\mathcal{F}_{j}\} &amp; = &amp;   
+\end{eqnarray*}\]</span> <span class="math display">\[
+\mathbb{E}\{W(t_{i})W(t_{j})(\left(W(t_{i+1})-W(t_{i})\right)^{2}-\left(t_{i+1}-t_{i}\right))\mathbb{E}[(\left(W(t_{j+1})-W(t_{j})\right)^{2}-\left(t_{j+1}-t_{j}\right))]|\mathcal{F}_{j}\} =0
+\]</span></p>
+<div class="{exr-1}">
+<p>Verifique que la isometría de Itô ecuación 6.4, <span class="math display">\[
+\mathbb{E}\left[\left(\int_{0}^{T}h(t)dW(t)\right)^{2}\right]=\mathbb{E}\left[\int_{0}^{T}h(t)^{2}dt\right],
+\]</span></p>
+<p>se tiene cuando <span class="math inline">\(h(t):= 1\)</span>.</p>
+</div>
+<p>del ejercicio 3, resulta <span class="math display">\[\begin{eqnarray*}
+    \mathbb{E}\left[\left(\int_{0}^{T}h(t)dW(t)\right)^{2}\right]=\mathbb{E}\left[\left(\int_{0}^{T}1dW(t)\right)^{2}\right] &amp; = &amp; \mathbb{E}\left[\left(\int_{0}^{T}1dW_{t}\right)\left(\int_{0}^{T}1dW_{t}\right)\right]\\
+    &amp; = &amp; \int_{0}^{T}\mathbb{E}[1]dt\\
+    &amp; = &amp; \int_{0}^{T}dt\\
+    &amp; = &amp; T.
+\end{eqnarray*}\]</span> y <span class="math display">\[\begin{eqnarray*}
+    \mathbb{E}\left[\int_{0}^{T}h(t)^{2}dt\right] &amp; = &amp; \mathbb{E}\left[\int_{0}^{T}1^{2}dt\right]\\
+    &amp; = &amp; \mathbb{E}\left[\int_{0}^{T}dt\right]\\
+    &amp; = &amp; \mathbb{E}\left[T\right]\\
+    &amp; = &amp; T
+\end{eqnarray*}\]</span></p>
+<p>Así, <span class="math display">\[
+\mathbb{E}\left[\left(\int_{0}^{T}dW(t)\right)^{2}\right]= \mathbb{E}\left[\int_{0}^{T}dt\right]
+\]</span></p>
 
 
 
@@ -424,12 +555,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Tarea7.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tarea7.html</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tarea 7</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Tarea9.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Muestre que <span class="math inline">\(X_{t}\)</span> es una martingala local.</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tarea 9</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
