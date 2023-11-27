@@ -225,10 +225,57 @@ Y\left(t\right)=Y\left(0\right)\exp\left(\left(\mu-\dfrac{1}{2}\sigma^{2}\right)
 \mathrm{d}Y\left(t\right)=\mu Y\left(t\right)\mathrm{d}t+\sigma Y\left(t\right)\mathrm{d}W\left(t\right)
 \]</span></p>
 </div>
+<p>Primero. Considerando la formula Integral.</p>
+<p><span class="math display">\[\begin{align*}
+S\left(t\right) &amp; =S\left(0\right)+\int_{0}^{t}\left(a_{1}\mathrm{S}\left(t\right)+a_{2}\right)\mathrm{d}t+\int_{0}^{t}g\left(S\left(s\right)\right)\mathrm{d}W\left(s\right)\\
+&amp; =S\left(0\right)+a_{1}\int_{0}^{t}\mathrm{S}\left(t\right)\mathrm{d}t+a_{2}t+\int_{0}^{t}g\left(S\left(s\right)\right)\mathrm{d}W\left(s\right),
+\end{align*}\]</span></p>
+<p>calculamos la esperanza. <span class="math display">\[\begin{align*}
+m\left(t\right) &amp; =m\left(0\right)+a_{1}\int_{0}^{t}m\left(t\right)\mathrm{d}t+a_{2}t+\int_{0}^{t}E\left[g\left(S\left(s\right)\right)\right]\mathrm{d}B\left(s\right)\\
+m\left(t\right)-m\left(0\right) &amp; =a_{1}\int_{0}^{t}m\left(t\right)\mathrm{d}t+a_{2}t+E\left[\int_{0}^{t}g\left(S\left(s\right)\right)\mathrm{d}B\left(s\right)\right]
+\end{align*}\]</span></p>
+<p>Como <span class="math inline">\(g\)</span> es de lipschitz y con crecimiento lineal <span class="math inline">\(g\left(S\right)\in L_{\text{ad}}^{2}\left(\Omega_{a}^{b}\right),\)</span> por lo tanto existe una constante <span class="math inline">\(c\)</span> tal que <span class="math display">\[
+E\left[\int_{0}^{t}g\left(S\left(s\right)\right)\mathrm{d}W\left(s\right)\right]=c,\ \forall t
+\]</span></p>
+<p>Luego, sabemos que <span class="math display">\[
+\int_{0}^{t}g\left(S\left(s\right)\right)\mathrm{d}W\left(s\right)=\lim_{n\to\infty}\sum_{i=1}^{n}g\left(S\left(t_{i-1}\right)\right)\left(B_{i}-B_{i-1}\right),
+\]</span> ahora, para cada <span class="math inline">\(i\)</span> <span class="math display">\[\begin{align*}
+E\left[g\left(S\left(t_{i-1}\right)\right)\left(B_{i}-B_{i-1}\right)\right] &amp; =E\left[E\left[g\left(S\left(t_{i-1}\right)\right)\left(B_{i}-B_{i-1}\right)\mid\mathcal{F}_{i-1}\right]\right]\\
+&amp; =E\left[g\left(S\left(t_{i-1}\right)\right)E\left[\left(B_{i}-B_{i-1}\right)\mid\mathcal{F}_{i-1}\right]\right]\\
+&amp; =0,
+\end{align*}\]</span></p>
+<p>por lo tanto <span class="math display">\[
+m\left(t\right)-m\left(0\right)=a_{1}\int_{0}^{t}m\left(t\right)\mathrm{d}t+a_{2}t,
+\]</span></p>
+<p>ahora, considere su forma diferencial. <span class="math display">\[
+\dfrac{\mathrm{d}m\left(t\right)}{\mathrm{d}t}=a_{1}m\left(t\right)+a_{2},
+\]</span></p>
+<p>es una ecuación diferencial lineal. Por lo tanto usaremos métodos conocidos para resolverla. <span class="math display">\[
+\dfrac{\mathrm{d}m\left(t\right)}{\mathrm{d}t}-a_{1}m\left(t\right)=a_{2},
+\]</span> defina <span class="math display">\[\begin{align*}
+u &amp; =\exp\left(\int a_{1}\mathrm{d}t\right)\\
+&amp; =e^{-a_{1}t},
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\dfrac{\mathrm{d}}{\mathrm{d}t}\left[um\left(t\right)\right] &amp; =a_{2}u\\
+u\left(t\right)m\left(t\right) &amp; =a_{2}\int u\left(t\right)\mathrm{d}t\\
+m\left(t\right) &amp; =\dfrac{a_{2}}{u\left(t\right)}\int u\left(t\right)\mathrm{d}t\\
+&amp; =a_{2}e^{a_{1}t}\int e^{-a_{1}t}\mathrm{d}t\\
+&amp; =-a_{2}e^{a_{1}t}\left[-\dfrac{1}{a_{1}}e^{-a_{1}t}+C\right]\\
+m\left(t\right) &amp; =-\dfrac{a_{2}}{a_{1}}-Ca_{2}e^{a_{1}t}
+\end{align*}\]</span></p>
+<p>Ahora, recordando la condición inicial. <span class="math display">\[\begin{align*}
+m\left(0\right) &amp; =-\dfrac{a_{2}}{a_{1}}-Ca_{2}\\
+\Rightarrow C &amp; =-\dfrac{1}{a_{1}}-\dfrac{1}{a_{2}}m\left(0\right).
+\end{align*}\]</span></p>
+<p>Entonces <span class="math display">\[
+E\left[X_{t}\right]=-\dfrac{a_{2}}{a_{1}}-\left[-\dfrac{a_{2}}{a_{1}}-E\left[X_{0}\right]\right]\exp\left(a_{1}t\right)
+\]</span></p>
 <div class="{exr-1}">
 <p>Considere la siguiente ecuación diferencial estocástica lineal. <span class="math display">\[
 \mathrm{d}S\left(t\right)=\left(a_{1}\mathrm{S}\left(t\right)+a_{2}\right)\mathrm{d}t+g\left(S\left(t\right)\right)\mathrm{d}W\left(t\right),
-\]</span> donde <span class="math inline">\(g:\mathbb{R}\to\mathbb{R}\)</span> es cualquier función global de Lipschitz con crecimiento lineal, y <span class="math inline">\(a_{1},a_{2}\)</span> son dos constantes diferentes de cero. Use la forma integral de la ecuación diferencial estocástica, la propiedad de martingala de la integral de Ito y la notación <span class="math display">\[
+\]</span></p>
+<p>donde <span class="math inline">\(g:\mathbb{R}\to\mathbb{R}\)</span> es cualquier función global de Lipschitz con crecimiento lineal, y <span class="math inline">\(a_{1},a_{2}\)</span> son dos constantes diferentes de cero. Use la forma integral de la ecuación diferencial estocástica, la propiedad de martingala de la integral de Ito y la notación <span class="math display">\[
 m\left(t\right)=E\left[X_{t}\right],
 \]</span> para deducir que <span class="math display">\[
 m\left(t\right)-m\left(0\right)=a_{1}\int_{0}^{t}m\left(s\right)\mathrm{d}s+a_{2}t
@@ -240,15 +287,81 @@ m\left(t\right)-m\left(0\right)=a_{1}\int_{0}^{t}m\left(s\right)\mathrm{d}s+a_{2
 E\left[X\left(t\right)\right]=-\dfrac{a_{2}}{a_{1}}+\left(E\left[X\left(0\right)\right]+\dfrac{a_{2}}{a_{1}}\right)\exp\left(a_{1}t\right)
 \]</span></p>
 </div>
+<p>Primero. Considerando la formula Integral.</p>
+<p><span class="math display">\[\begin{align*}
+S\left(t\right) &amp; =S\left(0\right)+\int_{0}^{t}\left(a_{1}\mathrm{S}\left(t\right)+a_{2}\right)\mathrm{d}t+\int_{0}^{t}g\left(S\left(s\right)\right)\mathrm{d}W\left(s\right)\\
+&amp; =S\left(0\right)+a_{1}\int_{0}^{t}\mathrm{S}\left(t\right)\mathrm{d}t+a_{2}t+\int_{0}^{t}g\left(S\left(s\right)\right)\mathrm{d}W\left(s\right),
+\end{align*}\]</span></p>
+<p>calculamos la esperanza. <span class="math display">\[\begin{align*}
+m\left(t\right) &amp; =m\left(0\right)+a_{1}\int_{0}^{t}m\left(t\right)\mathrm{d}t+a_{2}t+\int_{0}^{t}E\left[g\left(S\left(s\right)\right)\right]\mathrm{d}B\left(s\right)\\
+m\left(t\right)-m\left(0\right) &amp; =a_{1}\int_{0}^{t}m\left(t\right)\mathrm{d}t+a_{2}t+E\left[\int_{0}^{t}g\left(S\left(s\right)\right)\mathrm{d}B\left(s\right)\right]
+\end{align*}\]</span></p>
+<p>Como <span class="math inline">\(g\)</span> es de lipschitz y con crecimiento lineal <span class="math inline">\(g\left(S\right)\in L_{\text{ad}}^{2}\left(\Omega_{a}^{b}\right),\)</span> por lo tanto existe una constante <span class="math inline">\(c\)</span> tal que <span class="math display">\[
+E\left[\int_{0}^{t}g\left(S\left(s\right)\right)\mathrm{d}W\left(s\right)\right]=c,\ \forall t
+\]</span></p>
+<p>Luego, sabemos que <span class="math display">\[
+\int_{0}^{t}g\left(S\left(s\right)\right)\mathrm{d}W\left(s\right)=\lim_{n\to\infty}\sum_{i=1}^{n}g\left(S\left(t_{i-1}\right)\right)\left(B_{i}-B_{i-1}\right),
+\]</span></p>
+<p>ahora, para cada <span class="math inline">\(i\)</span> <span class="math display">\[\begin{align*}
+E\left[g\left(S\left(t_{i-1}\right)\right)\left(B_{i}-B_{i-1}\right)\right] &amp; =E\left[E\left[g\left(S\left(t_{i-1}\right)\right)\left(B_{i}-B_{i-1}\right)\mid\mathcal{F}_{i-1}\right]\right]\\
+&amp; =E\left[g\left(S\left(t_{i-1}\right)\right)E\left[\left(B_{i}-B_{i-1}\right)\mid\mathcal{F}_{i-1}\right]\right]\\
+&amp; =0,
+\end{align*}\]</span></p>
+<p>por lo tanto <span class="math display">\[
+m\left(t\right)-m\left(0\right)=a_{1}\int_{0}^{t}m\left(t\right)\mathrm{d}t+a_{2}t,
+\]</span></p>
+<p>ahora, considere su forma diferencial. <span class="math display">\[
+\dfrac{\mathrm{d}m\left(t\right)}{\mathrm{d}t}=a_{1}m\left(t\right)+a_{2},
+\]</span></p>
+<p>es una ecuación diferencial lineal. Por lo tanto usaremos métodos conocidos para resolverla. <span class="math display">\[
+\dfrac{\mathrm{d}m\left(t\right)}{\mathrm{d}t}-a_{1}m\left(t\right)=a_{2},
+\]</span> defina <span class="math display">\[\begin{align*}
+u &amp; =\exp\left(\int a_{1}\mathrm{d}t\right)\\
+&amp; =e^{-a_{1}t},
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\dfrac{\mathrm{d}}{\mathrm{d}t}\left[um\left(t\right)\right] &amp; =a_{2}u\\
+u\left(t\right)m\left(t\right) &amp; =a_{2}\int u\left(t\right)\mathrm{d}t\\
+m\left(t\right) &amp; =\dfrac{a_{2}}{u\left(t\right)}\int u\left(t\right)\mathrm{d}t\\
+&amp; =a_{2}e^{a_{1}t}\int e^{-a_{1}t}\mathrm{d}t\\
+&amp; =-a_{2}e^{a_{1}t}\left[-\dfrac{1}{a_{1}}e^{-a_{1}t}+C\right]\\
+m\left(t\right) &amp; =-\dfrac{a_{2}}{a_{1}}-Ca_{2}e^{a_{1}t}
+\end{align*}\]</span></p>
+<p>Ahora, recordando la condición inicial. <span class="math display">\[\begin{align*}
+m\left(0\right) &amp; =-\dfrac{a_{2}}{a_{1}}-Ca_{2}\\
+\Rightarrow C &amp; =-\dfrac{1}{a_{1}}-\dfrac{1}{a_{2}}m\left(0\right).
+\end{align*}\]</span></p>
+<p>Entonces <span class="math display">\[
+E\left[X_{t}\right]=-\dfrac{a_{2}}{a_{1}}-\left[-\dfrac{a_{2}}{a_{1}}-E\left[X_{0}\right]\right]\exp\left(a_{1}t\right)
+\]</span></p>
 <div class="{exr-1}">
 <p>Considere la siguiente ecuación diferencial estocástica lineal. <span class="math display">\[
 \mathrm{d}S\left(t\right)=\left(\alpha\left(t\right)\mathrm{S}\left(t\right)\right)\mathrm{d}t+\beta\left(t\right)S\left(t\right)\mathrm{d}W\left(t\right),S\left(0\right)=s_{0},
-\]</span> con constantes <span class="math inline">\(s_{0}\)</span> y funciones <span class="math inline">\(\alpha,\beta\)</span> integrables. Use la formula de Ito con la fórmula <span class="math display">\[
+\]</span></p>
+<p>con constantes <span class="math inline">\(s_{0}\)</span> y funciones <span class="math inline">\(\alpha,\beta\)</span> integrables. Use la formula de Ito con la fórmula <span class="math display">\[
 u\left(t,x\right)=\ln\left(\dfrac{x}{S_{0}}\right),
 \]</span> para deducir que <span class="math display">\[
 S\left(t\right)=S\left(0\right)\exp\left(\int_{0}^{t}\left[\alpha\left(s\right)-\dfrac{1}{2}\beta^{2}\left(s\right)\right]\mathrm{d}s+\int_{0}^{t}\beta\left(s\right)\mathrm{d}W\left(s\right)\right)
 \]</span></p>
 </div>
+<p>Ahora considere que <span class="math display">\[\begin{align*}
+f\left(t\right) &amp; =\beta\left(t\right)S\left(t\right)\\
+g\left(t\right) &amp; =\alpha\left(t\right)S\left(t\right),
+\end{align*}\]</span></p>
+<p>Calculamos las parciales de <span class="math inline">\(u\)</span>. <span class="math display">\[\begin{align*}
+u_{t} &amp; =0\\
+u_{x} &amp; =\dfrac{1}{x}\\
+u_{xx} &amp; =-\dfrac{1}{x^{2}}
+\end{align*}\]</span></p>
+<p>Entonces <span class="math display">\[\begin{align*}
+\mathrm{d}u\left(t,S_{t}\right) &amp; =\alpha\left(t\right)\mathrm{d}t+\beta\left(t\right)\mathrm{d}W\left(t\right)-\dfrac{1}{2S_{t}^{2}}\left(dS_{t}\right)^{2}\\
+&amp; =\alpha\left(t\right)\mathrm{d}t+\beta\left(t\right)\mathrm{d}W\left(t\right)-\dfrac{1}{2S_{t}^{2}}\beta^{2}S_{t}^{2}\mathrm{d}t\\
+&amp; =\left[\alpha\left(t\right)-\dfrac{\beta^{2}\left(t\right)}{2}\right]\mathrm{d}t+\beta\left(t\right)\mathrm{d}W\left(t\right),
+\end{align*}\]</span></p>
+<p>entonces <span class="math display">\[\begin{align*}
+\ln\left(\dfrac{S_{t}}{S_{0}}\right) &amp; =\int_{0}^{t}\left[\alpha\left(t\right)-\dfrac{\beta^{2}\left(t\right)}{2}\right]\mathrm{d}t+\int_{0}^{t}\beta\left(t\right)\mathrm{d}W\left(t\right)\\
+S_{t} &amp; =S_{0}\exp\left(\int_{0}^{t}\left[\alpha\left(t\right)-\dfrac{\beta^{2}\left(t\right)}{2}\right]\mathrm{d}t+\int_{0}^{t}\beta\left(t\right)\mathrm{d}W\left(t\right)\right)
+\end{align*}\]</span></p>
 <div class="{exr-1}">
 <p>Considere la siguiente ecuación diferencial estocástica lineal. <span class="math display">\[
 \mathrm{d}S\left(t\right)=\left(\alpha\left(t\right)\mathrm{S}\left(t\right)\right)\mathrm{d}t+\beta\left(t\right)S\left(t\right)\mathrm{d}W\left(t\right),S\left(0\right)=s_{0},
