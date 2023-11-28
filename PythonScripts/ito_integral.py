@@ -1,6 +1,8 @@
 import numpy as np
 import brownian_motion as bw
 
+# Tarea 
+
 
 def f(x: float, t: float):
     y = x
