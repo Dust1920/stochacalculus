@@ -20,9 +20,20 @@ Adapta este código para la Integral de Stratonovich correspondente y evalue el 
 
 
 ```{python}
+from PythonScripts import brownian_motion as bw
+import numpy as np
+
+def u(t: float, n_points: int):
+    dt = t / (n_points - 1)
+    dw = np.sqrt(dt) * np.random.standard_normal(n_points - 1)
+    w = np.zeros(n_points)
+    w[1:] = dw.cumsum()
+    time = np.linspace(0, t, n_points)
+    return time, w
+
 t_f = 1
 n_p = 2** 13
-t, bt = bw.u(t_f, n_p)
+t, bt = u(t_f, n_p)
 y = 0.5 * np.sqrt(t[1] - t[0]) * np.random.standard_normal(n_p)
 stratonovich = [(0.5 * (bt[i + 1] + bt[i]) + y[i])* (bt[i + 1] - bt[i]) for i in range(n_p - 1)]
 stratonovich = np.array(stratonovich).sum()
