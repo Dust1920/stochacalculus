@@ -1,11 +1,11 @@
 import numpy as np
+import matplotlib.pyplot as plt
+import brownian_motion as bw
 
-T = 1.0
-L = 2 ** 13
-dt = T / L
-dW = np.sqrt(dt) * np.random.normal(size=L)
-W = np.zeros(L + 1)
-W[1 :] = np.cumsum(dW)
-ito_integral = np.sum(np.multiply(W[0: -1], dW))
-err = np.abs(ito_integral - 0.5 * (W[-1] ** 2 - T))
-print(err)
+t_f = 1
+n_p = 2** 13
+t, bt = bw.u(t_f, n_p)
+y = 0.5 * np.sqrt(t[1] - t[0]) * np.random.standard_normal(n_p)
+stratonovich = [(0.5 * (bt[i + 1] + bt[i]) + y[i])* (bt[i + 1] - bt[i]) for i in range(n_p - 1)]
+stratonovich = np.array(stratonovich).sum()
+print(np.abs(stratonovich - 0.5 * bt[-1] ** 2))
