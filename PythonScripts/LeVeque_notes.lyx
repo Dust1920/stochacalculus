@@ -1,0 +1,457 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Error de Truncamiento Local.
+ 
+\end_layout
+
+\begin_layout Standard
+Para un método de segundo orden, definimos el error de truncamiento local
+ 
+\begin_inset Formula 
+\[
+L_{k}\left(x,t\right)=\dfrac{1}{k}\left[u\left(x,t+k\right)-\mathcal{H}_{k}\left(u\left(\cdot,t\right);x\right)\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El método es consitente si 
+\begin_inset Formula 
+\[
+\|L_{k}\left(\cdot,t\right)\|\to0,k\to0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El método es de orden 
+\begin_inset Formula $p$
+\end_inset
+
+ si para consicion inicial suficientemente suave con soporte compacto, existe
+ alguna constante 
+\begin_inset Formula $C_{L}$
+\end_inset
+
+ tal que 
+\begin_inset Formula 
+\[
+\|L_{k}\left(\cdot,t\right)\|\le C_{L}k^{p},\forall k<k_{0},t\leq T
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Estabilidad.
+ 
+\end_layout
+
+\begin_layout Standard
+Podemos rescribir 
+\begin_inset Formula $u$
+\end_inset
+
+ a partir del error de Truncamiento Local.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u\left(x,t+k\right)=\mathcal{H}_{k}\left(u\left(\cdot,t\right);x\right)+kL_{k}\left(x,t\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notemos que podemos reescribir el error en base a lo anterior
+\begin_inset Formula 
+\[
+E_{k}\left(x,t+k\right)=\mathcal{H}_{k}\left(E\left(\cdot,t+k\right);x\right)-kL_{k}\left(x,t\right),
+\]
+
+\end_inset
+
+como 
+\begin_inset Formula $\mathcal{H}_{k}$
+\end_inset
+
+ es un operador lineal.
+ Entonces 
+\begin_inset Formula 
+\[
+E_{k}\left(\cdot,t+k\right)=\mathcal{H}_{k}E\left(\cdot,t+k\right)-kL_{k}\left(\cdot,t\right),
+\]
+
+\end_inset
+
+iterando, tenemos que 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E_{k}\left(\cdot,t_{n}\right)=\mathcal{H}_{k}^{n}E_{k}\left(\cdot,0\right)-k\sum_{i=1}^{n}\mathcal{H}_{k}^{n-i}L_{k}\left(\cdot,t_{i-1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teorema de Equivalencia de Lax
+\end_layout
+
+\begin_layout Standard
+Nos dice que para un método lineal y consistente.
+ Estabilidad es suficiente para la convergencia.
+ 
+\end_layout
+
+\begin_layout Section
+Criterio CFL
+\end_layout
+
+\begin_layout Standard
+Uno de los primeros artículos sobre métodos de diferencias finitas para
+ PDE fue escrito en 1928 por Courant, Friedrichs y Lewy[12].
+ Usan métodos de diferencias finitas como herramienta analítica para demostrar
+ la existencia de soluciones de ciertos PDE.
+ 
+\end_layout
+
+\begin_layout Standard
+La idea es definir una secuencia de soluciones aproximadas (a través de
+ diferencias finitas ecuaciones), demostrar que convergen a medida que se
+ refina la cuadrícula y luego demuestre que el límite de la función debe
+ satisfacer la PDE, dando existencia de una solución.
+ 
+\end_layout
+
+\begin_layout Standard
+En el curso de demostrar la convergencia de esta secuencia (que es precisamente
+ lo que están interesados), reconocieron que una condición de estabilidad
+ necesaria para cualquier método es que el dominio de dependencia del método
+ de diferencias finitas debe incluir el dominio de dependencia de la PDE,
+ al menos en el límite cuando 
+\begin_inset Formula $k,h\to0$
+\end_inset
+
+.
+ Esta condición se conoce como condición CFL en honor a Courant, Friedrichs
+ y Lewy.
+\end_layout
+
+\begin_layout Standard
+El dominio de dependencia 
+\begin_inset Formula $\mathcal{D}\left(\overline{x},\overline{t}\right)$
+\end_inset
+
+ para la EDP son los puntos 
+\begin_inset Formula $\overline{x}-\lambda_{p}\overline{t},p=1,2,\ldots,m$
+\end_inset
+
+ ya que sólo los datos iniciales en estos puntos pueden afectar la solución
+ 
+\begin_inset Formula $\left(\overline{x},\overline{t}\right)$
+\end_inset
+
+.
+ De forma similar, el dominio de dependencia númerico 
+\begin_inset Formula $\mathcal{D}_{k}\left(\overline{x},\overline{t}\right)$
+\end_inset
+
+ para un metodo particular son los puntos 
+\begin_inset Formula $x$
+\end_inset
+
+ cuales la condición inicial 
+\begin_inset Formula $u_{0}\left(x\right)$
+\end_inset
+
+ posiblemente podría afectar la solución númerica en 
+\begin_inset Formula $\left(\overline{x},\overline{t}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ejemplo.
+ Supongamos que el dominio de dependencia númerico satisface 
+\begin_inset Formula 
+\[
+\mathcal{D}_{k}\left(x_{j},t_{n}\right)\subset\left\{ x:\left|x-x_{j}\right|\le nh\right\} ,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y 
+\begin_inset Formula 
+\[
+\mathcal{D}_{k}\left(\overline{x},\overline{t}\right)\subset\left\{ x:\left|x-\overline{x}\right|\le\dfrac{\overline{t}}{k}h\right\} ,
+\]
+
+\end_inset
+
+considere la malla fija 
+\begin_inset Formula $r=kh^{-1}$
+\end_inset
+
+, entonces 
+\begin_inset Formula 
+\[
+\mathcal{D}_{k}\left(\overline{x},\overline{t}\right)\subset\left\{ x:\left|x-\overline{x}\right|\le\dfrac{\overline{t}}{r}\right\} .
+\]
+
+\end_inset
+
+La condición CFL requiere 
+\begin_inset Formula 
+\[
+\mathcal{D}\left(\overline{x},\overline{t}\right)\subset\mathcal{D}_{0}\left(\overline{x},\overline{t}\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+entonces 
+\begin_inset Formula $y\in\mathcal{D}\left(\overline{x},\overline{t}\right)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $y=\overline{x}-\lambda_{p}\overline{t}$
+\end_inset
+
+.
+ Enrtonces 
+\begin_inset Formula 
+\begin{align*}
+\left|\left(\overline{x}-\lambda_{p}\overline{t}\right)-\overline{x}\right| & \le\dfrac{\overline{t}}{r}\\
+\left|\lambda_{p}r\right| & \leq1\\
+\left|\lambda_{p}\dfrac{k}{h}\right| & \leq1.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Importante destacar que la condición CFL no garantiza estabilidad.
+ Entonces se define lo que se conoce como número de Courant o número CFL.
+ 
+\begin_inset Formula 
+\[
+\nu=\max_{p}\left|\dfrac{\lambda_{p}k}{h}\right|.
+\]
+
+\end_inset
+
+Condición necesaria para la estabilidad es que 
+\begin_inset Formula $\nu<1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Método Upwind
+\end_layout
+
+\begin_layout Standard
+Para la ecuación de advección escalar con 
+\begin_inset Formula $a>0$
+\end_inset
+
+, el método one-sided puede ser aplicado y la estabilidad dadad por 
+\begin_inset Formula 
+\[
+s,
+\]
+
+\end_inset
+
+se cumple.
+ Esté método es mayormente llamado el método de upwind de primer orden,
+ y este puede cambiar, en el caso que 
+\begin_inset Formula $a<0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para un sistema de eucaciones, el método de one-sided solo puede ser usado
+ si sus eigenvalores tienen el mismo signo ya que si la onda se propaga
+ en ambas direcciones puede ser inestable ya que no se cumplíria el criterio
+ CFL.
+ 
+\end_layout
+
+\begin_layout Standard
+En el caso unidimensonal esto puede resolverse si usamos el método one-sided
+ adecuado según el signo de 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Entonces, para 
+\begin_inset Formula $a\in\mathbb{R}$
+\end_inset
+
+ definimos 
+\begin_inset Formula 
+\begin{align*}
+a^{+} & =\max\left(a,0\right)\\
+a^{-} & =\min\left(a,0\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces, el método upwind quedaría de la siguiente forma.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+U_{j}^{n+1}=U_{j}^{n}-a^{+}\dfrac{\Delta t}{\mathrm{\Delta}z}\left(U_{j}^{n}-U_{j-1}^{n}\right)-a^{-}\dfrac{\Delta t}{\Delta z}\left(U_{j+1}^{n}-U_{j}^{n}\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+teniendo que 
+\begin_inset Formula $a^{+}$
+\end_inset
+
+ o 
+\begin_inset Formula $a^{-}$
+\end_inset
+
+ serán cero segun el signo de 
+\begin_inset Formula $a$
+\end_inset
+
+ y tendríamos el método one-sided correspondiente.
+ 
+\end_layout
+
+\begin_layout Standard
+Para el caso no lineal se pueden ampliar las ideas del método de upwind.
+ Muchos de estos métodos requieren resolver problemas de Riemann para poder
+ lograr la división adecuada entre la propagación de ondas hacia la izquierda
+ y hacia la derecha.
+ El método fundamental de este tipo es el método de Godunov.
+ 
+\end_layout
+
+\end_body
+\end_document

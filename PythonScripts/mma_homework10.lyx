@@ -1,0 +1,197 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathrm{d}X_{t}=\left(\mu+\dfrac{1}{2}\sigma^{2}\right)X_{t}\mathrm{d}t+\sigma\mathrm{d}W_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considere 
+\begin_inset Formula 
+\[
+u\left(t,x\right)=y_{0}\exp\left(\mu t+\sigma x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora 
+\begin_inset Formula 
+\begin{align*}
+\partial_{t}u & =\mu u\\
+\partial_{x}u & =\sigma u\\
+\partial_{xx} & =\sigma^{2}u
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces 
+\begin_inset Formula 
+\begin{align*}
+\mathrm{d}u\left(t,X_{t}\right) & =\mu u\mathrm{d}t+\sigma u\mathrm{d}X_{t}+\dfrac{1}{2}\sigma^{2}u\left(\sigma^{2}\mathrm{d}t\right)\\
+ & =\mu u\mathrm{d}t+\sigma u\left[\left(\mu+\dfrac{1}{2}\sigma^{2}\right)X_{t}\mathrm{d}t+\sigma\mathrm{d}W_{t}\right]+\dfrac{1}{2}\sigma^{4}u\mathrm{d}t
+\end{align*}
+
+\end_inset
+
+Entonces 
+\begin_inset Formula 
+\begin{align*}
+\mathrm{d}u\left(t,X_{t}\right) & =\mu u\mathrm{d}t+\sigma u\left(\mu+\dfrac{1}{2}\sigma^{2}\right)X_{t}\mathrm{d}t+\sigma^{2}u\mathrm{d}W_{t}+\dfrac{1}{2}\sigma^{4}u\mathrm{d}t\\
+ & =\left[\mu u+\dfrac{1}{2}\sigma^{4}u+\sigma u\left(\mu+\dfrac{1}{2}\sigma^{2}\right)X_{t}\right]\mathrm{dt}+\sigma^{2}u\mathrm{d}W_{t}.\\
+ & =u\left(\left[\mu+\dfrac{1}{2}\sigma^{4}+\sigma\left(\mu+\dfrac{1}{2}\sigma^{2}\right)X_{t}\right]\mathrm{dt}+\sigma^{2}\mathrm{d}W_{t}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora, defina 
+\begin_inset Formula $c=\sigma^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\begin{align*}
+\mathrm{d}u\left(t,X_{t}\right) & =u\left(\left[\mu+\dfrac{1}{2}c^{2}+\sigma\left(\mu+\dfrac{1}{2}c\right)X_{t}\right]\mathrm{dt}+c\mathrm{d}W_{t}\right)\\
+ & =\left[\sigma\left(\mu+\dfrac{1}{2}c\right)uX_{t}\right]\mathrm{d}t+\left(\mu+\dfrac{1}{2}c^{2}\right)u\mathrm{d}t+cu\mathrm{d}W_{t}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora, 
+\begin_inset Formula 
+\begin{align*}
+u\left(t,X_{t}\right) & =u\left(0,X_{0}\right)+\sigma\left(\mu+\dfrac{1}{2}c\right)\int_{0}^{t}uX_{t}\mathrm{d}t+\left(\mu+\dfrac{1}{2}c^{2}\right)\int_{0}^{t}u\mathrm{d}t+c\int_{0}^{t}u\mathrm{d}W_{t}\\
+ & =\exp\left(\sigma X_{0}\right)+\sigma\left(\mu+\dfrac{1}{2}c\right)\int_{0}^{t}\exp\left(\mu s+\sigma X_{s}\right)X_{s}\mathrm{d}s+\left(\mu+\dfrac{1}{2}c^{2}\right)\int_{0}^{t}\exp\left(\mu s+\sigma X_{s}\right)\mathrm{d}s.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Defina 
+\begin_inset Formula 
+\begin{align*}
+\beta_{1} & =\sigma\left(\mu+\dfrac{1}{2}c\right)\\
+\beta_{2} & =\sigma\left(\mu+\dfrac{1}{2}c\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+u\left(t,X_{t}\right) & =\exp\left(\sigma X_{0}\right)+\beta_{1}\int_{0}^{t}\exp\left(\mu s+\sigma X_{s}\right)X_{s}\mathrm{d}s\\
+ & +\beta_{2}\int_{0}^{t}\exp\left(\mu s+\sigma X_{s}\right)\mathrm{d}s+c\int_{0}^{t}\exp\left(\mu s+\sigma X_{s}\right)\mathrm{d}W_{s}\\
+\exp\left(\mu t+\sigma X_{t}\right) & =\exp\left(\sigma X_{0}\right)+\beta_{1}\int_{0}^{t}\exp\left(\mu s+\sigma X_{s}\right)X_{s}\mathrm{d}s\\
+ & +\beta_{2}\int_{0}^{t}\exp\left(\mu s+\sigma X_{s}\right)\mathrm{d}s+c\int_{0}^{t}\exp\left(\mu s+\sigma X_{s}\right)\mathrm{d}W_{s}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
