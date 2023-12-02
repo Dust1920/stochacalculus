@@ -1,0 +1,230 @@
+# Tarea 9
+
+::: {#exr-1}
+
+El siguiente código calcula la aproximación de la Integral de Ito. Con $T= 1$, $L=2^{13}$ correspondiente al error de $\mathcal{O}(10^{-3})$  
+
+```{python}
+import numpy as np
+T = 1.0
+L = 2**13
+dt = T / L
+dW = np.sqrt(dt) * np.random.normal(size=L)
+W = np.zeros(L + 1)
+W[1 :] = np.cumsum(dW)
+ito_integral = np.sum(np.multiply(W[0: -1], dW))
+err = np.abs(ito_integral - 0.5 * (W[-1] ** 2 - T))
+```
+
+Adapta este código para la Integral de Stratonovich correspondente y evalue el error. 
+
+:::
+
+
+```{python}
+from PythonScripts import brownian_motion as bw
+import numpy as np
+
+def u(t: float, n_points: int):
+    dt = t / (n_points - 1)
+    dw = np.sqrt(dt) * np.random.standard_normal(n_points - 1)
+    w = np.zeros(n_points)
+    w[1:] = dw.cumsum()
+    time = np.linspace(0, t, n_points)
+    return time, w
+
+t_f = 1
+n_p = 2** 13
+t, bt = u(t_f, n_p)
+y = 0.5 * np.sqrt(t[1] - t[0]) * np.random.standard_normal(n_p)
+stratonovich = [(0.5 * (bt[i + 1] + bt[i]) + y[i])* (bt[i + 1] - bt[i]) for i in range(n_p - 1)]
+stratonovich = np.array(stratonovich).sum()
+print(np.abs(stratonovich - 0.5 * bt[-1] ** 2))
+```
+
+::: {#exr-2}
+
+Escoja un integrando y computacionalmente verifique la Isometría de Ito. 
+
+:::
+
+```{python}
+import numpy as np
+from PythonScripts import brownian_motion as bw
+
+# h(t) = Bt^2
+def f(x: float, t: float):
+    y = x ** 2
+    return y
+     
+
+def fB(partition: np.array, x: float, t: float):
+    y = 0
+    for i in range(len(partition) - 1):
+        if partition[i] <= t < partition[i + 1]:
+            y = f(x, t)
+    return y
+
+def ito_n(n_points: int, t: float):
+    time, w = bw.u(t, n_points)
+    integral = np.zeros(n_points)
+    for i in range(n_points - 1):
+        integral[i] = fB(time, w[i], time[i]) * (w[i + 1] - w[i])
+    ito = integral.sum()
+    return ito
+
+
+n = 500
+t = 1
+
+samples = 500
+
+E_ito = np.zeros(samples)
+
+
+for i in range(samples):
+    E_ito[i] = ito_n(n, t) ** 2
+
+ito_mean = E_ito.mean()
+
+
+ew = np.zeros(n)
+for i in range(samples):
+    vector, b = bw.u(t, n)
+    ws = (b**2) ** 2
+    ew += ws
+
+ew = ew * samples ** (-1)
+
+r = np.zeros(n)
+for i in range(n- 1):
+    r[i] = ew[i] * (vector[i + 1] - vector[i])
+riemann = r.sum()
+
+
+# E[If^2] = INT_0^1 Ef^2
+print(ito_mean - riemann)
+
+```
+
+
+::: {#exr-3}
+Sea $\tau$ un tiempo de paro. Prueba que $W\left(t+\tau\right)-W\left(\tau\right)$
+es un movimiento browniano. 
+:::
+
+Definamos 
+$$
+V_{\tau}\left(t\right)=W\left(t+\tau\right)-W\left(\tau\right),
+$$
+
+notemos que 
+$$
+V_{\tau}\left(0\right)=0,
+$$
+
+Luego, considere para $s\leq t$
+\begin{align*}
+V_{\tau}\left(t\right)-V_{\tau}\left(s\right) & =W\left(t+\tau\right)-W\left(\tau\right)-\left[W\left(s+\tau\right)-W\left(\tau\right)\right]\\
+ & =W\left(t+\tau\right)-W\left(s+\tau\right)\sim N\left(0,t-s\right),
+\end{align*}
+
+esto además nos garantiza la independencia de los incrementos del
+Browniano. 
+
+::: {#exr-4}
+Sea $W_{1}\left(t\right),W_{2}\left(t\right)$ movimientos brownianos
+independientes con punto inicial $\left(W_{1}\left(0\right),W_{2}\left(0\right)\right)\neq\left(0,0\right)$.
+Defina $X_{t}=\ln\left(W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\right).$
+:::
+
+### Muestre que $X_{t}$ es una martingala local.
+
+Supongamos que $X_{t}$ NO es una martingala local. 
+
+### Muestre que $E\left|X_{t}\right|<\infty$ para cada $t>0$.
+
+Considere 
+\begin{align*}
+X_{t} & =\ln\left(W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\right),\\
+\exp\left(X_{t}\right) & =W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right).
+\end{align*}
+
+\begin{align*}
+E\left[\exp\left(X_{t}\right)\right] & =E\left[W_{1}^{2}\left(t\right)\right]+E\left[W_{2}^{2}\left(t\right)\right]\\
+ & =2t,
+\end{align*}
+
+Como $X_{t}\geq0,\forall t$ 
+\begin{align*}
+X_{t} & \le\exp\left(X_{t}\right)\\
+E\left[X_{t}\right] & \leq2t<\infty,\forall t
+\end{align*}
+
+
+### Muestre que $X_{t}$ no es una martingala.
+
+Supongamos que existe $c\in\mathbb{R}$ tal que $E\left[X_{t}\right]=c,\forall t$.
+Entonces 
+\begin{align*}
+E\left[\ln\left(W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\right)\right] & =c\\
+\int_{0}^{\infty}\ln\left(W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\right)\mathrm{d}\mathcal{P} & =c,
+\end{align*}
+
+Como la integral es finita. Entonces 
+$$
+X_{t}\to0,t\to\infty,\text{ c.s}
+$$
+
+Luego, 
+$$
+W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\to1,t\to\infty,\text{c.s}
+$$
+
+Sin embargo 
+$$
+E\left[W_{1}^{2}\left(t\right)+W_{2}^{2}\left(t\right)\right]=2t\to\infty,t\to\infty,
+$$
+
+entonces llegamos a una contradicci\'on. Entonces $E\left[X_{t}\right]$
+no es constante, por lo tanto $X_{t}$ no puede ser martingala. 
+
+Considere 
+$$
+\tau_{n}=\inf_{t}\left\{ X_{t}=n\right\} 
+$$
+
+Como $X_{t}$ es no acotada. Entonces 
+$$
+\tau_{n}\left(\omega\right)\to\infty,n\to\infty,\forall n.
+$$
+
+Ahora probaremos que $Y_t$ es una martingala. Ahora, considere 
+$$
+Y_{t}=X_{\min\left\{ t,\tau_{n}\right\} },
+$$
+
+es adaptado con respecto a la filtración. Si $\tau_{n}>t$ lo tenemos
+por construcción. En caso contrario, para $n\in\mathbb{N}$. 
+
+$$
+Y_{t}=n
+$$
+
+$$
+\left[Y_{t}=n\right]\subset\left[\tau_{n}<t\right]\in\mathcal{F}_{t},
+$$
+
+por ser tiempo de paro. Por lo tanto $Y_{t}$ es adaptado a la filtración,
+por lo tanto nos queda probar que es una martingala. 
+
+Considere $s<t$. 
+\begin{align*}
+E\left[Y_{t}\mid\mathcal{F}_{s}\right] & =E\left[X_{\min\left\{ t,\tau_{n}\right\} }\mid\mathcal{F}_{s}\right]\\
+ & =E\left[X_{t}1_{[t<\tau_{n}]}\left(t\right)\mid\mathcal{F}_{s}\right]+E\left[X_{t}1_{\left[\tau_{n}\leq t\right]}\left(t\right)\mid\mathcal{F}_{s}\right]\\
+ & =E\left[X_{s}1_{[s<\tau_{n}]}\left(t\right)\mid\mathcal{F}_{s}\right]+E\left[X_{\tau_{n}}1_{\left[\tau_{n}\leq t\right]}\left(t\right)\mid\mathcal{F}_{s}\right]\\
+ & =X_{s}1_{[s<\tau_{n}]}\left(t\right)+X_{\tau_{n}}1_{\left[\tau_{n}\leq s\right]}\left(s\right)\\
+ & =Y_{s},
+\end{align*}
+teniendo así que para cada $n$ $Y_{t}$ es una martingala. 
+

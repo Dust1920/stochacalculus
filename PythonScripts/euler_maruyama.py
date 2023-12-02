@@ -13,7 +13,6 @@ def diffusion(t, x):
     return b
 
 
-
 def get_em_solution(x_0, T, N):
     x_t = np.zeros(N)
     x_t[0] = x_0
@@ -36,5 +35,5 @@ df = []
 for k in np.arange(100):
     t, x_t = get_em_solution(x_0, T, N)
     df.append([t, x_t])
-    ax.plot(t, x_t, color="C0", alpha=0.1)
+    ax.plot(t, x_t, color="C0", alpha= 0.1)
 plt.show()

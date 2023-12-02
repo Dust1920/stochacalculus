@@ -1,0 +1,190 @@
+# Tarea 7
+
+::: {#exr-1}
+Sea $W(t)$ un Movimiento Browniano y $Z_{i}$ una colección de variables aleatorias i.i.d, con distribución $N\left(0,\frac{\delta t}{4}\right)$.\
+Pruebe que la suma
+$$
+\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right),
+$$
+
+tiene valor esperado igual a cero y una varianza de $O(\delta t)$.
+::: 
+
+Sin perdida de generalidad supongamos que $Z_{i}$ y $W(t_{i+1})-W(t_{i})$ son variables aleatorias independientes para cada $i=1,\dots L$. Entonces
+\begin{eqnarray*}
+    \mathbb{E}\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right] & = &  \sum_{i=0}^{L}\mathbb{E}\left[Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right]\\
+    & = &  \sum_{i=0}^{L}\mathbb{E}(Z_{i})\mathbb{E}\left(W(t_{i+1})-W(t_{i})\right)\\
+    & = & 0
+\end{eqnarray*}
+así, 
+\begin{eqnarray*}
+    Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right] & = &   \mathbb{E}\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right]+\left(\mathbb{E}\left[\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right]\right)^{2}\\
+    & = &  \mathbb{E}\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right]
+\end{eqnarray*}
+por el Teorema multinomial, resulta
+\begin{eqnarray*}
+\mathbb{E}\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right] & = &  \mathbb{E}\left[\sum_{i=0}^{L} \left[Z_{i}(W(t_{i+1})-W(t_{i}))\right]^{2}+2\sum_{i\neq j}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j}(W(t_{j+1})-W(t_{j}))\right]\\
+& = &  \sum_{i=0}^{L} \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))\right]^{2}+2\sum_{i\neq j}^{L} \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j}(W(t_{j+1})-W(t_{j}))\right]\\
+& = &  \sum_{i=0}^{L} \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))\right]^{2}+2\sum_{i\neq j}^{L} \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j}(W(t_{j+1})-W(t_{j}))\right]
+\end{eqnarray*}
+observemos que, si $i<j$
+\begin{eqnarray*}
+    \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j}(W(t_{j+1})-W(t_{j}))\right] & = &  \mathbb{E}\{ \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j}(W(t_{j+1})-W(t_{j}))|\mathcal{F}_{j}\right]
+    \}\\
+    & = & \mathbb{E}[Z_{i}(W(t_{i+1})-W(t_{i}))Z_{j} ]\mathbb{E}\left[(W(t_{j+1})-W(t_{j}))|\mathcal{F}_{j}\right]\\
+    & = & 0
+\end{eqnarray*}
+y además
+\begin{eqnarray*}
+    \mathbb{E}\left[Z_{i}(W(t_{i+1})-W(t_{i}))\right]^{2} & = &  \mathbb{E}\{ \mathbb{E}\left[Z_{i}^{2}(W(t_{i+1})-W(t_{i}))^{2}|\mathcal{F}_{j}\right]
+    \}\\
+    & = & \mathbb{E}\{Z_{i}^{2}\mathbb{E}\left[(W(t_{i+1})-W(t_{i}))^{2}|\mathcal{F}_{j}\right]\}\\
+    & = & \mathbb{E}[Z_{i}^2](t_{i+1}-t_{i})\\
+    & = & \dfrac{\delta t}{4}(t_{i+1}-t_{i})
+\end{eqnarray*}
+sustituyendo resulta
+\begin{eqnarray*}
+Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right] & = &  \sum_{i=0}^{L}\dfrac{\delta t}{4}(t_{i+1}-t_{i})\\
+& = &  \dfrac{\delta t}{4}(t_{L+1}-t_{0}).
+\end{eqnarray*}
+Para un $L$ suficientemente grande, se tiene que, $(t_{L+1}-t_{0})\leq\dfrac{\varepsilon}{4}$, así
+$$
+Var\left[\sum_{i=0}^{L}Z_{i}\left(W(t_{i+1})-W(t_{i})\right)\right]\leq \varepsilon\delta t.
+$$
+
+Así, la varianza es de orden $\delta t$.
+
+
+::: {##exr-1}
+La regla del punto medio de la integral de Riemann de una función $h\in C^{2}([a,b])$ sobre una partición de $L$ puntos del intervalo $[a,b]$ está dada por,
+$$
+\int_{a}^{b}h(t)dt=\lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}h\left(\dfrac{t_{i}+t_{i+1}}{2}\right)\delta t.
+$$
+
+Use la relación
+$$
+W\left(\frac{t_{i}+t_{i+1}}{2}\right)=\frac{1}{2}(W(t_{i})+W(t_{i+1}))+ \underbrace{Z_{i}}_{i.i.d.\sim N(0,\delta t/4)},
+$$
+
+y el ejercicio anterior para demostrar que la regla del punto medio de la integral de Riemann implica que
+$$
+\int_{0}^{T}W(t)dW(t)=\frac{1}{2}W(T)^{2}.
+$$
+
+::: 
+
+Sea $\Delta_{L}=\{0=t_{0},t_{1},\dots,t_{L-1},t_{L}=T\}$ una partición del intervalo $[0,T]$.
+    De la regla del punto medio para $h(t)=W(t)$, resulta
+\begin{eqnarray*}
+    \int_{0}^{T}W(t)dW(t) & = & \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}W\left(\dfrac{t_{i}+t_{i+1}}{2}\right)(W(t_{i+1})-W(t_{i}))\\
+    & = & \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}\left[\frac{1}{2}(W(t_{i})+W(t_{i+1}))+ Z_{i}\right](W(t_{i+1})-W(t_{i}))\\
+    & = & \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L}\frac{1}{2}\left(W(t_{i+1})^{2}-W(t_{i})^{2}\right)+ \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\\
+    & = & \lim_{\delta t\to 0,\,L\to\infty}\frac{1}{2}\left(W(T)^{2}-W(0)^{2}\right)+ \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\\
+    & = & \frac{1}{2}W(T)^{2}+ \lim_{\delta t\to 0,\,L\to\infty}\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))
+\end{eqnarray*}
+Solo falta ver que 
+$$
+\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\rightarrow 0\text{ en } L^{2}
+$$
+es decir, 
+$$
+\lim_{\|\Delta_{L}\|\to0}E\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right]=0
+$$
+Del ejercicio anterior se tiene que 
+$$
+ E\left[\left(\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\right)^{2}\right] = O(\delta t)\leq \varepsilon\|\Delta_{L}\|,
+$$
+así, tomando el limite cuando $\|\Delta_{L}\|\to$ se tiene que,
+$$
+\sum_{i=0}^{L} Z_{i}(W(t_{i+1})-W(t_{i}))\rightarrow 0\text{ en } L^{2}
+$$
+
+
+::: {##exr-1}
+Usando la aproximación de la suma de Riemann
+$$
+\int_{0}^{T}h(t)dW(t)\sim\sum_{i=0}^{L}h(t_{i})(W(t_{i+1})-W(t_{i})),
+$$
+argumente que,
+$$
+\mathbb{E}\left[\left(\int_{0}^{T}tdW(t)\right)^{2}\right]=\frac{T^{3}}{3}.
+$$
+
+Por tanto, enuncie la isometría de It\^o y deduzca que esta isometría es válida para el caso $h(t)=t$.
+:::
+
+Sea $\{0=t_{0},t_{1},\dots,t_{L-1},t_{L}=T\}$ una partición del intervalo $[0,T]$. De la aproximación de la suma de Riemann, resulta
+\begin{eqnarray*}
+\int_{0}^{T}tdW(t) & \sim & \sum_{i=0}^{L}t_{i}(W(t_{i+1})-W(t_{i}))\\
+\Longrightarrow \left(\int_{0}^{T}tdW(t)\right)^{2} & \sim & \left(\sum_{i=0}^{L}t_{i}(W(t_{i+1})-W(t_{i}))\right)^{2},
+\end{eqnarray*}
+por el Teorema Multinomial, resulta
+\begin{equation*}
+    \left(\sum_{i=0}^{L}t_{i}(W(t_{i+1})-W(t_{i}))\right)^{2} = \sum_{i=0}^{L}t_{i}^{2}(W(t_{i+1})-W(t_{i}))^{2}+2\sum_{i\neq j}t_{i} t_{j}(W(t_{i+1})-W(t_{i}))(W(t_{j+1})-W(t_{j}))
+\end{equation*}
+entonces sustituyendo esto, resulta
+\begin{eqnarray*}
+   \mathbb{E}
+\left[\left(\int_{0}^{T}tdW(t)\right)^{2}\right] & \sim &  \mathbb{E}
+\left[\sum_{i=0}^{L}t_{i}^{2}(W(t_{i+1})-W(t_{i}))^{2}+2\sum_{i\neq j}t_{i} t_{j}(W(t_{i+1})-W(t_{i}))(W(t_{j+1})-W(t_{j}))\right]\\
+& = &  
+\sum_{i=0}^{L}t_{i}^{2}\mathbb{E}(W(t_{i+1})-W(t_{i}))^{2}+2\sum_{i\neq j}t_{i} t_{j}\mathbb{E}\left[(W(t_{i+1})-W(t_{i}))(W(t_{j+1})-W(t_{j}))\right]\\
+& = &  
+\sum_{i=0}^{L}t_{i}^{2}(t_{i+1}-t_{i}),
+\end{eqnarray*}
+observemos que,
+$$
+\lim_{L\to 0}\sum_{i=0}^{L}t_{i}^{2}(t_{i+1}-t_{i})=\int_{0}^{T}t^{2}dt=\frac{T}{3}
+$$
+
+entonces
+$$
+ \mathbb{E}
+\left[\left(\int_{0}^{T}tdW(t)\right)^{2}\right]=\frac{T}{3}.
+$$
+
+Además, de la isometria de Itô,
+\begin{eqnarray*}
+\mathbb{E}
+\left[\left(\int_{0}^{T}tdW(t)\right)^{2}\right] & = & \mathbb{E}
+\left[\left(\int_{0}^{T}tdW(t)\right)\left(\int_{0}^{T}tdW(t)\right)\right]\\
+& = & 
+\int_{0}^{T}\mathbb{E}(t^{2})dt\\
+& = & 
+\int_{0}^{T}t^{2}dt\\
+& = & \frac{T}{3}
+\end{eqnarray*}
+
+::: {##exr-1}
+Escriba una función de Python para calcular la integral de It\^o del movimiento Browniano $W(t)$ sobre $[0,T]$. La función tendría la siguiente firma.
+:::
+
+```{python}
+import numpy as np
+from PythonScripts import brownian_motion as bw
+
+def f(x: float, t: float):
+    y = x
+    return y
+     
+
+def fB(partition: np.array, x: float, t: float):
+    y = 0
+    for i in range(len(partition) - 1):
+        if partition[i] <= t < partition[i + 1]:
+            y = f(x, t)
+    return y
+
+def ito_n(n_points: int, t: float):
+    time, w = bw.u(t, n_points)
+    integral = np.zeros(n_points)
+    for i in range(n_points - 1):
+        integral[i] = fB(time, w[i], time[i]) * (w[i + 1] - w[i])
+    ito = integral.sum()
+    return w, ito
+
+b, ito = ito_n(1000, 1)
+print(ito - (0.5 * (b[-1] ** 2 - 1)))
+
+
+```

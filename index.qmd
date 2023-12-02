@@ -1,3 +1,3 @@
-# Ecuaciones Diferenciales Estocásticas
+# Lista de Tareas. {.unnumbered}
 
-Ahora, vamos 
+Este libro es una recopilación de las tareas presentadas a lo largo del curso de Métodos de Matemáticas Aplicadas. Enfocada principalmente sobre Cálculo Estocástico.

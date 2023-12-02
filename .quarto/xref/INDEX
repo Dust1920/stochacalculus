@@ -1,44 +1,38 @@
 {
   "index.qmd": {
-    "index.html": "183339db"
-  },
-  "intro.qmd": {
-    "intro.html": "a7f66bac"
-  },
-  "summary.qmd": {
-    "summary.html": "22f23d41"
-  },
-  "references.qmd": {
-    "references.html": "f52bb354"
+    "index.html": "58209fb0"
   },
   "Tarea1.qmd": {
-    "Tarea1.html": "73f7ca2a"
+    "Tarea1.html": "8e9dae5f"
   },
   "Tarea2.qmd": {
-    "Tarea2.html": "7fe1a26a"
+    "Tarea2.html": "c87a9d4b"
   },
   "Tarea3.qmd": {
-    "Tarea3.html": "35f3eae5"
+    "Tarea3.html": "24f43fc9"
   },
   "Tarea4.qmd": {
-    "Tarea4.html": "4976c79d"
+    "Tarea4.html": "66e2027f"
   },
   "Tarea5.qmd": {
-    "Tarea5.html": "a52e6517"
+    "Tarea5.html": "70cd73bc"
   },
   "Tarea6.qmd": {
-    "Tarea6.html": "fc8e955c"
+    "Tarea6.html": "421e0387"
   },
   "Tarea7.qmd": {
-    "Tarea7.html": "4d8e8b0c"
+    "Tarea7.html": "0186ad52"
   },
   "Tarea8.qmd": {
-    "Tarea8.html": "1d8eaefe"
+    "Tarea8.html": "0950c984"
   },
   "Tarea9.qmd": {
-    "Tarea9.html": "73e98076"
+    "Tarea9.html": "658beeaf"
   },
   "Tarea10.qmd": {
-    "Tarea10.html": "499ec2af"
+    "Tarea10.html": "8dcd2be7"
+  },
+  "aux_codes.qmd": {
+    "aux_codes.html": "f8d0fd6a"
   }
 }

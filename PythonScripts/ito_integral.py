@@ -1,11 +1,11 @@
 import numpy as np
-import brownian_motion as bw
+from PythonScripts import brownian_motion as bw
 
 # Tarea 
 
 
 def f(x: float, t: float):
-    y = x
+    y = x ** 2
     return y
      
 
@@ -20,12 +20,7 @@ def ito_n(n_points: int, t: float):
     time, w = bw.u(t, n_points)
     integral = np.zeros(n_points)
     for i in range(n_points - 1):
-        integral[i] = fB(time, time[i], time[i]) * (w[i + 1] - w[i])
+        integral[i] = fB(time, w[i], time[i]) * (w[i + 1] - w[i])
     ito = integral.sum()
     return w, ito
-
-
-
-
-
 
