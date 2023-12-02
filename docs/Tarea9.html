@@ -278,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>stratonovich <span class="op">=</span> np.array(stratonovich).<span class="bu">sum</span>()</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">abs</span>(stratonovich <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> bt[<span class="op">-</span><span class="dv">1</span>] <span class="op">**</span> <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.005327369930850451</code></pre>
+<pre><code>6.387317692702066e-05</code></pre>
 </div>
 </div>
 <div id="exr-2" class="theorem exercise">
@@ -341,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="co"># E[If^2] = INT_0^1 Ef^2</span></span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ito_mean <span class="op">-</span> riemann)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>-0.3359333118664233</code></pre>
+<pre><code>-0.570908013691914</code></pre>
 </div>
 </div>
 <div id="exr-3" class="theorem exercise">
