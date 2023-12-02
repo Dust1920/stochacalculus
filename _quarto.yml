@@ -7,17 +7,8 @@ book:
   date: "25/11/2023"
   chapters:
     - index.qmd
-    - Tarea1.qmd
-    - Tarea2.qmd
-    - Tarea3.qmd
-    - Tarea4.qmd
-    - Tarea5.qmd
-    - Tarea6.qmd
-    - Tarea7.qmd
-    - Tarea8.qmd
-    - Tarea9.qmd
-    - Tarea10.qmd
-    - references.qmd
+    - Tarea1.ipynb
+    - Tarea2.ipynb
 
 bibliography: references.bib
 
