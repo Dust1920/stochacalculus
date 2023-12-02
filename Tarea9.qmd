@@ -44,7 +44,11 @@ print(np.abs(stratonovich - 0.5 * bt[-1] ** 2))
 Escoja un integrando y computacionalmente verifique la Isometría de Ito de la Ecuación 7.4
 :::
 
+```{python}
+import numpy as np
+from PythonScripts import brownian_motion as bw
 
+```
 
 
 ::: {exr-3}

@@ -161,7 +161,7 @@ Escriba una función de Python para calcular la integral de It\^o del movimiento
 
 ```{python}
 import numpy as np
-
+from PythonScripts import brownian_motion as bw
 
 def f(x: float, t: float):
     y = x
@@ -182,6 +182,9 @@ def ito_n(n_points: int, t: float):
         integral[i] = fB(time, w[i], time[i]) * (w[i + 1] - w[i])
     ito = integral.sum()
     return w, ito
+
+b, ito = ito_n(1000, 1)
+print(ito - (0.5 * (b[-1] ** 2 - 1)))
 
 
 ```
