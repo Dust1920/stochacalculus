@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 book:
-  title: "mma_hws"
-  author: "Norah Jones"
+  title: "Calculo Estocástico"
+  author: "David Peña Peralta"
   date: "1/12/2023"
   chapters:
     - index.qmd
