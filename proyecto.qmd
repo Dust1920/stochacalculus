@@ -1,0 +1,267 @@
+# Tarea Final: Proyecto
+
+Articulo de Referencia: 
+
+## Problema 1
+
+::: {thm-1}
+Si $(X_{t})_{t\in[0,T]}$ es un proceso de Itô y $F\in C^{1,2}([0,T],\mathbb{R})$, entonces
+$$
+F(T,X_{t})-F(0,X_{0})=\int_{0}^{T}\frac{\partial F}{\partial x}(t,X_{t})dX_{t}+\int_{0}^{T}\frac{\partial F}{\partial t}(t,X_{t})dt+\frac{1}{2}\int_{0}^{T}\frac{\partial^{2} F}{\partial x^{2}}(t,X_{t})d\langle X\rangle_{t}.
+$$
+
+:::
+
+:::{.solution}
+
+   Sea $X_{t}$ un proceso de Ito dado por 
+$$
+X_{t}=X_{0}+\int_{0}^{t}f\left(s\right)\mathrm{d}B_{s}+\int_{0}^{t}g\left(s\right)\mathrm{d}s,0\leq t\leq T,
+$$
+
+donde $X_{0}$ es $\mathcal{F}_{0}-$medible, $f\in\mathcal{L}_{\text{ad}}\left(\Omega,L^{2}\left[0,T\right]\right)$
+y $g\in\mathcal{L}_{\text{ad}}\left(\Omega,L^{1}\left[0,T\right]\right)$.
+Consideremos a $F\left(t,x\right)$ dado que $F\in C^{1,2}$ entonces $F\left(t,X_{t}\right)$ es también un proceso de Itô.\\
+Usaremos la serie de Taylor y la tabla de Itô para encontrar la formula de Itô del proceso F.\\
+Usando la serie de Taylor para dos variables, se tiene que,
+\begin{eqnarray*}
+    F\left(t,x\right) & = & F\left(t_{0},x_{0}\right)+\partial_{t}F(t_{0},x_{0})\left(t-t_{0}\right)+\partial_{x}F(t_{0},x_{0})\left(x-x_{0}\right)+\frac{1}{2}\left(\partial_{xx}^{2}F\left(t_{0},x_{0}\right)\left(x-x_{0}\right)^{2}\right.\\
+    &  & \left.+\partial_{xt}^{2}F\left(t_{0},x_{0}\right)\left(t-t_{0}\right)\left(x-x_{0}\right)+\partial_{tx}^{2}F\left(t_{0},x_{0}\right)\left(x-x_{0}\right)\left(t-t_{0}\right)+\partial_{tt}^{2}F\left(t_{0},x_{0}\right)\left(t-t_{0}\right)^{2}\right).
+\end{eqnarray*}
+Sea $\Delta_{n}=\{t_{0}=0,t_{1},\dots,t_{n}=T\}$, entonces
+
+\begin{eqnarray*}
+    F\left(T,X_{t}\right)-F\left(0,X_{0}\right) & = & \sum_{i=1}^{n}\frac{\partial F}{\partial t}(t_{i-1},X_{t_{i-1}})\left(t_{i}-t_{i-1}\right)+\sum_{i=1}^{n}\frac{\partial F}{\partial x}(t_{i-1},X_{t_{i-1}})\left(X_{t_{i}}-X_{t_{i-1}}\right)\\
+    &  & +\sum_{i=1}^{n}\frac{1}{2}\frac{\partial^{2}F}{\partial x \partial  x}(t_{i-1},X_{t_{i-1}})\left(X_{t_{i}}-X_{t_{i-1}}\right)^{2}+\sum_{i=1}^{n}\frac{1}{2}\frac{\partial ^{2}F}{\partial x\partial t}(t_{i-1},X_{t_{i-1}})\left(t_{i}-t_{i-1}\right)\left(X_{t_{i}}-X_{t_{i-1}}\right)\\
+    &  & +\sum_{i=1}^{n}\frac{1}{2}\frac{\partial^{2}F}{\partial t\partial x}(t_{i-1},X_{t_{i-1}})\left(X_{t_{i}}-X_{t_{i-1}}\right)\left(t_{i}-t_{i-1}\right)+\sum_{i=1}^{n}\frac{1}{2}\frac{\partial^{2}F}{\partial t \partial t}(t_{i-1},X_{t_{i-1}})\left(t_{i}-t_{i-1}\right)^{2}
+\end{eqnarray*}
+
+Como, $\left(t_{i}-t_{i-1}\right)=dt_{i}$, $\left(t_{i}-t_{i-1}\right)\left(X_{t_{i}}-X_{t_{i-1}}\right)=dt_{i}dX_{t_{i}}$ y $\left(X_{t_{i}}-X_{t_{i-1}}\right)=(dX_{i})^{2}$, de la tabla de Itô, resulta para cada $i=1,\dots,n$,
+
+$$
+\left(X_{t_{i}}-X_{t_{i-1}}\right)^{2}=f^{2}(t_{i})dt_{i},
+$$
+
+$$
+\left(t_{i}-t_{i-1}\right)\left(X_{t_{i}}-X_{t_{i-1}}\right)=0,
+$$
+
+$$
+\left(X_{t_{i}}-X_{t_{i-1}}\right)\left(t_{i}-t_{i-1}\right)=0,
+$$
+
+$$
+\left(t_{i}-t_{i-1}\right)^{2}=0.
+$$
+
+Sustituyendo resulta:
+\begin{eqnarray*}
+    F\left(T,X_{t}\right)-F\left(0,X_{0}\right) & = & \sum_{i=1}^{n}\frac{\partial F}{\partial t}(t_{i-1},X_{t_{i-1}})dt_{i}+\sum_{i=1}^{n}\frac{\partial F}{\partial x}(t_{i-1},X_{t_{i-1}})dX_{t_{i}}\\
+    &  & +\sum_{i=1}^{n}\frac{1}{2}\frac{\partial^{2}F}{\partial x \partial  x}(t_{i-1},X_{t_{i-1}})f^{2}(t_{i})dt_{i}
+\end{eqnarray*}
+
+tomando $\|\Delta_{n}\|\to0$, resulta
+$$
+\sum_{i=1}^{n}\frac{\partial F}{\partial t}(t_{i-1},X_{t_{i-1}})dt_{i}\rightarrow \int_{0}^{T} \frac{\partial F}{\partial t}(t,X_{t})dt
+$$
+
+$$
+\frac{1}{2}\sum_{i=1}^{n}\frac{\partial^{2}F}{\partial x^{2}}(t_{i-1},X_{t_{i-1}})f^{2}(t_{i})dt_{i}\rightarrow \frac{1}{2}\int_{0}^{T} \frac{\partial^{2}F}{\partial x^{2}}(t,X_{t})f^{2}(t)dt
+$$
+
+del Teorema 5.3.3 del Kuo,
+$$
+\sum_{i=1}^{n}\frac{\partial F}{\partial x}(t_{i-1},X_{t_{i-1}})dX_{t_{i}}\rightarrow \int_{0}^{T} \frac{\partial F}{\partial x}(t,X_{t})dX_{t}.
+$$
+
+Entonces,
+$$
+F\left(T,X_{t}\right)-F\left(0,X_{0}\right)=\int_{0}^{T} \frac{\partial F}{\partial t}(t,X_{t})dt+\int_{0}^{T} \frac{\partial F}{\partial x}(t,X_{t})dX_{t}+\frac{1}{2}\int_{0}^{T} \frac{\partial^{2}F}{\partial x^{2}}(t,X_{t})f^{2}(t)dt
+$$
+
+con $f^{2}dt=d\langle X\rangle_{t}$. Así,
+
+$$
+F\left(T,X_{t}\right)-F\left(0,X_{0}\right)=\int_{0}^{T} \frac{\partial F}{\partial t}(t,X_{t})dt+\int_{0}^{T} \frac{\partial F}{\partial x}(t,X_{t})dX_{t}+\frac{1}{2}\int_{0}^{T} \frac{\partial^{2}F}{\partial x^{2}}(t,X_{t})d\langle X\rangle_{t}
+$$
+
+
+
+:::
+
+
+## Problema 2:
+
+Considere la siguiente ecuación diferencial estocástica
+
+$$
+dX_{t}=\left(a_{1}(t)X_{t}+a_{2}(t)\right)dt+\left(b_{1}(t)X_{t}+b_{2}(t)\right)dB_{t}.\quad X_{0}=x_{0},(6)
+$$
+
+
+::: {thm-SolEDE}
+Teorema 2: El proceso estocástico 
+$$
+X_{t}=\Phi_{t}^{-1}\left(x_{0}+\int_{0}^{t}\left(a_{2}(s)-b_{1}(s)b_{2}(s)\right)\Phi_{s}ds+\int_{0}^{t}b_{2}(s)\Phi_{s}dB_{s}\right),\quad t\geq 0,
+$$
+donde $\Phi_{t}:=e^{-\left(\int_{0}^{t}\left(a_{1}(s)-\frac{1}{2}b_{1}^{2}(s)\right)ds+\int_{0}^{t}b_{1}(s)dB_{s}\right)}$ es la solución de la ecuación lineal diferencial estocástica (6).
+
+:::
+
+:::{.solution}
+
+Necesitamos encontrar $d(\Phi_{t}X_{t})$.
+Para esto, de la sección 7.5 del Kuo H-H, se tiene que para dos procesos de Itô $X_{t}$, $Y_{t}$ se satisface que
+$$
+d(X_{t}Y_{t})=Y_{t}dX_{t}+X_{t}dY_{t}+dX_{t}dY_{t}
+$$
+
+Esta igualdad se llama fórmula del producto Itô.\\
+Por la fórmula del producto Itô, para $\Phi_{t}$ y $X_{t}$ tenemos que
+$$
+d(\Phi_{t}X_{t})=\Phi_{t}dX_{t}+X_{t}d\Phi_{t}+(d\Phi_{t})(dX_{t}).\quad(11,1,6)
+$$
+
+Sea $Z_{t}=\left(\int_{0}^{t}\left(a_{1}(s)-\frac{1}{2}b_{1}^{2}(s)\right)ds+\int_{0}^{t}b_{1}(s)dB_{s}\right)$, entonces $\Phi_{t}=e^{-Z_{t}}$, aplicando la fórmula de Itô para encontrar $d\Phi_{t}$ como sigue:
+
+\begin{eqnarray*}
+    d\Phi_{t} & = & d(e^{-Z_{t}})\\
+    & = & -e^{-Z_{t}}dZ_{t}-\frac{1}{2}\left(de^{-Z_{t}}\right)(dZ_{t})\\
+    & = & - \Phi_{t}dZ_{t}+\frac{1}{2}e^{-Z_{t}}(dZ_{t})^{2}\\
+    & = & \Phi_{t}\left(-a_{1}(t)dt+\frac{1}{2}b_{1}^{2}(t)dt-b_{1}(t)dB_{t}\right)+\frac{1}{2}\Phi_{t}b_{1}^{2}(t)dt\\
+    & = & \Phi_{t}\left(-a_{1}(t)dt+b_{1}^{2}(t)dt-b_{1}(t)dB_{t}\right)\quad(11.1.7)
+\end{eqnarray*}
+De las ecuaciones (6) y (11.1.7), y de la tabla de Itô, se deduce que
+
+\begin{eqnarray*}
+(d\Phi_{t})(dX_{t}) & = & \left(\Phi_{t}\left(-a_{1}(t)d+b_{1}^{2}(t)dt-b_{1}(t)dB_{t}\right)\right)\big(\left(a_{1}(t)X_{t}+a_{2}(t)\right)dt+\left(b_{1}(t)X_{t}+b_{2}(t)\right)dB_{t}\big)\\
+& = & -\Phi_{t}b_{1}^{2}(t)X_{t}dt-\Phi_{t}b_{1}(t)b_{2}(t)dt\\
+& = & -\Phi_{t}b_{1}(t)\{b_{1}(t)X_{t}+b_{2}(t)\}dt\quad(11.1.8)
+\end{eqnarray*}
+
+poniendo las ecuaciones (11.1.7) y (11,1,8) sobre la ecuación (11.1.16) obtenemos
+\begin{eqnarray*}
+    d(\Phi_{t}X_{t}) & = & \Phi_{t}dX_{t}+X_{t}\Phi_{t}\left(-a_{1}(t)dt+b_{1}^{2}(t)dt-b_{1}(t)dB_{t}\right)-\Phi_{t}b_{1}(t)\{b_{1}(t)X_{t}+b_{2}(t)\}dt\\
+                     & = & \Phi_{t}\{dX_{t}-a_{1}(t)X_{t}dt-b_{1}(t)X_{t}dB_{t}-b_{2}(t)b_{1}(t)d(t)\}\quad(11.1.9)
+\end{eqnarray*}
+
+sustituyendo la ecuación (6) en (11.1.9) implican que
+$$
+d(\Phi_{t}X_{t})=\Phi_{t}\{b_{2}(t)dB(t)+a_{2}(t)dt-b_{2}(t)b_{1}(t)dt\},
+$$
+
+entonces se tiene que,
+$$
+\Phi_{t}X_{t}= x_{0}+\int_{0}^{t}\Phi_{s}b_{2}(s)dB(s)+\int_{0}^{t}\Phi_{s}(a_{2}(s)-b_{2}(s)b_{1}(s))ds
+$$
+
+Al dividir ambos lados por $\Phi_{t}$ obtenemos la solución $X_{t}$ de la Ecuación (6),
+
+$$
+X_{t}= \Phi_{t}^{-1}\left( x_{0}+\int_{0}^{t}\Phi_{s}b_{2}(s)dB(s)+\int_{0}^{t}\Phi_{s}(a_{2}(s)-b_{2}(s)b_{1}(s))ds\right)
+$$
+
+:::
+
+## Problema 3: Solución exacta de la ecuación estocástica de Richards.
+
+Sea la ecuación logística de Richards
+
+$$
+dN_{t}=rN_{t}\left(1-\left(\frac{N_{t}}{K}\right)^{\alpha}\right)dt +\sigma N_{t}dB_{t}\quad(3)
+$$
+
+
+::: {thm-Richards}
+
+La solución de la ecuación estocástica de Richards (3) viene dada por
+$$
+N_{t}=N_{0}\exp{\left(\left(r-\frac{1}{2}\sigma^{2}\right)t+\sigma B_{t}\right)\left(1+\left(\frac{N_{0}}{K}\right)^{\alpha}r\alpha\int_{0}^{t}\exp{\left(\alpha\left(\left(r-\frac{1}{2}\sigma^{2}\right)s+\sigma B_{s}\right)\right)}ds\right)}^{-\frac{1}{\alpha}}
+$$
+
+:::
+
+:::{.solution}
+Sea $X_{t}:=\dfrac{N_{t}}{K}$. Entonces de la ecuacion (3), obtenemos $dX_{t}=rX_{t}\left(1-X_{t}^{\alpha}\right)dt+\sigma X_{t}dB_{t}$ con condición inicial $X_{0}=\dfrac{N_{0}}{K}$. Sea $F(t,x):=x^{-\alpha}$ y, por lo tanto 
+$$
+\frac{\partial F}{\partial x}=-\frac{\alpha}{x^{\alpha+1}},\,\frac{\partial^{2} F}{\partial x^{2}}=\frac{\alpha(\alpha+1)}{x^{\alpha+2}}\text{ y }\frac{\partial F}{\partial t}=0.
+$$
+
+La variación cuadrática de $X_{t}$ esta dada por $\langle X\rangle_{t}=\int_{0}^{t}\sigma^{2}X_{s}^{2}ds$ lo que significa $d\langle X\rangle_{t}=\sigma^{2}X_{t}^{2}dt$. Usando la notación $Y_{t}:=X_{t}^{-\alpha}$ y aplicando la formula de Itô (Teorema 1) obtenemos
+
+\begin{eqnarray*}
+    dY_{t} & = & -\frac{\alpha}{X_{t}^{\alpha+1}}dX_{t}+\frac{1}{2}\frac{\alpha(\alpha+1)}{X_{t}^{\alpha+2}}d\langle X\rangle_{t}\\
+    & = & -\frac{\alpha}{X_{t}^{\alpha+1}}dX_{t}+\frac{1}{2}\frac{\alpha(\alpha+1)}{X_{t}^{\alpha+2}}\sigma^{2}X_{t}^{2}dt\\
+    & = & -\frac{\alpha}{X_{t}^{\alpha+1}}\left(rX_{t}\left(1-X_{t}^{\alpha}\right)dt+\sigma X_{t}dB_{t}\right)+\frac{1}{2}\frac{\alpha(\alpha+1)}{X_{t}^{\alpha}}\sigma^{2}dt\\
+    & = & -\frac{\alpha r\left(1-X_{t}^{\alpha}\right)dt}{X_{t}^{\alpha}}-\frac{\sigma\alpha dB_{t}}{X_{t}^{\alpha}}+\frac{1}{2}\frac{\alpha(\alpha+1)}{X_{t}^{\alpha}}\sigma^{2}dt\\
+        & = & -\alpha r Y_{t}dt+\alpha rdt-\sigma\alpha Y_{t}dB_{t}+\frac{1}{2}\alpha(\alpha+1)Y_{t}\sigma^{2}dt\\
+        & = & \left(\left(\frac{1}{2}\alpha(\alpha+1)\sigma^{2}-r\alpha\right)Y_{t}+r\alpha\right)dt-\sigma\alpha Y_{t}dB_{t}.
+\end{eqnarray*}
+
+Esta es una ecuación diferencial estocástica lineal con factor integrante.
+Donde,
+$$
+a_{1}(t)=\frac{1}{2}\alpha(\alpha+1)\sigma^{2}-r\alpha
+,\,a_{2}(t)=r\alpha,\, b_{1}(t)=-\sigma\alpha,\,b_{2}(t)=0.
+$$
+
+entonces es una ecuación del tipo de (6), con
+\begin{eqnarray*}
+    \Phi_{t} & = & \exp{\left(-\left(\int_{0}^{t}\left(\frac{1}{2}\alpha(\alpha+1)\sigma^{2}-r\alpha\right)ds-\frac{1}{2}\int_{0}^{t}(-\sigma\alpha)^{2}ds-\int_{0}^{t}\sigma\alpha dB_{s}\right)\right)}\\
+    & = & \exp{\left(-\int_{0}^{t}\frac{1}{2}\alpha(\alpha+1)\sigma^{2}ds+\int_{0}^{t}r\alpha ds+\frac{1}{2}\int_{0}^{t}\sigma^{2}\alpha^{2}ds+\int_{0}^{t}\sigma\alpha dB_{s}\right)}\\
+    & = & \exp{\left(-\frac{1}{2}\int_{0}^{t}\alpha^{2}\sigma^{2}ds-\frac{1}{2}\int_{0}^{t}\alpha\sigma^{2}ds+\int_{0}^{t}r\alpha ds+\frac{1}{2}\int_{0}^{t}\sigma^{2}\alpha^{2}ds+\int_{0}^{t}\sigma\alpha dB_{s}\right)}\\
+    & = & \exp{\left(-\frac{1}{2}\int_{0}^{t}\alpha\sigma^{2}ds+\int_{0}^{t}r\alpha ds+\int_{0}^{t}\sigma\alpha dB_{s}\right)}\\
+        & = & \exp{\left(-\frac{1}{2}\alpha\sigma^{2}t+r\alpha t+\sigma\alpha B_{t}\right)}.
+\end{eqnarray*}
+Por lo tanto, según el Teorema 2, la solución de la ecuación diferencial estocástica lineal en $Y_{t}$ es
+\begin{eqnarray*}
+    Y_{t} & = &  \Phi_{t}^{-1}\left(Y_{0}+\int_{0}^{t}r\alpha\Phi_{s}ds\right)\\
+    & = &  \exp{\left(\frac{1}{2}\alpha\sigma^{2}t-r\alpha t-\sigma\alpha B_{t}\right)}\left(Y_{0}+\int_{0}^{t}r\alpha\exp{\left(-\frac{1}{2}\alpha\sigma^{2}s+r\alpha s+\sigma\alpha B_{s}\right)}ds\right)\\
+    & = &  \exp{\left(\alpha\left(\left(\frac{1}{2}\sigma^{2}-r \right)t-\sigma B_{t}\right)\right)}\left(Y_{0}+r\alpha\int_{0}^{t}\exp{\left(\alpha\left(\left(r-\frac{1}{2}\sigma^{2}\right)s+\sigma B_{s}\right)\right)}ds\right).
+\end{eqnarray*}
+Reescribiendo la última expresión en términos de $X_{t}$ se obtiene
+
+$$
+X_{t}=\exp{\left(\left(r-\frac{1}{2}\sigma^{2}\right)t+\sigma B_{t}\right)\left(\left(\frac{1}{X_{0}}\right)^{\alpha}+r\alpha\int_{0}^{t}\exp{\left(\alpha\left(\left(r-\frac{1}{2}\sigma^{2}\right)s+\sigma B_{s}\right)\right)}ds\right)^{-\frac{1}{\alpha}}}
+$$
+
+Finalmente, la solución de (3) viene dada por
+\begin{eqnarray*}
+    X_{t} & = & \exp{\left(\left(r-\frac{1}{2}\sigma^{2}\right)t+\sigma B_{t}\right)\left(\left(\frac{1}{X_{0}}\right)^{\alpha}+\left(\frac{X_{0}}{X_{0}}\right)^{\alpha}r\alpha\int_{0}^{t}\exp{\left(\alpha\left(\left(r-\frac{1}{2}\sigma^{2}\right)s+\sigma B_{s}\right)\right)}ds\right)^{-\frac{1}{\alpha}}}\\
+    & = & \exp{\left(\left(r-\frac{1}{2}\sigma^{2}\right)t+\sigma B_{t}\right)\left(\frac{1}{X_{0}}\right)^{-1}\left(1+(X_{0})^{\alpha}r\alpha\int_{0}^{t}\exp{\left(\alpha\left(\left(r-\frac{1}{2}\sigma^{2}\right)s+\sigma B_{s}\right)\right)}ds\right)^{-\frac{1}{\alpha}}}\\
+    & = & \exp{\left(\left(r-\frac{1}{2}\sigma^{2}\right)t+\sigma B_{t}\right)\left(\frac{N_{0}}{K}\right)\left(1+\left(\frac{N_{0}}{K}\right)^{\alpha}r\alpha\int_{0}^{t}\exp{\left(\alpha\left(\left(r-\frac{1}{2}\sigma^{2}\right)s+\sigma B_{s}\right)\right)}ds\right)^{-\frac{1}{\alpha}}}
+\end{eqnarray*}
+
+Así,
+
+$$
+N_{t}=N_{0}\exp{\left(\left(r-\frac{1}{2}\sigma^{2}\right)t+\sigma B_{t}\right)\left(1+\left(\frac{N_{0}}{K}\right)^{\alpha}r\alpha\int_{0}^{t}\exp{\left(\alpha\left(\left(r-\frac{1}{2}\sigma^{2}\right)s+\sigma B_{s}\right)\right)}ds\right)^{-\frac{1}{\alpha}}}.
+$$
+:::
+
+
+## Problema: Resolver la Ecuación Diferencial de Richards.
+
+
+Viendo la ec.diferencial del problema anterior , definimos las funciones auxiliares.
+
+\begin{align*}
+u\left(t,X_{t}\right) & =\alpha X_{t}\left[1-\left(\dfrac{X_{t}}{K}\right)^{m}\right]\\
+v\left(t,X_{t}\right) & =\sigma X_{t}
+\end{align*}
+
+Pudiendo reescribir el sistema. 
+
+\begin{align*}
+\mathrm{d}X_{t} & =u\left(t,X_{t}\right)\mathrm{d}t+v\left(t,X_{t}\right)\mathrm{d}B_{t},t>t_{0}\\
+X_{t_{0}} & =x_{0},
+\end{align*}
+
+
+
+
+
+## Problema: Encontrar la distribución invariante.
+
+
+
