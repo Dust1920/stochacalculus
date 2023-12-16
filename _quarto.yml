@@ -19,6 +19,7 @@ book:
     - Tarea8.qmd
     - Tarea9.qmd
     - Tarea10.qmd
+    - proyecto.qmd
 
 bibliography: references.bib
 

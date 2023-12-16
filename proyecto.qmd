@@ -258,10 +258,158 @@ X_{t_{0}} & =x_{0},
 \end{align*}
 
 
+```{python}
 
+def log_rich(pars,t,x):
+    alpha = pars[0]
+    m = pars[1]
+    k = pars[2]
+    sigma = pars[3]
+    u = alpha * x * (1 - (x / k) ** m)
+    v = sigma * x
+    return u, v
+
+import numpy as np
+
+def logistic_step(pars,t,x, dt):
+    u, v = log_rich(pars,t,x)
+    y = x + u * dt + v * np.sqrt(dt)* np.random.standard_normal()
+    return y
+
+x_0 = 20
+tf = 32
+log_pars = [0.5, 1, 400, 0.01]
+n = 2 ** 12
+
+time = np.linspace(0, tf, n) # Esto porque \Delta t es constante. 
+delta_t = time[1] - time[0]
+
+x_t = [x_0]
+for i in range(n - 1):
+    x_t.append(logistic_step(log_pars, time[i], x_t[i], delta_t))
+
+import matplotlib.pyplot as plt
+
+plt.plot(time, x_t)
+plt.show()
+
+
+```
+
+
+### Comparativa con la situación determinsita. 
+Es claro que si $\sigma=0$ recuperamos la parte estocástica. 
+
+
+$$
+\dfrac{\mathrm{d}X}{\mathrm{d}t} = \alpha X_t\left(1-\left(\dfrac{X_t}{K}\right)^m\right)
+$$
+
+
+La cual ya se sabe, que tiene por solución. 
+
+$$
+X\left(t\right)=K\left[1+\left(\left(\dfrac{K}{X_{0}}\right)^{m}-1\right)\exp\left(-m\alpha t\right)\right]^{-1/m}
+$$
+
+Ahora vamos a graficarla y verificar la solución. 
+
+```{python}
+def exact_solution(pars, x_0, t):
+    alpha = pars[0]
+    m = pars[1]
+    k = pars[2]
+    a_1 = (k / x_0) ** m - 1
+    a_2 = np.exp( -1 * m * alpha * t)
+    a_3 = 1 + a_1 * a_2
+    y = k * a_3 ** (-1 * m ** (-1))
+    return y 
+
+exact = [exact_solution(log_pars, x_0, t) for t in time]
+plt.plot(time, exact, 'r')
+plt.plot(time, x_t, 'b', alpha = 0.5)
+plt.legend(['Exacta','EM'])
+plt.title('Comparativa: EM vs Determinista')
+plt.show()
+```
 
 
 ## Problema: Encontrar la distribución invariante.
 
+
+```{python}
+
+def solve_logistic(pars, x_0, tf, n):
+    delta_t = tf / (n - 1)
+    x_t = [x_0]
+    for i in range(n - 1):
+        x_t.append(logistic_step(pars, 1, x_t[i], delta_t))
+    return x_t
+
+
+samples = 1000
+
+data = []
+for i in range(samples):
+    y_t = solve_logistic(log_pars, x_0, tf, n)
+    for j in range(n):
+        data.append([i + 1, j, j * delta_t, y_t[j]])
+        
+    
+import pandas as pd
+distr = pd.DataFrame(data, columns=['sample','step','time','x_t'])
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+
+
+fig, ax = plt.subplots()
+marker_style_00 = dict(
+    color="blue",
+    linestyle="-",
+    # marker="",
+    markersize=1,
+    markerfacecoloralt="gray",
+    alpha=0.1,
+)
+x_T = []
+for j in range(samples):
+    ax.plot(distr.iloc[j *n: (j+1) * n, 2], distr.iloc[j *n: (j+1) * n, 3], **marker_style_00, label=r"$X(t_i)$")
+    x_T.append(distr.iloc[j *n: (j+1) * n -1, 3])
+plt.xlabel(r"$t$")
+plt.ylabel(r"$X(t)$")
+
+x_T = np.array(x_T)
+ymax = np.max(np.abs(x_T))
+binwidth = 0.025
+lim = (int(ymax / binwidth) + 1) * binwidth
+bins = 100  # np.arange(0, lim + binwidth, binwidth)
+divider = make_axes_locatable(ax)
+ax_histy = divider.append_axes("right", 1.2, pad=0.1, sharey=ax)
+n, bins, patches = ax_histy.hist(x_T, bins=bins, orientation="horizontal", density=True)
+sigma = np.std(x_T)
+mu = np.mean(x_T)
+y = (1 / (np.sqrt(2 * np.pi) * sigma)) * np.exp(
+    -0.5 * ((1.0 / sigma) * (bins - mu)) ** 2
+)
+# ax_histy.plot(y, bins, "--")
+# plt.legend(loc=0)
+plt.savefig("gen_log_sde_batch_sample_path.png", dpi=300)
+
+plt.show()
+
+g = grid = sns.JointGrid(data=distr, x="time", y="x_t")
+g.plot_joint(sns.scatterplot)
+g.plot_marginals(sns.kdeplot)
+g.plot_marginals(sns.histplot)
+g.ax_marg_x.remove()
+# g = sns.jointplot(data=df_batch_path, x="t_i", y="X(t_i)", marginal_ticks=True)
+# sns.kdeplot(df_batch_path["X(t_i)"], ax=g.ax_marg_x, legend=False)
+g.savefig("marginal.png")
+
+
+
+```
 
 
